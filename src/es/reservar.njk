@@ -1,0 +1,31 @@
+---
+layout: base.njk
+lang: es
+alt: "/prenota/"
+permalink: /es/reservar/
+title: "Reservar una clase · Mar La Criolla"
+description: "Elige la clase, el día y la hora: reserva tu clase privada de salsa, bachata o timba con Mar La Criolla en Bari u online."
+---
+<section class="phero"><div class="wrap"><h1>Reserva tu clase</h1><p class="sub">Elige clase, día y hora. La solicitud le llega a Mar por WhatsApp y te confirma enseguida.</p></div></section>
+<section style="padding-top:40px">
+  <div class="wrap">
+    <div class="booker" id="booker">
+      <div class="bstep"><h3><i>1</i>¿Qué clase?</h3>
+        <div class="opts" id="bkServ">
+          <button type="button" class="opt" data-k="prova" data-v="Clase de prueba 60 min (Bari)" aria-pressed="false">Clase de prueba · Bari<small>60 min · 30 €</small></button>
+          <button type="button" class="opt" data-k="90" data-v="Clase privada 90 min (Bari)" aria-pressed="false">Clase privada · Bari<small>90 min · 75 €</small></button>
+          <button type="button" class="opt" data-k="coppia" data-v="Clase de pareja 60 min (Bari)" aria-pressed="false">Clase de pareja<small>60 min · 70 €</small></button>
+          <button type="button" class="opt" data-k="online" data-v="Clase online 60 min" aria-pressed="false">Clase online<small>60 min · 40 €</small></button>
+          <button type="button" class="opt" data-k="pack" data-v="Bono 4 clases (Bari)" aria-pressed="false">Bono 4 clases<small>Bari · 200 €</small></button>
+        </div>
+      </div>
+      <div class="bstep"><h3><i>2</i>¿Qué día?</h3><div class="days" id="bkDays"></div></div>
+      <div class="bstep"><h3><i>3</i>¿A qué hora?</h3><div class="opts" id="bkHours"></div></div>
+      <div class="bstep"><h3><i>4</i>Tus datos</h3>
+        <div class="grid2" style="margin-top:0"><label class="field">Nombre<input id="bkName" autocomplete="given-name" placeholder="Tu nombre"></label><label class="field">Notas (opcional)<input id="bkNote" placeholder="Nivel, objetivo, estilo…"></label></div>
+      </div>
+      <div class="summary"><p id="bkSum">Elige clase, día y hora.</p><a class="btn wa" id="bkSend" href="#">Enviar la solicitud por WhatsApp</a></div>
+      <p class="demo-note">Borrador: los horarios libres son de ejemplo. En la versión final se conectan al calendario de Mar (Google Calendar) y la reserva se puede pagar online.</p>
+    </div>
+  </div>
+</section>

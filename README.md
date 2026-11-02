@@ -9,4 +9,6 @@ Da modificare senza toccare il codice:
 - `src/_data/stili.json` — stili e descrizioni.
 - `src/blog/*.md` — articoli del blog.
 
-Da fare: numero WhatsApp reale, foto/video di Mar, storia (chi-sono), versione ES, Cal.com + Google Calendar, Stripe, privacy/cookie, togliere noindex al lancio.
+Lingue: IT (/) e ES (/es/), testi in `src/_data/t.json` + pagine in `src/es/`.
+
+Da fare: numero WhatsApp reale, foto/video di Mar, storia (chi-sono), Cal.com + Google Calendar, Stripe, privacy/cookie, togliere noindex al lancio.

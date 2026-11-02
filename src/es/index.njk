@@ -1,0 +1,78 @@
+---
+layout: base.njk
+lang: es
+alt: "/"
+permalink: /es/
+title: "Mar La Criolla · Profesora de salsa, timba y bachata en Bari y online"
+description: "Mar La Criolla enseña salsa, timba, bachata, Salsa Lady y folclore peruano: clases privadas en Bari y Barcelona, y online en todo el mundo."
+---
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="chips">{% for c in site.cities_es %}<span>{{ c }}</span>{% endfor %}</div>
+      <h1>Mar <em>La Criolla</em></h1>
+      <p class="lead">Salsa, timba, bachata, rumba y folclore peruano. Enseño a bailar con intención: técnica, musicalidad y una voz propia en la pista.</p>
+      <div class="cta">
+        <a class="btn" href="/es/clases-privadas-bari/">Clases privadas en Bari</a>
+        <a class="btn ghost" href="/es/reservar/?s=prova">Reservar la prueba</a>
+      </div>
+      <div class="clave">
+        <div class="clave-head"><span>El corazón de la salsa: la clave 3-2</span><button id="clavePlay" aria-pressed="false">▶ Escucha la clave</button></div>
+        <div class="beats" id="beats" aria-hidden="true"></div>
+      </div>
+    </div>
+    <div class="portrait">
+      <img src="https://images.unsplash.com/photo-1587922342650-955e9760d689?w=1000&q=70&auto=format&fit=crop" alt="Bailarina durante un baile latino" fetchpriority="high">
+      <div class="tag"><b>Mar La Criolla</b><span>Salsa · Bachata · Timba · Folclore peruviano</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>¿Por dónde quieres empezar?</h2>
+    <p class="sub">Tres caminos, una sola maestra. Hoy puedes empezar con las clases privadas; la escuela online llegará pronto.</p>
+    <div class="doors">
+      <a class="door" href="/es/clases-privadas-bari/"><img src="https://images.unsplash.com/photo-1575217764519-16d213a41dc1?w=1000&q=70&auto=format&fit=crop" alt="" loading="lazy"><span class="state">Disponible</span><h3>Clases privadas</h3><p>Presenciales en Bari o Barcelona, u online 1 a 1. Un plan construido para ti.</p></a>
+      <a class="door soon" href="/es/online/"><img src="https://images.unsplash.com/photo-1481841580057-e2b9927a05c6?w=1000&q=70&auto=format&fit=crop" alt="" loading="lazy"><span class="state">Próximamente</span><h3>Escuela online</h3><p>Cursos y programas para seguir desde cualquier país.</p></a>
+      <a class="door" href="/es/clases-privadas-bari/#per-chi"><span class="state">Disponible</span><h3>Mentoría para profesores</h3><p>Metodología, corrección técnica y recursos para tu propia escuela.</p></a>
+    </div>
+  </div>
+</section>
+
+<section class="dark-sec">
+  <div class="wrap">
+    <h2>Cómo puedo ayudarte</h2>
+    <p class="sub">Cada disciplina se adapta a tu nivel real y a tu objetivo: social, escenario, competición o enseñanza.</p>
+    <div class="stili">{% for s in stili_es %}<div class="stile"><b>{{ s.nome }}</b><span>{{ s.desc }}</span></div>{% endfor %}</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap oltre">
+    <div class="pic"><img src="https://images.unsplash.com/photo-1575217764519-16d213a41dc1?w=1000&q=70&auto=format&fit=crop" alt="Pareja bailando" loading="lazy"></div>
+    <div>
+      <h2>Más allá de seguir</h2>
+      <p class="sub">Clases privadas para mujeres que quieren desarrollar su propia voz dentro del baile.</p>
+      <blockquote class="big">«No se trata de dejar de seguir, sino de aprender cuándo y cómo aportar tu propia voz dentro del baile.»</blockquote>
+      <a class="btn" href="/es/clases-privadas-bari/#oltre">Descubre el programa</a>
+    </div>
+  </div>
+</section>
+
+<section class="dark-sec">
+  <div class="wrap">
+    <h2>Vídeos</h2>
+    <p class="sub">Clases, progreso de los alumnos y noches de baile: pronto aquí los vídeos de Mar.</p>
+    <div class="reels"><a class="reel" href="/es/videos/"><b>Una clase privada</b><span>Próximamente</span></a><a class="reel" href="/es/videos/"><b>Antes / después</b><span>Próximamente</span></a><a class="reel" href="/es/videos/"><b>Salsa Lady</b><span>Próximamente</span></a><a class="reel" href="/es/videos/"><b>Timba en la pista</b><span>Próximamente</span></a></div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Empieza hoy tu evolución en el baile.</h2>
+    <p class="sub">Cuéntame tus objetivos y te ayudaré a encontrar la mejor opción para ti.</p>
+    <div class="cta"><a class="btn mango" href="/es/reservar/">Reservar mi clase</a><a class="btn wa" data-wa="¡Hola Mar! Quiero información sobre las clases." href="#">Escríbeme por WhatsApp</a></div>
+    <p class="credit-ph">Fotos de ambiente: Unsplash (Alain Bonnardeaux, Preillumination SeTh, Alvin Mahmudov), se sustituirán por fotos de Mar.</p>
+  </div>
+</section>

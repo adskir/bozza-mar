@@ -1,0 +1,10 @@
+[
+  { "nome": "Salsa", "desc": "Técnica, giros, musicalidad y soltura en la pista social." },
+  { "nome": "Bachata", "desc": "Conexión, sensibilidad y recursos de pareja para bailar con intención." },
+  { "nome": "Salsa Lady", "desc": "Styling, presencia, expresión corporal y voz propia en la línea." },
+  { "nome": "Timba", "desc": "Cuban Son y rumba aplicadas a la Timba actual, con conexión a la percusión." },
+  { "nome": "Rumba", "desc": "Ritmo, cuerpo y cultura afrocubana desde la raíz." },
+  { "nome": "Folclore peruano", "desc": "Marinera, festejo y expresión cultural con técnica y raíz." },
+  { "nome": "Competición", "desc": "Coreografía, estrategia de pista, casting de pareja y preparación física." },
+  { "nome": "Mentoría para profesores", "desc": "Metodología, corrección técnica y recursos para tu propia escuela." }
+]

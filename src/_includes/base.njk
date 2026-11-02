@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="it">
+{% set L = t[lang] %}<html lang="{{ lang }}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +8,8 @@
 <meta name="description" content="{{ description }}">
 <link rel="canonical" href="{{ site.url }}{{ page.url }}">
 <meta property="og:type" content="website">
-<meta property="og:locale" content="it_IT">
+<meta property="og:locale" content="{{ L.locale }}">
+{% if alt %}<link rel="alternate" hreflang="{{ 'es' if lang == 'it' else 'it' }}" href="{{ site.url }}{{ alt }}"><link rel="alternate" hreflang="{{ lang }}" href="{{ site.url }}{{ page.url }}">{% endif %}
 <meta property="og:site_name" content="{{ site.name }}">
 <meta property="og:title" content="{{ title }}">
 <meta property="og:description" content="{{ description }}">
@@ -20,16 +21,16 @@
 {% if schema %}<script type="application/ld+json">{{ schema | dump | safe }}</script>{% endif %}
 </head>
 <body class="{{ bodyClass }}">
-<a class="skip" href="#main">Vai al contenuto</a>
+<a class="skip" href="#main">{{ L.skip }}</a>
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="/">Mar <span>La Criolla</span></a>
-    <nav class="nav" id="nav" aria-label="Menu principale">
-      {% set links = [["/lezioni-private-bari/","Lezioni a Bari"],["/chi-sono/","Chi sono"],["/video/","Video"],["/blog/","Blog"],["/online/","Online"]] %}
-      {% for l in links %}<a href="{{ l[0] }}"{% if page.url == l[0] %} aria-current="page"{% endif %}>{{ l[1] }}</a>{% endfor %}
+    <a class="brand" href="{{ L.home }}">Mar <span>La Criolla</span></a>
+    <nav class="nav" id="nav" aria-label="{{ L.menu }}">
+      {% for l in L.nav %}<a href="{{ l[0] }}"{% if page.url == l[0] %} aria-current="page"{% endif %}>{{ l[1] }}</a>{% endfor %}
     </nav>
-    <a class="btn small" href="/prenota/">Prenota</a>
-    <button class="burger" id="burger" aria-label="Apri il menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+    <a class="lang-sw" href="{{ alt or ('/es/' if lang == 'it' else '/') }}" hreflang="{{ 'es' if lang == 'it' else 'it' }}" title="{{ L.otherName }}">{{ L.other }}</a>
+    <a class="btn small" href="{{ L.prenota }}">{{ L.book }}</a>
+    <button class="burger" id="burger" aria-label="{{ L.burger }}" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
   </div>
 </header>
 
@@ -40,28 +41,21 @@
 <footer class="foot">
   <div class="wrap">
     <div>
-      <a class="brand" href="/">Mar <span>La Criolla</span></a>
-      <p>Salsa, timba, bachata e folclore peruviano.<br>Lezioni private a Bari, Barcellona e online.</p>
+      <a class="brand" href="{{ L.home }}">Mar <span>La Criolla</span></a>
+      <p>{{ L.foot1 }}<br>{{ L.foot2 }}</p>
     </div>
-    <nav aria-label="Pagine">
-      <a href="/lezioni-private-bari/">Lezioni private a Bari</a>
-      <a href="/prenota/">Prenota</a>
-      <a href="/chi-sono/">Chi sono</a>
-      <a href="/video/">Video</a>
-      <a href="/blog/">Blog</a>
-      <a href="/online/">Scuola online</a>
-    </nav>
-    <p class="credit">© {{ "" | year }} Mar La Criolla · Sito realizzato da <a href="https://clickbari.it" target="_blank" rel="noopener">ClickBari</a></p>
+    <nav aria-label="{{ L.menu }}">{% for l in L.footnav %}<a href="{{ l[0] }}">{{ l[1] }}</a>{% endfor %}</nav>
+    <p class="credit">© {{ "" | year }} Mar La Criolla · {{ L.made }} <a href="https://clickbari.it" target="_blank" rel="noopener">ClickBari</a></p>
   </div>
 </footer>
 
 <!-- Assistente: primo contatto automatico -->
 <div class="bot" id="bot" hidden>
-  <div class="bot-head"><b>Mar La Criolla</b><span>Ti rispondo in pochi secondi</span><button id="botClose" aria-label="Chiudi">×</button></div>
+  <div class="bot-head"><b>Mar La Criolla</b><span>{{ L.botTitle }}</span><button id="botClose" aria-label="{{ L.close }}">×</button></div>
   <div class="bot-body" id="botBody" aria-live="polite"></div>
   <div class="bot-opts" id="botOpts"></div>
 </div>
-<button class="bot-fab" id="botFab" aria-label="Apri la chat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/></svg><span>Chatta con Mar</span></button>
+<button class="bot-fab" id="botFab" aria-label="{{ L.openChat }}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/></svg><span>{{ L.botFab }}</span></button>
 
 <script>window.MAR={wa:"{{ site.whatsapp }}"};</script>
 <script src="/assets/app.js" defer></script>

@@ -1,0 +1,22 @@
+{
+  "presenza": {
+    "include": ["Evaluación inicial y diseño de tu plan personalizado", "Corrección técnica y de musicalidad en tiempo real", "Seguimiento por WhatsApp entre clases", "Revisión de vídeos de tu práctica", "Coordinación de estudio en Bari o Barcelona", "Precio bloqueado como alumno fundador"],
+    "voci": [
+      { "nome": "Primera clase de prueba · 60 min", "desc": "Presencial en Bari o Barcelona", "prezzo": 30, "nota": "ahorras 15 €", "top": true },
+      { "nome": "Clase privada · 90 min", "desc": "Para preparar coreografía o competición", "prezzo": 75 },
+      { "nome": "Bono 4 clases · 60 min", "desc": "Válido 3 meses", "prezzo": 200, "nota": "ahorras 20 €" },
+      { "nome": "Bono 8 clases · 60 min", "desc": "Válido 6 meses", "prezzo": 380, "nota": "ahorras 60 €" },
+      { "nome": "Clase de pareja · 60 min", "desc": "Dos personas, un solo objetivo", "prezzo": 70 }
+    ]
+  },
+  "online": {
+    "include": ["Clases en directo por videollamada, solo para ti", "Grabación de la sesión para que la repases", "Plan de práctica entre clases con objetivos concretos", "Revisión de vídeos enviados por ti", "Horarios flexibles según tu franja horaria", "Mismo precio protegido de alumno fundador"],
+    "voci": [
+      { "nome": "Clase online · 60 min", "desc": "Videollamada 1 a 1 + grabación", "prezzo": 40, "top": true },
+      { "nome": "Clase online · 90 min", "desc": "Para profundizar o preparar evento", "prezzo": 55 },
+      { "nome": "Bono 4 clases online", "desc": "Válido 3 meses", "prezzo": 150, "nota": "ahorras 10 €" },
+      { "nome": "Bono 8 clases online", "desc": "Válido 6 meses", "prezzo": 280, "nota": "ahorras 40 €" },
+      { "nome": "Revisión de vídeo", "desc": "Corrección comentada de tu práctica", "prezzo": 20 }
+    ]
+  }
+}

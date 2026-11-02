@@ -43,12 +43,16 @@ section{padding:96px 0}
 .nav a{text-decoration:none;opacity:.85;padding:4px 0;border-bottom:2px solid transparent}
 .nav a:hover{opacity:1;color:var(--mango)}
 .nav a[aria-current]{opacity:1;border-color:var(--mango)}
+.lang-sw{font-weight:800;font-size:13px;text-decoration:none;border:1.5px solid #4A3F5A;border-radius:999px;padding:5px 11px}
+.lang-sw:hover{border-color:var(--mango);color:var(--mango)}
+@media(max-width:420px){.brand{font-size:18px}.top .btn.small{padding:8px 12px}}
 .burger{display:none;background:none;border:0;width:40px;height:40px;position:relative}
 .burger span{position:absolute;left:9px;right:9px;height:2px;background:#fff;transition:transform .2s}
 .burger span:first-child{top:15px}.burger span:last-child{top:23px}
 @media(max-width:900px){
-  .burger{display:block}
-  .top .btn.small{margin-left:auto}
+  .top .wrap{gap:10px}
+  .burger{display:block;flex:0 0 40px}
+  .lang-sw{margin-left:auto}
   .nav{position:fixed;top:66px;left:0;right:0;flex-direction:column;gap:0;background:var(--night);padding:8px 20px 20px;display:none;margin:0}
   .nav.open{display:flex}
   .nav a{padding:14px 0;border-bottom:1px solid var(--night3);font-size:18px}

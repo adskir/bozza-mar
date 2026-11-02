@@ -3,6 +3,18 @@
   "url": "https://marlacriolla.netlify.app",
   "whatsapp": "390000000000",
   "instagram": "",
-  "founders": { "total": 20, "available": 7 },
-  "cities": ["Bari · Italia", "Barcellona · España", "Online · tutto il mondo"]
+  "founders": {
+    "total": 20,
+    "available": 7
+  },
+  "cities": [
+    "Bari · Italia",
+    "Barcellona · España",
+    "Online · tutto il mondo"
+  ],
+  "cities_es": [
+    "Bari · Italia",
+    "Barcelona · España",
+    "Online · todo el mundo"
+  ]
 }
