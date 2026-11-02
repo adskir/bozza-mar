@@ -1,8 +1,8 @@
 {
   "presenza": {
-    "include": ["Evaluación inicial y diseño de tu plan personalizado", "Corrección técnica y de musicalidad en tiempo real", "Seguimiento por WhatsApp entre clases", "Revisión de vídeos de tu práctica", "Coordinación de estudio en Bari o Barcelona", "Precio bloqueado como alumno fundador"],
+    "include": ["Evaluación inicial y diseño de tu plan personalizado", "Corrección técnica y de musicalidad en tiempo real", "Seguimiento por WhatsApp entre clases", "Revisión de vídeos de tu práctica", "Coordinación de estudio en Bari", "Precio bloqueado como alumno fundador"],
     "voci": [
-      { "nome": "Primera clase de prueba · 60 min", "desc": "Presencial en Bari o Barcelona", "prezzo": 30, "nota": "ahorras 15 €", "top": true },
+      { "nome": "Primera clase de prueba · 60 min", "desc": "Presencial en Bari", "prezzo": 30, "nota": "ahorras 15 €", "top": true },
       { "nome": "Clase privada · 90 min", "desc": "Para preparar coreografía o competición", "prezzo": 75 },
       { "nome": "Bono 4 clases · 60 min", "desc": "Válido 3 meses", "prezzo": 200, "nota": "ahorras 20 €" },
       { "nome": "Bono 8 clases · 60 min", "desc": "Válido 6 meses", "prezzo": 380, "nota": "ahorras 60 €" },

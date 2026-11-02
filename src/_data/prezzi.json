@@ -1,8 +1,8 @@
 {
   "presenza": {
-    "include": ["Valutazione iniziale e piano personalizzato", "Correzione tecnica e di musicalità in tempo reale", "Supporto su WhatsApp tra una lezione e l'altra", "Revisione dei video della tua pratica", "Sala a Bari o Barcellona coordinata da me", "Prezzo bloccato da allievo fondatore"],
+    "include": ["Valutazione iniziale e piano personalizzato", "Correzione tecnica e di musicalità in tempo reale", "Supporto su WhatsApp tra una lezione e l'altra", "Revisione dei video della tua pratica", "Sala a Bari coordinata da me", "Prezzo bloccato da allievo fondatore"],
     "voci": [
-      { "nome": "Prima lezione di prova · 60 min", "desc": "In presenza a Bari o Barcellona", "prezzo": 30, "nota": "risparmi 15 €", "top": true },
+      { "nome": "Prima lezione di prova · 60 min", "desc": "In presenza a Bari", "prezzo": 30, "nota": "risparmi 15 €", "top": true },
       { "nome": "Lezione privata · 90 min", "desc": "Per preparare una coreografia o una gara", "prezzo": 75 },
       { "nome": "Pacchetto 4 lezioni · 60 min", "desc": "Valido 3 mesi", "prezzo": 200, "nota": "risparmi 20 €" },
       { "nome": "Pacchetto 8 lezioni · 60 min", "desc": "Valido 6 mesi", "prezzo": 380, "nota": "risparmi 60 €" },

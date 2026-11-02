@@ -3,7 +3,7 @@
     "skip": "Vai al contenuto", "menu": "Menu principale", "book": "Prenota", "burger": "Apri il menu",
     "nav": [["/lezioni-private-bari/","Lezioni a Bari"],["/chi-sono/","Chi sono"],["/video/","Video"],["/blog/","Blog"],["/online/","Online"]],
     "home": "/", "prenota": "/prenota/",
-    "foot1": "Salsa, timba, bachata e folclore peruviano.", "foot2": "Lezioni private a Bari, Barcellona e online.",
+    "foot1": "Salsa, timba, bachata e folclore peruviano.", "foot2": "Lezioni private a Bari e online.",
     "footnav": [["/lezioni-private-bari/","Lezioni private a Bari"],["/prenota/","Prenota"],["/chi-sono/","Chi sono"],["/video/","Video"],["/blog/","Blog"],["/online/","Scuola online"]],
     "made": "Sito realizzato da", "botTitle": "Ti rispondo in pochi secondi", "botFab": "Chatta con Mar", "close": "Chiudi", "openChat": "Apri la chat",
     "other": "ES", "otherName": "Español", "locale": "it_IT"
@@ -12,7 +12,7 @@
     "skip": "Ir al contenido", "menu": "Menú principal", "book": "Reservar", "burger": "Abrir el menú",
     "nav": [["/es/clases-privadas-bari/","Clases en Bari"],["/es/sobre-mi/","Sobre mí"],["/es/videos/","Vídeos"],["/es/blog/","Blog"],["/es/online/","Online"]],
     "home": "/es/", "prenota": "/es/reservar/",
-    "foot1": "Salsa, timba, bachata y folclore peruano.", "foot2": "Clases privadas en Bari, Barcelona y online.",
+    "foot1": "Salsa, timba, bachata y folclore peruano.", "foot2": "Clases privadas en Bari y online.",
     "footnav": [["/es/clases-privadas-bari/","Clases privadas en Bari"],["/es/reservar/","Reservar"],["/es/sobre-mi/","Sobre mí"],["/es/videos/","Vídeos"],["/es/blog/","Blog"],["/es/online/","Escuela online"]],
     "made": "Web realizada por", "botTitle": "Te respondo en pocos segundos", "botFab": "Chatea con Mar", "close": "Cerrar", "openChat": "Abrir el chat",
     "other": "IT", "otherName": "Italiano", "locale": "es_ES"

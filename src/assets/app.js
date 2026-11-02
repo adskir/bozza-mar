@@ -11,7 +11,7 @@
     hi: "¡Hola! Soy el asistente de Mar 💃 Con 3 preguntas te indico la clase ideal para ti.",
     q1: "¿Qué quieres bailar?", a1: ["Salsa", "Bachata", "Salsa Lady", "Timba / Rumba", "Folclore peruano", "Preparar una competición", "Soy profesor/a"],
     q2: "¿Qué nivel tienes?", a2: ["Empiezo de cero", "Ya bailo un poco", "Nivel avanzado"],
-    q3: "¿Prefieres presencial u online?", a3: ["En Bari", "En Barcelona", "Online"],
+    q3: "¿Prefieres presencial u online?", a3: ["En Bari", "Online"],
     end: (o) => `¡Perfecto! Te propongo empezar con una clase de prueba ${o ? "online (40 €)" : "presencial (30 €)"}: evaluamos tu nivel y creamos tu plan.`,
     go: "Seguir en WhatsApp", slot: "Elegir día y hora",
     msg: (p) => `¡Hola Mar! Te escribo desde la web.\n• Quiero aprender: ${p.stile}\n• Nivel: ${p.livello}\n• Formato: ${p.formato}\nQuiero reservar la clase de prueba.`
@@ -22,7 +22,7 @@
     hi: "¡Hola! Sono l'assistente di Mar 💃 In 3 domande ti indico la lezione giusta per te.",
     q1: "Cosa vuoi ballare?", a1: ["Salsa", "Bachata", "Salsa Lady", "Timba / Rumba", "Folclore peruviano", "Preparare una gara", "Sono insegnante"],
     q2: "Che livello hai?", a2: ["Parto da zero", "Ballo già un po'", "Livello avanzato"],
-    q3: "Preferisci in presenza o online?", a3: ["A Bari", "A Barcellona", "Online"],
+    q3: "Preferisci in presenza o online?", a3: ["A Bari", "Online"],
     end: (o) => `Perfetto! Ti propongo di iniziare con una lezione di prova ${o ? "online (40 €)" : "in presenza (30 €)"}: valutiamo il tuo livello e costruiamo il tuo piano.`,
     go: "Continua su WhatsApp", slot: "Scegli giorno e ora",
     msg: (p) => `Ciao Mar! Ho scritto dal sito.\n• Voglio imparare: ${p.stile}\n• Livello: ${p.livello}\n• Formato: ${p.formato}\nVorrei prenotare la lezione di prova.`
