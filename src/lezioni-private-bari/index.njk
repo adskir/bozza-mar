@@ -1,0 +1,138 @@
+---
+layout: base.njk
+title: "Lezioni private di salsa e bachata a Bari · Mar La Criolla"
+description: "Lezioni private di salsa, bachata, timba e Salsa Lady a Bari e online con Mar La Criolla. Un percorso costruito su di te. Lezione di prova a 30 €."
+schema: {"@context":"https://schema.org","@type":"Service","name":"Lezioni private di salsa e bachata","provider":{"@type":"Person","name":"Mar La Criolla"},"areaServed":{"@type":"City","name":"Bari"},"offers":{"@type":"Offer","name":"Lezione di prova 60 min","price":"30","priceCurrency":"EUR"}}
+---
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="chips">{% for c in site.cities %}<span>{{ c }}</span>{% endfor %}</div>
+      <h1>Lezioni private in presenza e online con <em>Mar La Criolla</em></h1>
+      <p class="lead">Un percorso adattato al 100% a te. Ti accompagno passo dopo passo verso i tuoi obiettivi, con un seguito costante e un piano su misura.</p>
+      <div class="cta">
+        <a class="btn" href="/prenota/?s=prova">Prenota la tua lezione</a>
+        <a class="btn ghost" href="#metodo">Guarda il metodo</a>
+      </div>
+    </div>
+    <div class="portrait">
+      <img src="https://images.unsplash.com/photo-1587922342650-955e9760d689?w=1000&q=70&auto=format&fit=crop" alt="Ballerina durante una danza latina" fetchpriority="high">
+      <div class="tag"><b>Lezione di prova · 30 €</b><span>60 minuti con valutazione e piano</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="per-chi">
+  <div class="wrap">
+    <h2>Per chi sono?</h2>
+    <p class="sub">Le lezioni private sono pensate per profili precisi. Se ti riconosci in una di queste situazioni, questo spazio è per te.</p>
+    <div class="grid2">
+      <div class="card"><span class="who">Approccio diverso</span><h3>Chi ha bisogno di un percorso su misura</h3><p>Se le lezioni di gruppo ti stanno strette, se vai a un altro ritmo o semplicemente vuoi qualcuno che guardi solo il tuo ballo: qui il piano si costruisce intorno a te, non il contrario.</p></div>
+      <div class="card"><span class="who">Livello intermedio e avanzato</span><h3>Chi vuole approfondire</h3><p>Hai già le basi e cerchi ciò che fa la differenza: musicalità, sfumature, interpretazione, sicurezza e una voce tua riconoscibile in pista.</p></div>
+      <div class="card"><span class="who">Gare</span><h3>Chi compete</h3><p>Preparazione di coreografie, casting di coppia, allenamento al palco e lavoro sulla presenza. Con calendario, obiettivi per turno e feedback misurabile.</p></div>
+      <div class="card"><span class="who">Mentoring</span><h3>Chi insegna</h3><p>Per chi insegna: revisione della tua metodologia, risorse didattiche, correzione tecnica e strumenti per lezioni più chiare e sicure.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-sec" id="stili">
+  <div class="wrap">
+    <h2>Come posso aiutarti</h2>
+    <p class="sub">Lavoro specializzato nel ballo latino e nell'espressione corporea. Ogni disciplina si adatta al tuo livello reale e al tuo obiettivo: sociale, palco, gara o insegnamento.</p>
+    <div class="stili">{% for s in stili %}<div class="stile"><b>{{ s.nome }}</b><span>{{ s.desc }}</span></div>{% endfor %}</div>
+  </div>
+</section>
+
+<section id="oltre">
+  <div class="wrap oltre">
+    <div class="pic"><img src="https://images.unsplash.com/photo-1575217764519-16d213a41dc1?w=1000&q=70&auto=format&fit=crop" alt="Coppia che balla" loading="lazy"></div>
+    <div>
+      <h2>Lezioni private per donne che vogliono sviluppare la propria voce nel ballo</h2>
+      <p class="sub">Imparerai a riconoscere i momenti in cui puoi interpretare la musica, esprimere il tuo stile, prendere decisioni e partecipare attivamente alla connessione con il partner, per un ballo più consapevole, libero e autentico.</p>
+      <p style="margin-top:18px;font-weight:600">In queste lezioni lavoriamo su aspetti che di solito non si insegnano nelle lezioni tradizionali:</p>
+      <ul class="checks"><li>Musicalità applicata al ballo sociale</li><li>Presenza ed espressione corporea</li><li>Fiducia e sicurezza nel ballare</li><li>Strumenti per prendere decisioni nel ballo</li><li>Una connessione più consapevole con il partner</li></ul>
+      <blockquote class="big">«Non si tratta di smettere di seguire, ma di imparare quando e come portare la tua voce nel ballo.»</blockquote>
+      <a class="btn" href="/prenota/?s=prova">Prenota la tua lezione</a>
+    </div>
+  </div>
+</section>
+
+<section class="dark-sec" id="metodo">
+  <div class="wrap" style="text-align:center">
+    <h2>Il metodo: il percorso completo in 5 passi</h2>
+    <p class="sub" style="margin:14px auto 0">Un percorso chiaro e in ordine. Dal primo passo alla sfida finale, senza salti né improvvisazioni.</p>
+    <div class="steps">
+      <div class="step"><b>Scegli il formato</b><span>In presenza o online.</span></div>
+      <div class="step"><b>Definiamo gli obiettivi</b><span>Disegniamo il tuo piano personalizzato.</span></div>
+      <div class="step"><b>Scegli l'orario</b><span>Troviamo il momento migliore per te.</span></div>
+      <div class="step"><b>Inizi le lezioni</b><span>Impari con accompagnamento e feedback.</span></div>
+      <div class="step"><b>Evolvi</b><span>Un progresso misurabile e sostenibile.</span></div>
+    </div>
+    <div class="cta" style="justify-content:center;margin-top:40px"><a class="btn mango" href="/prenota/">Inizia ora</a></div>
+  </div>
+</section>
+
+<section id="prezzi">
+  <div class="wrap">
+    <div class="price-head">
+      <div><h2>Prezzi chiari, senza sorprese</h2><p class="sub">Scegli la modalità più adatta al tuo momento. Tutte le lezioni sono private al 100% e con un piano personalizzato.</p></div>
+      <div class="toggle" data-toggle role="group" aria-label="Modalità"><button aria-pressed="true" data-show="presenza">In presenza</button><button aria-pressed="false" data-show="online">Online</button></div>
+    </div>
+    {% for k, label in {"presenza":"in presenza","online":"online"} %}
+    <div class="prices" data-panel="{{ k }}"{% if k == "online" %} hidden{% endif %}>
+      <div class="include"><h3>Cosa include la modalità {{ label }}</h3><ul class="checks">{% for i in prezzi[k].include %}<li>{{ i }}</li>{% endfor %}</ul></div>
+      <div class="plist">{% for v in prezzi[k].voci %}<div class="pitem{% if v.top %} top{% endif %}"><div><b>{{ v.nome }}</b><small>{{ v.desc }}</small></div><div class="eur">{{ v.prezzo }} €{% if v.nota %}<small>{{ v.nota }}</small>{% endif %}</div></div>{% endfor %}</div>
+    </div>
+    {% endfor %}
+    <div class="cta" style="justify-content:space-between;align-items:center"><p style="font-weight:600">Nessun costo nascosto. Nessuna sorpresa. Trasparenza totale.</p><a class="btn" href="/prenota/">Prenota la tua lezione</a></div>
+  </div>
+</section>
+
+<section class="dark-sec">
+  <div class="wrap founders">
+    <div>
+      <h2>Offerta di lancio per allievi fondatori</h2>
+      <p class="sub">Per celebrare il lancio delle lezioni private in presenza e online, le prime {{ site.founders.total }} persone accedono a condizioni esclusive e mantengono questo prezzo per sempre.</p>
+      <ul class="checks"><li>Prezzo protetto per tutto il tuo percorso: non pagherai i futuri aumenti</li><li>Valutazione iniziale personalizzata</li><li>Revisione dei video della tua pratica</li><li>Offerte speciali per congressi e festival di timba</li><li>Posti limitati a {{ site.founders.total }} allievi fondatori</li></ul>
+    </div>
+    <div class="fbox">
+      <div class="num">{{ site.founders.available }} <span>/ {{ site.founders.total }}</span></div>
+      <p>posti da fondatore ancora disponibili</p>
+      <div class="bar"><i style="width:{{ ((site.founders.total - site.founders.available) / site.founders.total * 100) | round }}%"></i></div>
+      <p class="sub" style="font-size:15px;margin-top:0">Quando la lista è completa, le condizioni da fondatore si chiudono definitivamente.</p>
+      <a class="btn mango" style="margin-top:18px;width:100%" href="/prenota/?s=prova">Voglio il mio posto da fondatore</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Lo raccontano loro</h2>
+    <p class="sub">Qui arriveranno le video-testimonianze degli allievi di Bari, Barcellona e online.</p>
+    <div class="reels"><div class="reel"><b>Allievi di Barcellona</b><span>Video in arrivo</span></div><div class="reel"><b>Online</b><span>Video in arrivo</span></div><div class="reel"><b>Salsa Lady</b><span>Video in arrivo</span></div><div class="reel"><b>Coppia in gara</b><span>Video in arrivo</span></div></div>
+  </div>
+</section>
+
+<section id="faq" style="padding-top:0">
+  <div class="wrap">
+    <h2>Domande frequenti</h2>
+    <p class="sub">Tutto quello che ti serve sapere prima di prenotare la prima lezione.</p>
+    <div class="faq">
+      <details><summary>Serve esperienza per iniziare?</summary><p>No. Le lezioni si costruiscono sul tuo punto di partenza reale. Se parti da zero, lavoriamo su base, sicurezza e fiducia; se balli già, affiniamo tecnica, musicalità e interpretazione.</p></details>
+      <details><summary>Come funzionano le lezioni online?</summary><p>Si fanno in videochiamata, dal vivo e in modo individuale. Ricevi la registrazione della lezione, un piano di pratica tra una lezione e l'altra e la revisione dei video che mi mandi. Ti servono solo spazio per muoverti e una connessione stabile.</p></details>
+      <details><summary>Quali sono gli orari disponibili?</summary><p>In presenza a Bari e Barcellona, di mattina e di pomeriggio; online, adattati al tuo fuso orario. Scrivendomi su WhatsApp verifichiamo la disponibilità e fissiamo il momento migliore per te.</p></details>
+      <details><summary>Come funzionano i pagamenti?</summary><p>Paghi la lezione di prova o il pacchetto prima di iniziare. Ti spiego le modalità di pagamento su WhatsApp.</p></details>
+      <details><summary>E se devo annullare o spostare una lezione?</summary><p>Avvisami il prima possibile: troviamo insieme una nuova data.</p></details>
+      <details><summary>Le lezioni sono solo per donne?</summary><p>No, le lezioni private sono per tutti. Il percorso «Oltre il seguire» è pensato in particolare per le donne.</p></details>
+      <details><summary>Posso combinare presenza e online?</summary><p>Sì: puoi alternare lezioni in presenza e online nello stesso percorso.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Inizia oggi la tua evoluzione nel ballo.</h2>
+    <p class="sub">Raccontami i tuoi obiettivi e ti aiuto a trovare l'opzione migliore per te.</p>
+    <div class="cta"><a class="btn mango" href="/prenota/">Prenota il tuo posto</a><a class="btn wa" data-wa="Ciao Mar! Vorrei prenotare il mio posto e raccontarti i miei obiettivi." href="#">Scrivimi su WhatsApp</a></div>
+  </div>
+</section>

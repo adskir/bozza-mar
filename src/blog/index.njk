@@ -1,0 +1,11 @@
+---
+layout: base.njk
+title: "Blog · Mar La Criolla"
+description: "Consigli di ballo, salsa, timba e bachata: articoli di Mar La Criolla per chi balla a Bari e nel mondo."
+---
+<section class="phero"><div class="wrap"><h1>Blog</h1><p class="sub">Consigli pratici per ballare meglio, dentro e fuori dalla lezione.</p></div></section>
+<section style="padding-top:50px"><div class="wrap"><div class="posts">
+  {% for p in collections.posts %}<a class="post" href="{{ p.url }}"><time>{{ p.date.toLocaleDateString("it-IT",{day:"numeric",month:"long",year:"numeric"}) }}</time><h3>{{ p.data.title }}</h3><p>{{ p.data.description }}</p></a>{% endfor %}
+  <div class="post soon"><time>Prossimamente</time><h3>Salsa cubana o salsa in linea: quale scegliere?</h3><p>Differenze, stile e come capire quale fa per te.</p></div>
+  <div class="post soon"><time>Prossimamente</time><h3>Il primo ballo degli sposi: come prepararlo</h3><p>Tempi, scelta della canzone e quante lezioni servono.</p></div>
+</div></div></section>

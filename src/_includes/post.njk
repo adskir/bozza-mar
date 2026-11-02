@@ -1,0 +1,9 @@
+---
+layout: base.njk
+---
+<section><article class="article">
+  <a href="/blog/" style="color:var(--rojo);font-weight:700;text-decoration:none">← Blog</a>
+  <h1 style="margin-top:14px">{{ title }}</h1>
+  <p class="meta">{{ page.date.toLocaleDateString("it-IT",{day:"numeric",month:"long",year:"numeric"}) }} · Mar La Criolla</p>
+  {{ content | safe }}
+</article></section>
