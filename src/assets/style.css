@@ -483,3 +483,15 @@ details.include .checks{padding:0 0 18px;margin:0}
 #prenota .bk-side{padding:40px var(--side) 40px 40px}
 #prenota .bk-demo{padding:14px var(--side);background:var(--ivory)}
 @media(max-width:860px){#prenota .bk-steps,#prenota .bk-side{padding:26px 20px}#prenota .bk-demo{padding:14px 20px}}
+
+/* "Cosa include" in evidenza */
+details.include{background:#FFF7E6;border:1.5px solid var(--mango);box-shadow:0 10px 26px -18px rgba(255,182,39,.9)}
+details.include summary{font-weight:700}
+details.include summary::before{content:"✓";display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--mango);color:#2A1D00;font-size:14px;font-weight:800;margin-right:10px;flex:none}
+details.include summary{justify-content:flex-start;align-items:center}
+details.include summary::after{margin-left:auto}
+
+/* footer: social e crediti al centro */
+.foot-social{grid-column:1/-1;display:flex;justify-content:center}
+.foot-social .social.mini{margin:6px 0 0;justify-content:center}
+.foot .credit{text-align:center}
