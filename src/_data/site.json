@@ -1,6 +1,6 @@
 {
   "name": "Mar La Criolla",
-  "url": "https://marlacriolla.netlify.app",
+  "url": "https://bozza-mar.netlify.app",
   "whatsapp": "393444084291",
   "founders": {
     "total": 20,
@@ -56,5 +56,6 @@
     "fino": "2026-11-30",
     "testo": "30 novembre",
     "sconto": 15
-  }
+  },
+  "ogImage": "/assets/img/og-mar.jpg"
 }
