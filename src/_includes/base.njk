@@ -1,5 +1,5 @@
 <!doctype html>
-{% set L = t[lang] %}<html lang="{{ lang }}">
+{% set L = t[lang] %}{% from "icons.njk" import social %}<html lang="{{ lang }}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,11 +24,10 @@
 <a class="skip" href="#main">{{ L.skip }}</a>
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="{{ L.home }}">Mar <span>La Criolla</span></a>
+    <a class="brand logo" href="#main"><img src="/assets/img/logo-timba-criolla.webp" alt="Timba Criolla · Mar La Criolla" width="1200" height="711"></a>
     <nav class="nav" id="nav" aria-label="{{ L.menu }}">
-      {% for l in L.nav %}<a href="{{ l[0] }}"{% if page.url == l[0] %} aria-current="page"{% endif %}>{{ l[1] }}</a>{% endfor %}
+      {% for l in L.nav %}<a href="{{ l[0] }}">{{ l[1] }}</a>{% endfor %}
     </nav>
-    <a class="lang-sw" href="{{ alt or ('/es/' if lang == 'it' else '/') }}" hreflang="{{ 'es' if lang == 'it' else 'it' }}" title="{{ L.otherName }}">{{ L.other }}</a>
     <a class="btn small" href="{{ L.prenota }}">{{ L.book }}</a>
     <button class="burger" id="burger" aria-label="{{ L.burger }}" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
   </div>
@@ -41,8 +40,9 @@
 <footer class="foot">
   <div class="wrap">
     <div>
-      <a class="brand" href="{{ L.home }}">Mar <span>La Criolla</span></a>
+      <img class="foot-logo" src="/assets/img/logo-timba-criolla.webp" alt="Timba Criolla" width="1200" height="711" loading="lazy">
       <p>{{ L.foot1 }}<br>{{ L.foot2 }}</p>
+      {{ social(site.social, true) | safe }}
     </div>
     <nav aria-label="{{ L.menu }}">{% for l in L.footnav %}<a href="{{ l[0] }}">{{ l[1] }}</a>{% endfor %}</nav>
     <p class="credit">© {{ "" | year }} Mar La Criolla · {{ L.made }} <a href="https://clickbari.it" target="_blank" rel="noopener">ClickBari</a></p>

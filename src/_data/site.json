@@ -1,8 +1,7 @@
 {
   "name": "Mar La Criolla",
   "url": "https://marlacriolla.netlify.app",
-  "whatsapp": "390000000000",
-  "instagram": "",
+  "whatsapp": "393444084291",
   "founders": {
     "total": 20,
     "available": 7
@@ -14,5 +13,37 @@
   "cities_es": [
     "Bari · Italia",
     "Online · todo el mundo"
+  ],
+  "social": [
+    {
+      "k": "wa",
+      "n": "WhatsApp",
+      "h": "+39 344 408 4291",
+      "u": "https://wa.me/393444084291"
+    },
+    {
+      "k": "ig",
+      "n": "Instagram",
+      "h": "@marjoriericse",
+      "u": "https://www.instagram.com/marjoriericse/"
+    },
+    {
+      "k": "tt",
+      "n": "TikTok",
+      "h": "@mar_lacriolla",
+      "u": "https://www.tiktok.com/@mar_lacriolla"
+    },
+    {
+      "k": "fb",
+      "n": "Facebook",
+      "h": "marlacriolla",
+      "u": "https://www.facebook.com/marlacriolla"
+    },
+    {
+      "k": "yt",
+      "n": "YouTube",
+      "h": "@timbacriolla_it",
+      "u": "https://www.youtube.com/@timbacriolla_it"
+    }
   ]
 }

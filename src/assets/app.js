@@ -7,7 +7,7 @@
   const T = ES ? {
     def: "¡Hola Mar! Quiero información sobre las clases.", play: "▶ Escucha la clave", stop: "❚❚ Stop",
     pickDay: "Elige primero el día.", busy: "Ocupado", pickAll: "Elige clase, día y hora.", at: "a las",
-    req: "¡Hola Mar! Quiero reservar:", name: "Nombre", note: "Notas", prenota: "/es/reservar/",
+    req: "¡Hola Mar! Quiero reservar:", name: "Nombre", note: "Notas", prenota: "#prenota",
     hi: "¡Hola! Soy el asistente de Mar 💃 Con 3 preguntas te indico la clase ideal para ti.",
     q1: "¿Qué quieres bailar?", a1: ["Salsa", "Bachata", "Salsa Lady", "Timba / Rumba", "Folclore peruano", "Preparar una competición", "Soy profesor/a"],
     q2: "¿Qué nivel tienes?", a2: ["Empiezo de cero", "Ya bailo un poco", "Nivel avanzado"],
@@ -18,7 +18,7 @@
   } : {
     def: "Ciao Mar! Vorrei informazioni sulle lezioni.", play: "▶ Ascolta la clave", stop: "❚❚ Stop",
     pickDay: "Scegli prima il giorno.", busy: "Occupato", pickAll: "Scegli lezione, giorno e ora.", at: "ore",
-    req: "Ciao Mar! Vorrei prenotare:", name: "Nome", note: "Note", prenota: "/prenota/",
+    req: "Ciao Mar! Vorrei prenotare:", name: "Nome", note: "Note", prenota: "#prenota",
     hi: "¡Hola! Sono l'assistente di Mar 💃 In 3 domande ti indico la lezione giusta per te.",
     q1: "Cosa vuoi ballare?", a1: ["Salsa", "Bachata", "Salsa Lady", "Timba / Rumba", "Folclore peruviano", "Preparare una gara", "Sono insegnante"],
     q2: "Che livello hai?", a2: ["Parto da zero", "Ballo già un po'", "Livello avanzato"],
@@ -122,6 +122,16 @@
     const pre = new URLSearchParams(location.search).get("s");
     if (pre) { const b = $(`#bkServ .opt[data-k="${pre}"]`); b && b.click(); }
     renderHours(); update();
+  }
+
+  /* vinile: gira con lo scroll */
+  const vd = $("#vdisc"), va = $(".varm");
+  if (vd && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    let tk = false;
+    const spin = () => { tk = false; const r = vd.getBoundingClientRect(); const p = Math.min(1, Math.max(0, (innerHeight - r.top) / (innerHeight + r.height)));
+      vd.style.transform = `rotate(${p * 720}deg)`; va && va.style.setProperty("--arm", `${p * 18}deg`);
+      $$(".tracks li").forEach((li, i, a) => li.classList.toggle("on", p > 0.2 + i * 0.5 / a.length)); };
+    addEventListener("scroll", () => { if (!tk) { tk = true; requestAnimationFrame(spin); } }, { passive: true }); spin();
   }
 
   /* assistente: primo contatto (regole semplici, poi passa a WhatsApp) */
