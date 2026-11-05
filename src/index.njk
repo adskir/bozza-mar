@@ -42,11 +42,11 @@ schema: {"@context":"https://schema.org","@type":"Service","name":"Lezioni priva
     </div>
     {% set k = "presenza" %}
     <div class="offer" id="offer" data-until="{{ site.lancio.fino }}">
-      <span class="o-tag">Prezzi di lancio</span>
-      <p><b>Fino al {{ site.lancio.testo }} risparmi fino al {{ site.lancio.maxSconto }}%.</b> Dal 1° dicembre valgono i prezzi barrati.</p>
+      <span class="o-tag">−{{ site.lancio.sconto }}%</span>
+      <p><b>Prezzi di lancio: −{{ site.lancio.sconto }}% su tutte le lezioni fino al {{ site.lancio.testo }}.</b> Dal 1° dicembre valgono i prezzi barrati.</p>
       <span class="o-left" id="offerLeft"></span>
     </div>
-    <div class="plist">{% for v in prezzi[k].voci %}<div class="pitem{% if v.top %} top{% endif %}"><div><b>{{ v.nome }}</b><small>{{ v.desc }}</small></div><div class="eur"><span class="o-old">{{ v.dopo }} €</span>{{ v.prezzo }} €<small class="o-pct">−{{ v.sconto }}%</small></div></div>{% endfor %}</div>
+    <div class="plist">{% for v in prezzi[k].voci %}<div class="pitem{% if v.top %} top{% endif %}"><div><b>{{ v.nome }}</b><small>{{ v.desc }}</small></div><div class="eur"><span class="o-old">{{ v.dopo }} €</span>{{ v.prezzo }} €</div></div>{% endfor %}</div>
     <details class="include">
       <summary>Cosa include ogni lezione</summary>
       <ul class="checks">{% for i in prezzi[k].include %}<li>{{ i }}</li>{% endfor %}</ul>

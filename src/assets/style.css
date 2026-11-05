@@ -447,7 +447,7 @@ html{scroll-behavior:smooth;scroll-padding-top:80px}
 .o-tag{background:var(--rojo);color:#fff;font-weight:800;font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:999px;white-space:nowrap}
 .o-left{font-family:"Bricolage";font-weight:800;color:var(--mango);font-size:18px;white-space:nowrap}
 #prezzi .plist{margin-top:16px}
-.pitem .eur{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+.pitem .eur{display:flex;align-items:baseline;gap:10px;justify-content:flex-end}
 .pitem .eur .o-old{font:600 16px "Figtree";color:var(--muted);text-decoration:line-through;text-decoration-color:var(--rojo);text-decoration-thickness:2px}
 .pitem .eur small.o-pct{flex-basis:100%;text-align:right;font:700 12px "Figtree";color:var(--rojo)}
 #prezzi.expired .o-old,#prezzi.expired .o-pct,#prezzi.expired .offer{display:none}
@@ -458,3 +458,4 @@ details.include[open] summary::after{content:"";transform:rotate(-135deg);margin
 details.include .checks{padding:0 0 18px;margin:0}
 #oltre{background:#fff}
 #prenota .booker{box-shadow:0 30px 60px -40px rgba(30,26,38,.35)}
+.o-tag{font-size:16px;letter-spacing:.02em;padding:6px 14px}

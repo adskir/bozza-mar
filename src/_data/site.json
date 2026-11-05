@@ -55,6 +55,6 @@
   "lancio": {
     "fino": "2026-11-30",
     "testo": "30 novembre",
-    "maxSconto": 18
+    "sconto": 15
   }
 }
