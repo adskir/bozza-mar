@@ -51,5 +51,10 @@
     "bpm": 160,
     "loopStart": 0.3,
     "loopEnd": 30.3
+  },
+  "lancio": {
+    "fino": "2026-11-30",
+    "testo": "30 novembre",
+    "maxSconto": 18
   }
 }

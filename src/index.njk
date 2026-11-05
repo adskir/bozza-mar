@@ -41,10 +41,16 @@ schema: {"@context":"https://schema.org","@type":"Service","name":"Lezioni priva
       <div><h2>Prezzi chiari, senza sorprese</h2><p class="sub">Tutte le lezioni sono private al 100%, in presenza a Bari e con un piano personalizzato.</p></div>
     </div>
     {% set k = "presenza" %}
-    <div class="prices">
-      <div class="include"><h3>Cosa include ogni lezione</h3><ul class="checks">{% for i in prezzi[k].include %}<li>{{ i }}</li>{% endfor %}</ul></div>
-      <div class="plist">{% for v in prezzi[k].voci %}<div class="pitem{% if v.top %} top{% endif %}"><div><b>{{ v.nome }}</b><small>{{ v.desc }}</small></div><div class="eur">{{ v.prezzo }} €{% if v.nota %}<small>{{ v.nota }}</small>{% endif %}</div></div>{% endfor %}</div>
+    <div class="offer" id="offer" data-until="{{ site.lancio.fino }}">
+      <span class="o-tag">Prezzi di lancio</span>
+      <p><b>Fino al {{ site.lancio.testo }} risparmi fino al {{ site.lancio.maxSconto }}%.</b> Dal 1° dicembre valgono i prezzi barrati.</p>
+      <span class="o-left" id="offerLeft"></span>
     </div>
+    <div class="plist">{% for v in prezzi[k].voci %}<div class="pitem{% if v.top %} top{% endif %}"><div><b>{{ v.nome }}</b><small>{{ v.desc }}</small></div><div class="eur"><span class="o-old">{{ v.dopo }} €</span>{{ v.prezzo }} €<small class="o-pct">−{{ v.sconto }}%</small></div></div>{% endfor %}</div>
+    <details class="include">
+      <summary>Cosa include ogni lezione</summary>
+      <ul class="checks">{% for i in prezzi[k].include %}<li>{{ i }}</li>{% endfor %}</ul>
+    </details>
     <div class="cta" style="justify-content:space-between;align-items:center"><p style="font-weight:600">Nessun costo nascosto. Nessuna sorpresa. Trasparenza totale.</p><a class="btn" href="#prenota">Prenota la tua lezione</a></div>
   </div>
 </section>
@@ -73,61 +79,7 @@ schema: {"@context":"https://schema.org","@type":"Service","name":"Lezioni priva
   </div>
 </section>
 
-<section id="oltre">
-  <div class="wrap oltre">
-    <div class="pic"><img src="https://images.unsplash.com/photo-1575217764519-16d213a41dc1?w=1000&q=70&auto=format&fit=crop" alt="Foto provvisoria: coppia che balla" loading="lazy"></div>
-    <div>
-      <h2>Lezioni private per donne che vogliono sviluppare la propria voce nel ballo</h2>
-      <p class="sub">Imparerai a riconoscere i momenti in cui puoi interpretare la musica, esprimere il tuo stile, prendere decisioni e partecipare attivamente alla connessione con il partner, per un ballo più consapevole, libero e autentico.</p>
-      <p style="margin-top:18px;font-weight:600">In queste lezioni lavoriamo su aspetti che di solito non si insegnano nelle lezioni tradizionali:</p>
-      <ul class="checks"><li>Musicalità applicata al ballo sociale</li><li>Presenza ed espressione corporea</li><li>Fiducia e sicurezza nel ballare</li><li>Strumenti per prendere decisioni nel ballo</li><li>Una connessione più consapevole con il partner</li></ul>
-      <blockquote class="big">«Non si tratta di smettere di seguire, ma di imparare quando e come portare la tua voce nel ballo.»</blockquote>
-      <a class="btn" href="#prenota">Prenota la tua lezione</a>
-    </div>
-  </div>
-</section>
-
-<section class="dark-sec">
-  <div class="wrap founders">
-    <div>
-      <h2>Offerta di lancio per allievi fondatori</h2>
-      <p class="sub">Per celebrare il lancio delle lezioni private a Bari, le prime {{ site.founders.total }} persone accedono a condizioni esclusive e mantengono questo prezzo per sempre.</p>
-      <ul class="checks"><li>Prezzo protetto per tutto il tuo percorso: non pagherai i futuri aumenti</li><li>Valutazione iniziale personalizzata</li><li>Revisione dei video della tua pratica</li><li>Posti limitati a {{ site.founders.total }} allievi fondatori</li></ul>
-    </div>
-    <div class="fbox">
-      <div class="num">{{ site.founders.available }} <span>/ {{ site.founders.total }}</span></div>
-      <p>posti da fondatore ancora disponibili</p>
-      <div class="bar"><i style="width:{{ ((site.founders.total - site.founders.available) / site.founders.total * 100) | round }}%"></i></div>
-      <p class="sub" style="font-size:15px;margin-top:0">Quando la lista è completa, le condizioni da fondatore si chiudono definitivamente.</p>
-      <a class="btn mango" style="margin-top:18px;width:100%" href="/?s=prova#prenota">Voglio il mio posto da fondatore</a>
-    </div>
-  </div>
-</section>
-
-<section id="lezioni">
-  <div class="wrap">
-    <h2>Per chi sono?</h2>
-    <p class="sub">Le lezioni private sono pensate per profili precisi. Se ti riconosci in una di queste situazioni, questo spazio è per te.</p>
-    <div class="grid2 three">
-      <div class="card"><span class="who">Approccio diverso</span><h3>Chi ha bisogno di un percorso su misura</h3><p>Se le lezioni di gruppo ti stanno strette, se vai a un altro ritmo o semplicemente vuoi qualcuno che guardi solo il tuo ballo: qui il piano si costruisce intorno a te, non il contrario.</p></div>
-      <div class="card"><span class="who">Livello intermedio e avanzato</span><h3>Chi vuole approfondire</h3><p>Hai già le basi e cerchi ciò che fa la differenza: musicalità, sfumature, interpretazione, sicurezza e una voce tua riconoscibile in pista.</p></div>
-      <div class="card"><span class="who">Gare</span><h3>Chi compete</h3><p>Preparazione di coreografie, casting di coppia, allenamento al palco e lavoro sulla presenza. Con calendario, obiettivi per turno e feedback misurabile.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="chi-sono">
-  <div class="wrap oltre">
-    <div class="pic" style="display:grid;place-items:center;color:#fff;text-align:center;padding:30px;background:linear-gradient(160deg,#E8344E,#2E2540 70%)"><p style="font-family:Bricolage;font-size:26px;font-weight:700">Qui la foto di Mar</p></div>
-    <div>
-      <h2>Chi sono</h2>
-      <p class="sub">Mi chiamano Mar La Criolla. Insegno salsa e bachata con lezioni private a Bari. Accompagno chi parte da zero, chi vuole approfondire e chi compete.</p>
-      <p class="demo-note">Bozza: qui va la storia di Mar con le sue parole (origini, formazione, palchi e gare, perché insegna).</p>
-    </div>
-  </div>
-</section>
-
-<section class="dark-sec" id="prenota">
+<section id="prenota">
   <div class="wrap">
     <h2>Prenota la tua lezione</h2>
     <p class="sub">Scegli stile, lezione, giorno e ora. La richiesta arriva a Mar su WhatsApp e ti conferma in breve.</p>
@@ -162,6 +114,43 @@ schema: {"@context":"https://schema.org","@type":"Service","name":"Lezioni priva
         <small class="bk-note">Si apre WhatsApp con il messaggio già scritto: premi Invia e Mar ti conferma.</small>
       </aside>
       <p class="demo-note bk-demo">Bozza: gli orari liberi sono di esempio. Nella versione finale arrivano dal calendario di Mar.</p>
+    </div>
+  </div>
+</section>
+
+<section id="oltre">
+  <div class="wrap oltre">
+    <div class="pic"><img src="https://images.unsplash.com/photo-1575217764519-16d213a41dc1?w=1000&q=70&auto=format&fit=crop" alt="Foto provvisoria: coppia che balla" loading="lazy"></div>
+    <div>
+      <h2>Lezioni private per donne che vogliono sviluppare la propria voce nel ballo</h2>
+      <p class="sub">Imparerai a riconoscere i momenti in cui puoi interpretare la musica, esprimere il tuo stile, prendere decisioni e partecipare attivamente alla connessione con il partner, per un ballo più consapevole, libero e autentico.</p>
+      <p style="margin-top:18px;font-weight:600">In queste lezioni lavoriamo su aspetti che di solito non si insegnano nelle lezioni tradizionali:</p>
+      <ul class="checks"><li>Musicalità applicata al ballo sociale</li><li>Presenza ed espressione corporea</li><li>Fiducia e sicurezza nel ballare</li><li>Strumenti per prendere decisioni nel ballo</li><li>Una connessione più consapevole con il partner</li></ul>
+      <blockquote class="big">«Non si tratta di smettere di seguire, ma di imparare quando e come portare la tua voce nel ballo.»</blockquote>
+      <a class="btn" href="#prenota">Prenota la tua lezione</a>
+    </div>
+  </div>
+</section>
+
+<section id="lezioni">
+  <div class="wrap">
+    <h2>Per chi sono?</h2>
+    <p class="sub">Le lezioni private sono pensate per profili precisi. Se ti riconosci in una di queste situazioni, questo spazio è per te.</p>
+    <div class="grid2 three">
+      <div class="card"><span class="who">Approccio diverso</span><h3>Chi ha bisogno di un percorso su misura</h3><p>Se le lezioni di gruppo ti stanno strette, se vai a un altro ritmo o semplicemente vuoi qualcuno che guardi solo il tuo ballo: qui il piano si costruisce intorno a te, non il contrario.</p></div>
+      <div class="card"><span class="who">Livello intermedio e avanzato</span><h3>Chi vuole approfondire</h3><p>Hai già le basi e cerchi ciò che fa la differenza: musicalità, sfumature, interpretazione, sicurezza e una voce tua riconoscibile in pista.</p></div>
+      <div class="card"><span class="who">Gare</span><h3>Chi compete</h3><p>Preparazione di coreografie, casting di coppia, allenamento al palco e lavoro sulla presenza. Con calendario, obiettivi per turno e feedback misurabile.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="chi-sono">
+  <div class="wrap oltre">
+    <div class="pic" style="display:grid;place-items:center;color:#fff;text-align:center;padding:30px;background:linear-gradient(160deg,#E8344E,#2E2540 70%)"><p style="font-family:Bricolage;font-size:26px;font-weight:700">Qui la foto di Mar</p></div>
+    <div>
+      <h2>Chi sono</h2>
+      <p class="sub">Mi chiamano Mar La Criolla. Insegno salsa e bachata con lezioni private a Bari. Accompagno chi parte da zero, chi vuole approfondire e chi compete.</p>
+      <p class="demo-note">Bozza: qui va la storia di Mar con le sue parole (origini, formazione, palchi e gare, perché insegna).</p>
     </div>
   </div>
 </section>

@@ -439,3 +439,22 @@ html{scroll-behavior:smooth;scroll-padding-top:80px}
 @media(max-width:420px){.hours{grid-template-columns:repeat(3,minmax(0,1fr))}.chips3 .opt{padding:10px 6px}}
 .booker .bstep{border-radius:0}
 .bk-side .field{display:flex;flex-direction:column;gap:6px}
+
+/* prezzi di lancio + "cosa include" richiudibile */
+.offer{display:flex;align-items:center;gap:14px 18px;flex-wrap:wrap;margin-top:26px;padding:14px 18px;border-radius:16px;background:var(--night);color:#fff}
+.offer p{font-size:15px;color:#D8D1E2;flex:1 1 320px}
+.offer p b{color:#fff}
+.o-tag{background:var(--rojo);color:#fff;font-weight:800;font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:999px;white-space:nowrap}
+.o-left{font-family:"Bricolage";font-weight:800;color:var(--mango);font-size:18px;white-space:nowrap}
+#prezzi .plist{margin-top:16px}
+.pitem .eur{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+.pitem .eur .o-old{font:600 16px "Figtree";color:var(--muted);text-decoration:line-through;text-decoration-color:var(--rojo);text-decoration-thickness:2px}
+.pitem .eur small.o-pct{flex-basis:100%;text-align:right;font:700 12px "Figtree";color:var(--rojo)}
+#prezzi.expired .o-old,#prezzi.expired .o-pct,#prezzi.expired .offer{display:none}
+details.include{margin-top:16px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:0 20px}
+details.include summary{font-size:16px;padding:16px 0}
+details.include summary::after{content:"";width:10px;height:10px;border-right:2px solid var(--rojo);border-bottom:2px solid var(--rojo);transform:rotate(45deg);margin:2px 6px 0 0;transition:transform .2s}
+details.include[open] summary::after{content:"";transform:rotate(-135deg);margin-top:8px}
+details.include .checks{padding:0 0 18px;margin:0}
+#oltre{background:#fff}
+#prenota .booker{box-shadow:0 30px 60px -40px rgba(30,26,38,.35)}

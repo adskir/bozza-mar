@@ -5,38 +5,44 @@
       "Correzione tecnica e di musicalità in tempo reale",
       "Supporto su WhatsApp tra una lezione e l'altra",
       "Revisione dei video della tua pratica",
-      "Sala a Bari coordinata da me",
-      "Prezzo bloccato da allievo fondatore"
+      "Sala a Bari coordinata da me"
     ],
     "voci": [
       {
         "nome": "Prima lezione di prova · 60 min",
         "desc": "In presenza a Bari",
         "prezzo": 30,
-        "nota": "risparmi 15 €",
-        "top": true
+        "top": true,
+        "dopo": 35,
+        "sconto": 14
       },
       {
         "nome": "Lezione privata · 90 min",
         "desc": "Per preparare una coreografia o una gara",
-        "prezzo": 75
+        "prezzo": 75,
+        "dopo": 90,
+        "sconto": 17
       },
       {
         "nome": "Pacchetto 4 lezioni · 60 min",
         "desc": "Valido 3 mesi",
         "prezzo": 200,
-        "nota": "risparmi 20 €"
+        "dopo": 240,
+        "sconto": 17
       },
       {
         "nome": "Pacchetto 8 lezioni · 60 min",
         "desc": "Valido 6 mesi",
         "prezzo": 380,
-        "nota": "risparmi 60 €"
+        "dopo": 450,
+        "sconto": 16
       },
       {
         "nome": "Lezione di coppia · 60 min",
         "desc": "Due persone, un solo obiettivo",
-        "prezzo": 70
+        "prezzo": 70,
+        "dopo": 85,
+        "sconto": 18
       }
     ]
   }

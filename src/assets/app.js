@@ -76,6 +76,14 @@
   if (fabWa && bookSec && "IntersectionObserver" in window)
     new IntersectionObserver(([e]) => fabWa.classList.toggle("away", e.isIntersecting), { threshold: 0.25 }).observe(bookSec);
 
+  /* prezzi di lancio: giorni che mancano; dopo la scadenza spariscono barrati e sconti */
+  const off = $("#offer");
+  if (off) {
+    const end = new Date(off.dataset.until + "T23:59:59"), left = Math.ceil((end - new Date()) / 864e5);
+    if (left < 0) $("#prezzi").classList.add("expired");
+    else $("#offerLeft").textContent = left <= 1 ? "Ultimo giorno" : `Mancano ${left} giorni`;
+  }
+
   /* prenotazione: stile, lezione, giorno e ora → messaggio WhatsApp già scritto */
   const bk = $("#booker");
   if (bk) {
