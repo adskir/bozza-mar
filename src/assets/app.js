@@ -1,4 +1,5 @@
 (() => {
+  const SCRIPT_URL = (document.currentScript && document.currentScript.src) || location.href;
   const WA = (window.MAR && window.MAR.wa) || "";
   const wa = (t) => `https://wa.me/${WA}?text=${encodeURIComponent(t)}`;
   const $ = (s, r = document) => r.querySelector(s);
@@ -59,33 +60,35 @@
       beats.appendChild(bar);
     });
     const cells = $$(".st", beats), btn = $("#clavePlay");
-    let ctx, timer, step = 0, next = 0, on = false;
-    const BPM = 100, spb = 60 / BPM / 4;
-    const click = (t, acc) => {
-      const o = ctx.createOscillator(), g = ctx.createGain(), f = ctx.createBiquadFilter();
-      o.frequency.value = acc ? 2500 : 2200; f.type = "bandpass"; f.frequency.value = 2500; f.Q.value = 8;
-      g.gain.setValueAtTime(0.9, t); g.gain.exponentialRampToValueAtTime(0.001, t + 0.08);
-      o.connect(f).connect(g).connect(ctx.destination); o.start(t); o.stop(t + 0.1);
-    };
-    const conga = (t) => {
-      const o = ctx.createOscillator(), g = ctx.createGain(); o.frequency.setValueAtTime(220, t); o.frequency.exponentialRampToValueAtTime(160, t + 0.15);
-      g.gain.setValueAtTime(0.35, t); g.gain.exponentialRampToValueAtTime(0.001, t + 0.25); o.connect(g).connect(ctx.destination); o.start(t); o.stop(t + 0.3);
-    };
-    const loop = () => {
-      while (next < ctx.currentTime + 0.1) {
-        const s = step, t = next;
-        if (CL.includes(s)) click(t, s === 0);
-        if (s === 6 || s === 14) conga(t);
-        setTimeout(() => cells.forEach((c, i) => c.classList.toggle("now", i === s)), Math.max(0, (t - ctx.currentTime) * 1000));
-        next += spb; step = (step + 1) % 16;
+    /* base: brano di salsa a 90 BPM (4 battute in loop) con la voce che conta 1-2-3, 5-6-7 */
+    const SRC = new URL("salsa-90bpm.wav", SCRIPT_URL).href, E = 60 / 90 / 2;
+    const WORDS = { 1: "Uno", 2: "Dos", 3: "Tres", 5: "Cinco", 6: "Seis", 7: "Siete" };
+    const box = $("#clave"), word = $("#cword");
+    let ctx, buf, srcNode, t0 = 0, raf = 0, on = false, last = -1;
+    const draw = () => {
+      const lat = ctx.outputLatency || ctx.baseLatency || 0;
+      const el = ctx.currentTime - t0 - lat;
+      if (el >= 0) {
+        const s = Math.floor(el / E) % 16;
+        if (s !== last) { last = s; cells.forEach((c, i) => c.classList.toggle("now", i === s));
+          const n = Math.floor(s / 2) + 1; if (s % 2 === 0) { word.textContent = WORDS[n] || "·"; word.classList.toggle("rest", !WORDS[n]); } }
       }
+      raf = requestAnimationFrame(draw);
     };
+    const stop = () => { on = false; srcNode && srcNode.stop(); srcNode = null; cancelAnimationFrame(raf); last = -1;
+      cells.forEach((c) => c.classList.remove("now")); word.textContent = ""; box.classList.remove("playing");
+      btn.setAttribute("aria-pressed", false); btn.setAttribute("aria-label", T.play); };
     btn.addEventListener("click", async () => {
+      if (on) return stop();
       ctx = ctx || new (window.AudioContext || window.webkitAudioContext)();
       if (ctx.state === "suspended") await ctx.resume();
-      on = !on; btn.setAttribute("aria-pressed", on); btn.setAttribute("aria-label", on ? T.stop : T.play); $("#clave").classList.toggle("playing", on);
-      if (on) { step = 0; next = ctx.currentTime + 0.05; timer = setInterval(loop, 25); }
-      else { clearInterval(timer); cells.forEach((c) => c.classList.remove("now")); }
+      on = true; btn.setAttribute("aria-pressed", true); btn.setAttribute("aria-label", T.stop); box.classList.add("playing");
+      try {
+        if (!buf) { box.classList.add("loading"); const r = await fetch(SRC); buf = await ctx.decodeAudioData(await r.arrayBuffer()); box.classList.remove("loading"); }
+      } catch (e) { box.classList.remove("loading"); stop(); return; }
+      if (!on) return;
+      srcNode = ctx.createBufferSource(); srcNode.buffer = buf; srcNode.loop = true; srcNode.connect(ctx.destination);
+      t0 = ctx.currentTime + 0.06; srcNode.start(t0); draw();
     });
   }
 

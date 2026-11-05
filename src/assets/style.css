@@ -361,3 +361,9 @@ html{scroll-behavior:smooth;scroll-padding-top:80px}
 @keyframes wap{0%{transform:scale(1);opacity:.5}100%{transform:scale(1.45);opacity:0}}
 .wa-fab svg{animation:wabeat 2.6s ease-in-out infinite}
 @keyframes wabeat{0%,100%{transform:scale(1)}8%{transform:scale(1.15)}16%{transform:scale(1)}24%{transform:scale(1.1)}32%{transform:scale(1)}}
+.clave{grid-template-columns:auto minmax(0,1fr) auto}
+.cword{font-family:"Bricolage";font-weight:800;font-size:clamp(26px,3vw,34px);color:var(--mango);min-width:4.6ch;text-align:right;line-height:1}
+.cword.rest{color:#5A4F6A}
+.clave.loading .cplay{animation:cload .8s ease-in-out infinite alternate}
+@keyframes cload{to{opacity:.55}}
+@media(max-width:520px){.clave{grid-template-columns:auto minmax(0,1fr)}.cword{grid-column:1/-1;grid-row:2;text-align:center;min-height:1em}.clave .beats{grid-row:3}}
