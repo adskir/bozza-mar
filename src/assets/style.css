@@ -373,3 +373,5 @@ html{scroll-behavior:smooth;scroll-padding-top:80px}
 @media(max-width:620px){.summary{display:grid}.summary .send{max-width:none;justify-items:stretch}.btn.wa-send{width:100%}.summary .send small{text-align:center}}
 .wa-fab.away{opacity:0;transform:scale(.6);pointer-events:none}
 .wa-fab{transition:transform .25s,opacity .25s,box-shadow .2s}
+
+.portrait img,.oltre .pic img{color:transparent}
