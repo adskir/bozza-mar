@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 title: "Lezioni private di salsa e bachata a Bari · Mar La Criolla"
-description: "Lezioni private di salsa, bachata e Salsa Lady a Bari con Mar La Criolla. Un percorso costruito su di te. Lezione di prova a 30 €."
+description: "Lezioni private di salsa, bachata e Lady Style a Bari con Mar La Criolla. Un percorso costruito su di te. Lezione di prova a 30 €."
 schema: {"@context":"https://schema.org","@type":"Service","name":"Lezioni private di salsa e bachata","provider":{"@type":"Person","name":"Mar La Criolla"},"areaServed":{"@type":"City","name":"Bari"},"offers":{"@type":"Offer","name":"Lezione di prova 60 min","price":"30","priceCurrency":"EUR"}}
 ---
 {% from "icons.njk" import icon %}
@@ -31,7 +31,7 @@ schema: {"@context":"https://schema.org","@type":"Service","name":"Lezioni priva
 <section id="prezzi">
   <div class="wrap">
     <div class="price-head">
-      <div><h2>Prezzi chiari, senza sorprese</h2><div class="styles-row">{% for st in stili %}<span title="{{ st.desc }}">{{ st.nome }}</span>{% endfor %}</div><p class="sub">Lezioni private di salsa, bachata e Salsa Lady, in presenza a Bari e con un piano personalizzato.</p></div>
+      <div><h2>Prezzi chiari, senza sorprese</h2><div class="styles-row">{% for st in stili %}<span title="{{ st.desc }}">{{ st.nome }}</span>{% endfor %}</div><p class="sub">Lezioni private di salsa, bachata e Lady Style, in presenza a Bari e con un piano personalizzato.</p></div>
     </div>
     {% set k = "presenza" %}
     <div class="offer" id="offer" data-until="{{ site.lancio.fino }}">
@@ -61,7 +61,7 @@ schema: {"@context":"https://schema.org","@type":"Service","name":"Lezioni priva
       <h2>Il percorso completo in 5 tracce</h2>
       <p class="sub">Un percorso chiaro e in ordine. Dal primo passo alla sfida finale, senza salti né improvvisazioni.</p>
       <ol class="tracks">
-        <li><span>A1</span><div><b>Scegli lo stile</b><small>Salsa, bachata o Salsa Lady, a Bari.</small></div><time>0:45</time></li>
+        <li><span>A1</span><div><b>Scegli lo stile</b><small>Salsa, bachata o Lady Style, a Bari.</small></div><time>0:45</time></li>
         <li><span>A2</span><div><b>Definiamo gli obiettivi</b><small>Disegniamo il tuo piano personalizzato.</small></div><time>1:30</time></li>
         <li><span>A3</span><div><b>Scegli l'orario</b><small>Troviamo il momento migliore per te.</small></div><time>2:15</time></li>
         <li><span>A4</span><div><b>Inizi le lezioni</b><small>Impari con accompagnamento e feedback.</small></div><time>3:00</time></li>
@@ -79,7 +79,7 @@ schema: {"@context":"https://schema.org","@type":"Service","name":"Lezioni priva
     <div class="booker" id="booker">
       <div class="bk-steps">
         <div class="bstep"><h3><i>1</i>Cosa vuoi ballare?</h3>
-          <div class="chips3" id="bkStyle">{% for s in ["Salsa","Bachata","Salsa Lady"] %}<button type="button" class="opt" data-v="{{ s }}" aria-pressed="false">{{ s }}</button>{% endfor %}</div>
+          <div class="chips3" id="bkStyle">{% for s in ["Salsa","Bachata","Lady Style"] %}<button type="button" class="opt" data-v="{{ s }}" aria-pressed="false">{{ s }}</button>{% endfor %}</div>
         </div>
         <div class="bstep"><h3><i>2</i>Che lezione?</h3>
           <div class="grid-opts" id="bkServ">
