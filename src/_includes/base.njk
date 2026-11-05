@@ -41,7 +41,7 @@
     <div>
       <img class="foot-logo" src="/assets/img/logo-timba-criolla.webp" alt="Timba Criolla" width="1200" height="711" loading="lazy">
       <p>{{ L.foot1 }}<br>{{ L.foot2 }}</p>
-      {{ social(site.social, true) | safe }}
+      {% set fs = [] %}{% for k in ["yt","tt","ig","fb"] %}{% for s in site.social %}{% if s.k == k %}{% set fs = (fs.push(s), fs) %}{% endif %}{% endfor %}{% endfor %}{{ social(fs, true) | safe }}
     </div>
     <nav aria-label="{{ L.menu }}">{% for l in L.footnav %}<a href="{{ l[0] }}">{{ l[1] }}</a>{% endfor %}</nav>
     <p class="credit">© {{ "" | year }} Mar La Criolla · {{ L.made }} <a href="https://clickbari.it" target="_blank" rel="noopener">ClickBari</a></p>
