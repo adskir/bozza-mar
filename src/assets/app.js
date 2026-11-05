@@ -64,7 +64,7 @@
       if (ctx.state === "suspended") await ctx.resume();
       on = true; cl.classList.add("playing"); btn.setAttribute("aria-pressed", true);
       try { if (!buf) { cl.classList.add("loading"); buf = await ctx.decodeAudioData(await (await fetch(SRC)).arrayBuffer()); } }
-      catch (err) { cl.classList.remove("loading"); return stop(); }
+      catch (err) { cl.classList.remove("loading"); stop(); const t = $(".ctext span", cl); if (t) t.textContent = "La musica arriva presto: intanto conta con noi 1, 2, 3… 5, 6, 7."; return; }
       cl.classList.remove("loading"); if (!on) return;
       node = ctx.createBufferSource(); node.buffer = buf; node.loop = true; node.loopStart = A; node.loopEnd = B;
       node.connect(ctx.destination); t0 = ctx.currentTime + 0.05; node.start(t0, A); draw();
