@@ -5,7 +5,7 @@
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const ES = document.documentElement.lang === "es", LOC = ES ? "es-ES" : "it-IT";
   const T = ES ? {
-    def: "¡Hola Mar! Quiero información sobre las clases.", play: "▶ Escucha la clave", stop: "❚❚ Stop",
+    def: "¡Hola Mar! Quiero información sobre las clases.", play: "Escucha la clave", stop: "Para la clave",
     pickDay: "Elige primero el día.", busy: "Ocupado", pickAll: "Elige clase, día y hora.", at: "a las",
     req: "¡Hola Mar! Quiero reservar:", name: "Nombre", note: "Notas", prenota: "#prenota",
     hi: "¡Hola! Soy el asistente de Mar 💃 Con 3 preguntas te indico la clase ideal para ti.",
@@ -16,7 +16,7 @@
     go: "Seguir en WhatsApp", slot: "Elegir día y hora",
     msg: (p) => `¡Hola Mar! Te escribo desde la web.\n• Quiero aprender: ${p.stile}\n• Nivel: ${p.livello}\n• Formato: ${p.formato}\nQuiero reservar la clase de prueba.`
   } : {
-    def: "Ciao Mar! Vorrei informazioni sulle lezioni.", play: "▶ Ascolta la clave", stop: "❚❚ Stop",
+    def: "Ciao Mar! Vorrei informazioni sulle lezioni.", play: "Ascolta la clave", stop: "Ferma la clave",
     pickDay: "Scegli prima il giorno.", busy: "Occupato", pickAll: "Scegli lezione, giorno e ora.", at: "ore",
     req: "Ciao Mar! Vorrei prenotare:", name: "Nome", note: "Note", prenota: "#prenota",
     hi: "¡Hola! Sono l'assistente di Mar 💃 In 3 domande ti indico la lezione giusta per te.",
@@ -48,8 +48,17 @@
   const beats = $("#beats");
   if (beats) {
     const CL = [0, 3, 6, 10, 12];
-    for (let i = 0; i < 16; i++) { const e = document.createElement("i"); if (CL.includes(i)) e.className = "hit"; beats.appendChild(e); }
-    const cells = $$("i", beats), btn = $("#clavePlay");
+    ["Lato 3", "Lato 2"].forEach((lab, b) => {
+      const bar = document.createElement("div"); bar.className = "cbar"; bar.innerHTML = `<small>${lab}</small><div class="cells"></div>`;
+      const row = $(".cells", bar);
+      for (let j = 0; j < 8; j++) {
+        const i = b * 8 + j, n = i / 2 + 1, st = document.createElement("span");
+        st.className = "st" + (CL.includes(i) ? " hit" : "") + (n === 4 || n === 8 ? " rest" : "");
+        st.innerHTML = `<i></i><em>${i % 2 ? "" : n}</em>`; row.appendChild(st);
+      }
+      beats.appendChild(bar);
+    });
+    const cells = $$(".st", beats), btn = $("#clavePlay");
     let ctx, timer, step = 0, next = 0, on = false;
     const BPM = 100, spb = 60 / BPM / 4;
     const click = (t, acc) => {
@@ -74,7 +83,7 @@
     btn.addEventListener("click", async () => {
       ctx = ctx || new (window.AudioContext || window.webkitAudioContext)();
       if (ctx.state === "suspended") await ctx.resume();
-      on = !on; btn.setAttribute("aria-pressed", on); btn.textContent = on ? T.stop : T.play;
+      on = !on; btn.setAttribute("aria-pressed", on); btn.setAttribute("aria-label", on ? T.stop : T.play); $("#clave").classList.toggle("playing", on);
       if (on) { step = 0; next = ctx.currentTime + 0.05; timer = setInterval(loop, 25); }
       else { clearInterval(timer); cells.forEach((c) => c.classList.remove("now")); }
     });
