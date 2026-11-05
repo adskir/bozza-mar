@@ -375,3 +375,4 @@ html{scroll-behavior:smooth;scroll-padding-top:80px}
 .wa-fab{transition:transform .25s,opacity .25s,box-shadow .2s}
 
 .portrait img,.oltre .pic img{color:transparent}
+@media(min-width:900px){.grid2.three{grid-template-columns:repeat(3,minmax(0,1fr))}}
