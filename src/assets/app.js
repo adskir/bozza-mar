@@ -1,5 +1,4 @@
 (() => {
-  const SCRIPT_URL = (document.currentScript && document.currentScript.src) || location.href;
   const WA = (window.MAR && window.MAR.wa) || "";
   const wa = (t) => `https://wa.me/${WA}?text=${encodeURIComponent(t)}`;
   const $ = (s, r = document) => r.querySelector(s);
@@ -45,50 +44,13 @@
     }));
   });
 
-  /* clave 3-2: suona davvero */
-  const beats = $("#beats");
-  if (beats) {
-    const CL = [0, 3, 6, 10, 12];
-    ["Lato 3", "Lato 2"].forEach((lab, b) => {
-      const bar = document.createElement("div"); bar.className = "cbar"; bar.innerHTML = `<small>${lab}</small><div class="cells"></div>`;
-      const row = $(".cells", bar);
-      for (let j = 0; j < 8; j++) {
-        const i = b * 8 + j, n = i / 2 + 1, st = document.createElement("span");
-        st.className = "st" + (CL.includes(i) ? " hit" : "") + (n === 4 || n === 8 ? " rest" : "");
-        st.innerHTML = `<i></i><em>${i % 2 ? "" : n}</em>`; row.appendChild(st);
-      }
-      beats.appendChild(bar);
-    });
-    const cells = $$(".st", beats), btn = $("#clavePlay");
-    /* base: brano di salsa a 90 BPM (4 battute in loop) con la voce che conta 1-2-3, 5-6-7 */
-    const SRC = new URL("salsa-90bpm.wav", SCRIPT_URL).href, E = 60 / 90 / 2;
-    const WORDS = { 1: "Uno", 2: "Dos", 3: "Tres", 5: "Cinco", 6: "Seis", 7: "Siete" };
-    const box = $("#clave"), word = $("#cword");
-    let ctx, buf, srcNode, t0 = 0, raf = 0, on = false, last = -1;
-    const draw = () => {
-      const lat = ctx.outputLatency || ctx.baseLatency || 0;
-      const el = ctx.currentTime - t0 - lat;
-      if (el >= 0) {
-        const s = Math.floor(el / E) % 16;
-        if (s !== last) { last = s; cells.forEach((c, i) => c.classList.toggle("now", i === s));
-          const n = Math.floor(s / 2) + 1; if (s % 2 === 0) { word.textContent = WORDS[n] || "·"; word.classList.toggle("rest", !WORDS[n]); } }
-      }
-      raf = requestAnimationFrame(draw);
-    };
-    const stop = () => { on = false; srcNode && srcNode.stop(); srcNode = null; cancelAnimationFrame(raf); last = -1;
-      cells.forEach((c) => c.classList.remove("now")); word.textContent = ""; box.classList.remove("playing");
-      btn.setAttribute("aria-pressed", false); btn.setAttribute("aria-label", T.play); };
-    btn.addEventListener("click", async () => {
-      if (on) return stop();
-      ctx = ctx || new (window.AudioContext || window.webkitAudioContext)();
-      if (ctx.state === "suspended") await ctx.resume();
-      on = true; btn.setAttribute("aria-pressed", true); btn.setAttribute("aria-label", T.stop); box.classList.add("playing");
-      try {
-        if (!buf) { box.classList.add("loading"); const r = await fetch(SRC); buf = await ctx.decodeAudioData(await r.arrayBuffer()); box.classList.remove("loading"); }
-      } catch (e) { box.classList.remove("loading"); stop(); return; }
-      if (!on) return;
-      srcNode = ctx.createBufferSource(); srcNode.buffer = buf; srcNode.loop = true; srcNode.connect(ctx.destination);
-      t0 = ctx.currentTime + 0.06; srcNode.start(t0); draw();
+  /* passo base: il video si carica solo al clic (YouTube senza cookie) */
+  const cl = $("#clave");
+  if (cl && cl.dataset.yt) {
+    $("#clavePlay").addEventListener("click", () => {
+      const v = $("#cvideo"); if (!v.hidden) return;
+      v.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${cl.dataset.yt}?autoplay=1&rel=0&playsinline=1" title="Brano per il passo base di salsa" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>`;
+      v.hidden = false; cl.classList.add("open");
     });
   }
 
