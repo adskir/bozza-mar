@@ -475,3 +475,11 @@ details.include .checks{padding:0 0 18px;margin:0}
 .styles-row span{font-weight:700;font-size:15px;padding:7px 16px;border-radius:999px;background:var(--night);color:#fff}
 .styles-row span:nth-child(2){background:var(--rojo)}
 .styles-row span:nth-child(3){background:var(--mango);color:#2A1D00}
+
+/* prenotazione a tutta larghezza */
+#prenota{padding-bottom:0}
+#prenota .booker{--side:max(20px,calc((100vw - 1160px) / 2 + 20px));margin-top:36px;border:0;border-radius:0;box-shadow:none;background:#fff;border-top:1px solid var(--line)}
+#prenota .bk-steps{padding:40px 40px 40px var(--side)}
+#prenota .bk-side{padding:40px var(--side) 40px 40px}
+#prenota .bk-demo{padding:14px var(--side);background:var(--ivory)}
+@media(max-width:860px){#prenota .bk-steps,#prenota .bk-side{padding:26px 20px}#prenota .bk-demo{padding:14px 20px}}
