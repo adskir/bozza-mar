@@ -13,6 +13,7 @@ schema: {"@context":"https://schema.org","@type":"Service","name":"Lezioni priva
       <p class="lead">Un percorso adattato al 100% a te. Ti accompagno passo dopo passo verso i tuoi obiettivi, con un seguito costante e un piano su misura.</p>
       <div class="cta">
         <a class="btn" href="#prenota">Prenota la prova · 30 €</a>
+        <a class="hero-cd" href="#prezzi"><span class="o-tag">−{{ site.lancio.sconto }}%</span>fino al {{ site.lancio.testo }} · <span class="cd cd-inline" data-until="{{ site.lancio.fino }}"><b data-u="d">00</b>g <b data-u="h">00</b>h <b data-u="m">00</b>m <b data-u="s">00</b>s</span></a>
       </div>
       <div class="clave" id="clave" data-src="{{ site.passoBase.audio }}" data-bpm="{{ site.passoBase.bpm }}" data-a="{{ site.passoBase.loopStart }}" data-b="{{ site.passoBase.loopEnd }}">
         <button class="cplay" id="clavePlay" type="button" aria-pressed="false" aria-label="Ascolta il brano del passo base"><svg class="ic-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.9l10-6.5a1 1 0 0 0 0-1.7l-10-6.5A1 1 0 0 0 8 5.5Z"/></svg><svg class="ic-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg></button>
@@ -44,7 +45,7 @@ schema: {"@context":"https://schema.org","@type":"Service","name":"Lezioni priva
     <div class="offer" id="offer" data-until="{{ site.lancio.fino }}">
       <span class="o-tag">−{{ site.lancio.sconto }}%</span>
       <p><b>Prezzi di lancio: −{{ site.lancio.sconto }}% su tutte le lezioni fino al {{ site.lancio.testo }}.</b> Dal 1° dicembre valgono i prezzi barrati.</p>
-      <span class="o-left" id="offerLeft"></span>
+      <div class="cd" data-until="{{ site.lancio.fino }}" aria-label="Tempo rimasto"><span><b data-u="d">00</b><small>giorni</small></span><span><b data-u="h">00</b><small>ore</small></span><span><b data-u="m">00</b><small>min</small></span><span><b data-u="s">00</b><small>sec</small></span></div>
     </div>
     <div class="plist">{% for v in prezzi[k].voci %}<div class="pitem{% if v.top %} top{% endif %}"><div><b>{{ v.nome }}</b><small>{{ v.desc }}</small></div><div class="eur"><span class="o-old">{{ v.dopo }} €</span>{{ v.prezzo }} €</div></div>{% endfor %}</div>
     <details class="include">
@@ -119,10 +120,10 @@ schema: {"@context":"https://schema.org","@type":"Service","name":"Lezioni priva
 </section>
 
 <section id="chi-sono">
+  <div class="wrap"><h2 class="chi-title">Chi sono</h2></div>
   <div class="wrap oltre">
     <div class="pic" style="display:grid;place-items:center;color:#fff;text-align:center;padding:30px;background:linear-gradient(160deg,#E8344E,#2E2540 70%)"><p style="font-family:Bricolage;font-size:26px;font-weight:700">Qui la foto di Mar</p></div>
     <div>
-      <h2>Chi sono</h2>
       <p class="sub">Mi chiamano Mar La Criolla. Insegno salsa e bachata con lezioni private a Bari. Accompagno chi parte da zero, chi vuole approfondire e chi compete.</p>
       <p class="demo-note">Bozza: qui va la storia di Mar con le sue parole (origini, formazione, palchi e gare, perché insegna).</p>
     </div>

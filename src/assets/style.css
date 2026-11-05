@@ -459,3 +459,15 @@ details.include .checks{padding:0 0 18px;margin:0}
 #oltre{background:#fff}
 #prenota .booker{box-shadow:0 30px 60px -40px rgba(30,26,38,.35)}
 .o-tag{font-size:16px;letter-spacing:.02em;padding:6px 14px}
+
+/* conto alla rovescia */
+.cd{display:flex;gap:8px}
+.cd span{display:grid;justify-items:center;min-width:54px;padding:6px 6px 5px;border-radius:10px;background:var(--night2);box-shadow:inset 0 0 0 1px var(--night3)}
+.cd b{font-family:"Bricolage";font-weight:800;font-size:22px;line-height:1.05;color:var(--mango);font-variant-numeric:tabular-nums}
+.cd small{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--lav)}
+.hero-cd{display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;margin-left:4px;font-size:14px;font-weight:600;color:#D8D1E2;text-decoration:none}
+.hero-cd .o-tag{font-size:13px;padding:4px 10px}
+.cd-inline{display:inline;gap:0}.cd-inline b{font-size:15px;color:var(--mango)}
+@media(max-width:620px){.offer .cd{width:100%;justify-content:space-between}.offer .cd span{flex:1}.hero-cd{margin:6px 0 0}}
+.chi-title{margin-bottom:28px}
+@media(max-width:860px){#chi-sono .oltre{gap:22px}}

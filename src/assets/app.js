@@ -76,12 +76,18 @@
   if (fabWa && bookSec && "IntersectionObserver" in window)
     new IntersectionObserver(([e]) => fabWa.classList.toggle("away", e.isIntersecting), { threshold: 0.25 }).observe(bookSec);
 
-  /* prezzi di lancio: giorni che mancano; dopo la scadenza spariscono barrati e sconti */
-  const off = $("#offer");
-  if (off) {
-    const end = new Date(off.dataset.until + "T23:59:59"), left = Math.ceil((end - new Date()) / 864e5);
-    if (left < 0) $("#prezzi").classList.add("expired");
-    else $("#offerLeft").textContent = left <= 1 ? "Ultimo giorno" : `Mancano ${left} giorni`;
+  /* prezzi di lancio: conto alla rovescia; dopo la scadenza spariscono barrati e sconti */
+  const cds = $$(".cd[data-until]");
+  if (cds.length) {
+    const end = new Date(cds[0].dataset.until + "T23:59:59").getTime(), pad = (n) => String(n).padStart(2, "0");
+    const tick = () => {
+      const t = end - Date.now();
+      if (t <= 0) { $("#prezzi") && $("#prezzi").classList.add("expired"); $$(".hero-cd").forEach((e) => e.remove()); return false; }
+      const v = { d: Math.floor(t / 864e5), h: Math.floor(t / 36e5) % 24, m: Math.floor(t / 6e4) % 60, s: Math.floor(t / 1e3) % 60 };
+      cds.forEach((c) => $$("[data-u]", c).forEach((e) => (e.textContent = pad(v[e.dataset.u]))));
+      return true;
+    };
+    if (tick()) setInterval(tick, 1000);
   }
 
   /* prenotazione: stile, lezione, giorno e ora → messaggio WhatsApp già scritto */
