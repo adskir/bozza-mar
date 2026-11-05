@@ -76,49 +76,54 @@
   if (fabWa && bookSec && "IntersectionObserver" in window)
     new IntersectionObserver(([e]) => fabWa.classList.toggle("away", e.isIntersecting), { threshold: 0.25 }).observe(bookSec);
 
-  /* prenotazione: scegli servizio, giorno e ora */
+  /* prenotazione: stile, lezione, giorno e ora → messaggio WhatsApp già scritto */
   const bk = $("#booker");
   if (bk) {
-    const state = { servizio: null, giorno: null, ora: null };
+    const state = { stile: null, servizio: null, giorno: null, ora: null };
     const sum = $("#bkSum"), send = $("#bkSend"), daysEl = $("#bkDays"), hoursEl = $("#bkHours");
     const fmt = (d) => d.toLocaleDateString(LOC, { weekday: "long", day: "numeric", month: "long" });
     // disponibilità di esempio (sarà sostituita dal calendario di Mar)
     const ORE = ["10:00", "11:30", "17:00", "18:30", "20:00"];
     const busy = (d, h) => ((d.getDate() * 7 + h * 3) % 5) === 0;
+    const pick = (box, sel, b) => $$(sel, box).forEach((x) => x.setAttribute("aria-pressed", x === b));
     const today = new Date(); today.setHours(0, 0, 0, 0);
     for (let i = 1; i <= 14; i++) {
       const d = new Date(today); d.setDate(d.getDate() + i);
       const b = document.createElement("button"); b.type = "button"; b.className = "day"; b.setAttribute("aria-pressed", "false");
       b.innerHTML = `<small>${d.toLocaleDateString(LOC, { weekday: "short" })}</small><b>${d.getDate()}</b><small>${d.toLocaleDateString(LOC, { month: "short" })}</small>`;
       if (d.getDay() === 0) b.disabled = true;
-      b.addEventListener("click", () => { $$(".day", daysEl).forEach((x) => x.setAttribute("aria-pressed", x === b)); state.giorno = d; state.ora = null; renderHours(); update(); });
+      b.addEventListener("click", () => { pick(daysEl, ".day", b); state.giorno = d; state.ora = null; renderHours(); update(); });
       daysEl.appendChild(b);
     }
     function renderHours() {
       hoursEl.innerHTML = "";
-      if (!state.giorno) { hoursEl.innerHTML = `<p class="demo-note">${T.pickDay}</p>`; return; }
+      if (!state.giorno) { hoursEl.innerHTML = `<p class="bk-empty">${T.pickDay}</p>`; return; }
       ORE.forEach((h, i) => {
         const b = document.createElement("button"); b.type = "button"; b.className = "opt"; b.textContent = h; b.setAttribute("aria-pressed", "false");
         if (busy(state.giorno, i)) { b.disabled = true; b.title = T.busy; }
-        b.addEventListener("click", () => { $$(".opt", hoursEl).forEach((x) => x.setAttribute("aria-pressed", x === b)); state.ora = h; update(); });
+        b.addEventListener("click", () => { pick(hoursEl, ".opt", b); state.ora = h; update(); });
         hoursEl.appendChild(b);
       });
     }
-    $$("#bkServ .opt").forEach((b) => b.addEventListener("click", () => { $$("#bkServ .opt").forEach((x) => x.setAttribute("aria-pressed", x === b)); state.servizio = b.dataset.v; update(); }));
+    $$("#bkStyle .opt").forEach((b) => b.addEventListener("click", () => { pick($("#bkStyle"), ".opt", b); state.stile = b.dataset.v; update(); }));
+    $$("#bkServ .opt").forEach((b) => b.addEventListener("click", () => { pick($("#bkServ"), ".opt", b); state.servizio = b.dataset.v; update(); }));
+    const ok = () => state.stile && state.servizio && state.giorno && state.ora;
+    const set = (id, v) => { const el = $(id); el.textContent = v || "—"; el.classList.toggle("set", !!v); };
     function update() {
-      const ok = state.servizio && state.giorno && state.ora;
-      sum.classList.toggle("warn", false); sum.innerHTML = ok ? `<b>${state.servizio}</b><br>${fmt(state.giorno)}, ${T.at} ${state.ora}` : T.pickAll;
-      send.toggleAttribute("aria-disabled", !ok);
+      set("#rcStyle", state.stile); set("#rcServ", state.servizio);
+      set("#rcDay", state.giorno && fmt(state.giorno)); set("#rcHour", state.ora);
+      sum.classList.remove("warn"); sum.textContent = ok() ? "Tutto pronto: aggiungi il tuo nome e invia." : "Scegli stile, lezione, giorno e ora.";
+      send.toggleAttribute("aria-disabled", !ok());
     }
     send.addEventListener("click", (e) => {
       e.preventDefault();
-      if (!(state.servizio && state.giorno && state.ora)) {
-        const miss = !state.servizio ? "#bkServ" : !state.giorno ? "#bkDays" : "#bkHours", st = $(miss).closest(".bstep");
+      if (!ok()) {
+        const miss = !state.stile ? "#bkStyle" : !state.servizio ? "#bkServ" : !state.giorno ? "#bkDays" : "#bkHours", st = $(miss).closest(".bstep");
         st.classList.remove("missing"); void st.offsetWidth; st.classList.add("missing"); st.scrollIntoView({ behavior: "smooth", block: "center" });
         sum.classList.add("warn"); return;
       }
-      const nome = ($("#bkName") || {}).value || ""; const note = ($("#bkNote") || {}).value || "";
-      window.open(wa(`${T.req}\n• ${state.servizio}\n• ${fmt(state.giorno)}, ${T.at} ${state.ora}` + (nome ? `\n• ${T.name}: ${nome}` : "") + (note ? `\n• ${T.note}: ${note}` : "")), "_blank");
+      const nome = $("#bkName").value.trim(), note = $("#bkNote").value.trim();
+      window.open(wa(`${T.req}\n• Stile: ${state.stile}\n• ${state.servizio}\n• ${fmt(state.giorno)}, ${T.at} ${state.ora}` + (nome ? `\n• ${T.name}: ${nome}` : "") + (note ? `\n• ${T.note}: ${note}` : "")), "_blank");
     });
     const pre = new URLSearchParams(location.search).get("s");
     if (pre) { const b = $(`#bkServ .opt[data-k="${pre}"]`); b && b.click(); }

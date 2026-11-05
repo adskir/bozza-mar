@@ -130,23 +130,38 @@ schema: {"@context":"https://schema.org","@type":"Service","name":"Lezioni priva
 <section class="dark-sec" id="prenota">
   <div class="wrap">
     <h2>Prenota la tua lezione</h2>
-    <p class="sub">Scegli lezione, giorno e ora. La richiesta arriva a Mar su WhatsApp e ti conferma in breve.</p>
+    <p class="sub">Scegli stile, lezione, giorno e ora. La richiesta arriva a Mar su WhatsApp e ti conferma in breve.</p>
     <div class="booker" id="booker">
-      <div class="bstep"><h3><i>1</i>Che lezione?</h3>
-        <div class="opts" id="bkServ">
-          <button type="button" class="opt" data-k="prova" data-v="Lezione di prova 60 min (Bari)" aria-pressed="false">Lezione di prova · Bari<small>60 min · 30 €</small></button>
-          <button type="button" class="opt" data-k="90" data-v="Lezione privata 90 min (Bari)" aria-pressed="false">Lezione privata · Bari<small>90 min · 75 €</small></button>
-          <button type="button" class="opt" data-k="coppia" data-v="Lezione di coppia 60 min (Bari)" aria-pressed="false">Lezione di coppia<small>60 min · 70 €</small></button>
-          <button type="button" class="opt" data-k="pack" data-v="Pacchetto 4 lezioni (Bari)" aria-pressed="false">Pacchetto 4 lezioni<small>Bari · 200 €</small></button>
+      <div class="bk-steps">
+        <div class="bstep"><h3><i>1</i>Cosa vuoi ballare?</h3>
+          <div class="chips3" id="bkStyle">{% for s in ["Salsa","Bachata","Salsa Lady"] %}<button type="button" class="opt" data-v="{{ s }}" aria-pressed="false">{{ s }}</button>{% endfor %}</div>
         </div>
+        <div class="bstep"><h3><i>2</i>Che lezione?</h3>
+          <div class="grid-opts" id="bkServ">
+            <button type="button" class="opt" data-k="prova" data-v="Lezione di prova · 60 min · 30 €" aria-pressed="false"><b>Lezione di prova</b><small>60 min · 30 €</small></button>
+            <button type="button" class="opt" data-k="90" data-v="Lezione privata · 90 min · 75 €" aria-pressed="false"><b>Lezione privata</b><small>90 min · 75 €</small></button>
+            <button type="button" class="opt" data-k="coppia" data-v="Lezione di coppia · 60 min · 70 €" aria-pressed="false"><b>Lezione di coppia</b><small>60 min · 70 €</small></button>
+            <button type="button" class="opt" data-k="pack" data-v="Pacchetto 4 lezioni · 200 €" aria-pressed="false"><b>Pacchetto 4 lezioni</b><small>4 × 60 min · 200 €</small></button>
+          </div>
+        </div>
+        <div class="bstep"><h3><i>3</i>Che giorno?</h3><div class="days" id="bkDays"></div></div>
+        <div class="bstep"><h3><i>4</i>A che ora?</h3><div class="hours" id="bkHours"></div></div>
       </div>
-      <div class="bstep"><h3><i>2</i>Che giorno?</h3><div class="days" id="bkDays"></div></div>
-      <div class="bstep"><h3><i>3</i>A che ora?</h3><div class="opts" id="bkHours"></div></div>
-      <div class="bstep"><h3><i>4</i>I tuoi dati</h3>
-        <div class="grid2" style="margin-top:0"><label class="field">Nome<input id="bkName" autocomplete="given-name" placeholder="Il tuo nome"></label><label class="field">Note (facoltativo)<input id="bkNote" placeholder="Livello, obiettivo, stile…"></label></div>
-      </div>
-      <div class="summary"><p id="bkSum">Scegli lezione, giorno e ora.</p><div class="send"><a class="btn wa-send" id="bkSend" href="#">{{ icon("wa") | safe }}<span>Invia su WhatsApp</span></a><small>Si apre WhatsApp con il messaggio già scritto: premi Invia e Mar ti conferma.</small></div></div>
-      <p class="demo-note">Bozza: gli orari liberi sono di esempio. Nella versione finale si collegano al calendario di Mar (Google Calendar).</p>
+      <aside class="bk-side">
+        <h3>La tua richiesta</h3>
+        <dl class="recap">
+          <div><dt>Stile</dt><dd id="rcStyle">—</dd></div>
+          <div><dt>Lezione</dt><dd id="rcServ">—</dd></div>
+          <div><dt>Giorno</dt><dd id="rcDay">—</dd></div>
+          <div><dt>Ora</dt><dd id="rcHour">—</dd></div>
+        </dl>
+        <label class="field"><span class="lb">Nome</span><input id="bkName" autocomplete="given-name" placeholder="Il tuo nome"></label>
+        <label class="field"><span class="lb">Note <i>(facoltativo)</i></span><input id="bkNote" placeholder="Livello, obiettivo…"></label>
+        <p class="bk-hint" id="bkSum">Scegli stile, lezione, giorno e ora.</p>
+        <a class="btn wa-send" id="bkSend" href="#">{{ icon("wa") | safe }}<span>Invia su WhatsApp</span></a>
+        <small class="bk-note">Si apre WhatsApp con il messaggio già scritto: premi Invia e Mar ti conferma.</small>
+      </aside>
+      <p class="demo-note bk-demo">Bozza: gli orari liberi sono di esempio. Nella versione finale arrivano dal calendario di Mar.</p>
     </div>
   </div>
 </section>

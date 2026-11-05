@@ -394,3 +394,48 @@ html{scroll-behavior:smooth;scroll-padding-top:80px}
 .foot .social.mini .s-tt svg{filter:drop-shadow(-1.5px -1px 0 #25F4EE) drop-shadow(1.5px 1px 0 #FE2C55)}
 .foot .social.mini a:hover .ic{transform:translateY(-3px) scale(1.06);box-shadow:0 10px 22px -8px var(--c)}
 .foot .social.mini .s-tt:hover .ic{box-shadow:inset 0 0 0 1.5px #fff}
+
+/* ===== prenotazione: struttura a due colonne, campi sottili ===== */
+.booker{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:0;padding:0;overflow:hidden;border-radius:24px}
+.bk-steps{padding:26px 28px}
+.bstep{padding:18px 0;border-bottom:1px solid var(--line)}
+.bstep:first-child{padding-top:4px}.bstep:last-child{border:0;padding-bottom:4px}
+.bstep h3{font-size:16px;margin-bottom:12px;gap:10px}
+.bstep h3 i{width:24px;height:24px;font-size:12px}
+.booker .opt{border:1px solid var(--line);background:#fff;border-radius:10px;padding:10px 12px;font-size:14px;font-weight:600;text-align:center;min-height:44px}
+.booker .opt:hover:not([disabled]){border-color:#CFC4B5}
+.booker .opt[aria-pressed=true]{border-color:var(--rojo);background:#FFF1F3;box-shadow:inset 0 0 0 1px var(--rojo)}
+.chips3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.grid-opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.grid-opts .opt{text-align:left;padding:11px 14px}
+.grid-opts .opt b{display:block;font-size:14px}
+.grid-opts .opt small{font-size:12.5px;margin-top:2px}
+.hours{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.hours .opt{font-variant-numeric:tabular-nums}
+.bk-empty{grid-column:1/-1;font-size:14px;color:var(--muted);padding:10px 0}
+.days{grid-auto-columns:64px;gap:8px}
+.day{border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 2px}
+.day b{font-size:20px}
+.day small{font-size:11px}
+.bk-side{background:var(--night);color:#fff;padding:26px 24px;display:flex;flex-direction:column;gap:12px}
+.bk-side h3{font-size:18px;color:#fff}
+.recap{margin:0 0 4px;display:grid;gap:0;border-top:1px solid var(--night3)}
+.recap div{display:grid;grid-template-columns:72px minmax(0,1fr);gap:10px;padding:9px 0;border-bottom:1px solid var(--night3);font-size:14px}
+.recap dt{color:var(--lav)}
+.recap dd{margin:0;color:#6E6380;text-transform:none}
+.recap dd.set{color:#fff;font-weight:600}
+#rcDay.set::first-letter{text-transform:uppercase}
+.bk-side .field{color:var(--lav);font-size:13px;font-weight:600;display:grid;gap:5px}
+.bk-side .field i{font-style:normal;font-weight:400}
+.bk-side .field input{background:var(--night2);border:1px solid var(--night3);color:#fff;border-radius:10px;padding:10px 12px;font-size:15px;width:100%}
+.bk-side .field input::placeholder{color:#6E6380}
+.bk-side .field input:focus{border-color:var(--mango);outline:none}
+.bk-hint{font-size:14px;color:#D8D1E2;margin-top:4px}
+.bk-hint.warn{color:var(--mango)}
+.bk-side .btn.wa-send{width:100%}
+.bk-note{font-size:12.5px;line-height:1.4;color:#8D839C;text-align:center}
+.bk-demo{grid-column:1/-1;margin:0;padding:12px 28px;border-top:1px solid var(--line);font-size:13px}
+@media(max-width:860px){.booker{grid-template-columns:minmax(0,1fr)}.bk-steps{padding:20px 18px}.bk-side{padding:22px 18px}.bk-demo{padding:12px 18px}}
+@media(max-width:420px){.hours{grid-template-columns:repeat(3,minmax(0,1fr))}.chips3 .opt{padding:10px 6px}}
+.booker .bstep{border-radius:0}
+.bk-side .field{display:flex;flex-direction:column;gap:6px}
