@@ -376,3 +376,10 @@ html{scroll-behavior:smooth;scroll-padding-top:80px}
 
 .portrait img,.oltre .pic img{color:transparent}
 @media(min-width:900px){.grid2.three{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.btn.wa-send[aria-disabled]{filter:none}
+.btn.wa-send{background:#25D366;color:#fff;box-shadow:0 0 0 2px rgba(255,255,255,.18),0 12px 30px -8px rgba(37,211,102,.85);text-shadow:0 1px 1px rgba(0,60,30,.35)}
+.btn.wa-send:hover{background:#1FBF5B}
+.summary p.warn{color:var(--mango)}
+.bstep.missing{animation:miss .9s ease}
+@keyframes miss{0%,100%{background:transparent}30%{background:rgba(232,52,78,.1)}}
+.bstep{border-radius:16px}

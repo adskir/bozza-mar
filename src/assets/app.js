@@ -107,11 +107,16 @@
     $$("#bkServ .opt").forEach((b) => b.addEventListener("click", () => { $$("#bkServ .opt").forEach((x) => x.setAttribute("aria-pressed", x === b)); state.servizio = b.dataset.v; update(); }));
     function update() {
       const ok = state.servizio && state.giorno && state.ora;
-      sum.innerHTML = ok ? `<b>${state.servizio}</b><br>${fmt(state.giorno)}, ${T.at} ${state.ora}` : T.pickAll;
-      send.toggleAttribute("aria-disabled", !ok); send.style.opacity = ok ? 1 : 0.5;
+      sum.classList.toggle("warn", false); sum.innerHTML = ok ? `<b>${state.servizio}</b><br>${fmt(state.giorno)}, ${T.at} ${state.ora}` : T.pickAll;
+      send.toggleAttribute("aria-disabled", !ok);
     }
     send.addEventListener("click", (e) => {
-      e.preventDefault(); if (!(state.servizio && state.giorno && state.ora)) return;
+      e.preventDefault();
+      if (!(state.servizio && state.giorno && state.ora)) {
+        const miss = !state.servizio ? "#bkServ" : !state.giorno ? "#bkDays" : "#bkHours", st = $(miss).closest(".bstep");
+        st.classList.remove("missing"); void st.offsetWidth; st.classList.add("missing"); st.scrollIntoView({ behavior: "smooth", block: "center" });
+        sum.classList.add("warn"); return;
+      }
       const nome = ($("#bkName") || {}).value || ""; const note = ($("#bkNote") || {}).value || "";
       window.open(wa(`${T.req}\n• ${state.servizio}\n• ${fmt(state.giorno)}, ${T.at} ${state.ora}` + (nome ? `\n• ${T.name}: ${nome}` : "") + (note ? `\n• ${T.note}: ${note}` : "")), "_blank");
     });
