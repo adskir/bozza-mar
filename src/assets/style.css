@@ -471,3 +471,7 @@ details.include .checks{padding:0 0 18px;margin:0}
 @media(max-width:620px){.offer .cd{width:100%;justify-content:space-between}.offer .cd span{flex:1}.hero-cd{margin:6px 0 0}}
 .chi-title{margin-bottom:28px}
 @media(max-width:860px){#chi-sono .oltre{gap:22px}}
+.styles-row{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 4px}
+.styles-row span{font-weight:700;font-size:15px;padding:7px 16px;border-radius:999px;background:var(--night);color:#fff}
+.styles-row span:nth-child(2){background:var(--rojo)}
+.styles-row span:nth-child(3){background:var(--mango);color:#2A1D00}

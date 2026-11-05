@@ -28,18 +28,10 @@ schema: {"@context":"https://schema.org","@type":"Service","name":"Lezioni priva
   </div>
 </section>
 
-<section class="dark-sec" id="stili">
-  <div class="wrap">
-    <h2>Come posso aiutarti</h2>
-    <p class="sub">Lavoro specializzato nel ballo latino e nell'espressione corporea. Ogni disciplina si adatta al tuo livello reale e al tuo obiettivo: ballo sociale, palco o gara.</p>
-    <div class="stili">{% for s in stili %}<div class="stile"><b>{{ s.nome }}</b><span>{{ s.desc }}</span></div>{% endfor %}</div>
-  </div>
-</section>
-
 <section id="prezzi">
   <div class="wrap">
     <div class="price-head">
-      <div><h2>Prezzi chiari, senza sorprese</h2><p class="sub">Tutte le lezioni sono private al 100%, in presenza a Bari e con un piano personalizzato.</p></div>
+      <div><h2>Prezzi chiari, senza sorprese</h2><div class="styles-row">{% for st in stili %}<span title="{{ st.desc }}">{{ st.nome }}</span>{% endfor %}</div><p class="sub">Lezioni private di salsa, bachata e Salsa Lady, in presenza a Bari e con un piano personalizzato.</p></div>
     </div>
     {% set k = "presenza" %}
     <div class="offer" id="offer" data-until="{{ site.lancio.fino }}">
