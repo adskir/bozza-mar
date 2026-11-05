@@ -1,22 +1,43 @@
 {
   "presenza": {
-    "include": ["Valutazione iniziale e piano personalizzato", "Correzione tecnica e di musicalità in tempo reale", "Supporto su WhatsApp tra una lezione e l'altra", "Revisione dei video della tua pratica", "Sala a Bari coordinata da me", "Prezzo bloccato da allievo fondatore"],
+    "include": [
+      "Valutazione iniziale e piano personalizzato",
+      "Correzione tecnica e di musicalità in tempo reale",
+      "Supporto su WhatsApp tra una lezione e l'altra",
+      "Revisione dei video della tua pratica",
+      "Sala a Bari coordinata da me",
+      "Prezzo bloccato da allievo fondatore"
+    ],
     "voci": [
-      { "nome": "Prima lezione di prova · 60 min", "desc": "In presenza a Bari", "prezzo": 30, "nota": "risparmi 15 €", "top": true },
-      { "nome": "Lezione privata · 90 min", "desc": "Per preparare una coreografia o una gara", "prezzo": 75 },
-      { "nome": "Pacchetto 4 lezioni · 60 min", "desc": "Valido 3 mesi", "prezzo": 200, "nota": "risparmi 20 €" },
-      { "nome": "Pacchetto 8 lezioni · 60 min", "desc": "Valido 6 mesi", "prezzo": 380, "nota": "risparmi 60 €" },
-      { "nome": "Lezione di coppia · 60 min", "desc": "Due persone, un solo obiettivo", "prezzo": 70 }
-    ]
-  },
-  "online": {
-    "include": ["Lezioni dal vivo in videochiamata, solo per te", "Registrazione della lezione da rivedere", "Piano di pratica tra le lezioni con obiettivi concreti", "Revisione dei video che mi mandi", "Orari flessibili secondo il tuo fuso", "Stesso prezzo protetto da allievo fondatore"],
-    "voci": [
-      { "nome": "Lezione online · 60 min", "desc": "Videochiamata 1 a 1 + registrazione", "prezzo": 40, "top": true },
-      { "nome": "Lezione online · 90 min", "desc": "Per approfondire o preparare un evento", "prezzo": 55 },
-      { "nome": "Pacchetto 4 lezioni online", "desc": "Valido 3 mesi", "prezzo": 150, "nota": "risparmi 10 €" },
-      { "nome": "Pacchetto 8 lezioni online", "desc": "Valido 6 mesi", "prezzo": 280, "nota": "risparmi 40 €" },
-      { "nome": "Revisione video", "desc": "Correzione commentata della tua pratica", "prezzo": 20 }
+      {
+        "nome": "Prima lezione di prova · 60 min",
+        "desc": "In presenza a Bari",
+        "prezzo": 30,
+        "nota": "risparmi 15 €",
+        "top": true
+      },
+      {
+        "nome": "Lezione privata · 90 min",
+        "desc": "Per preparare una coreografia o una gara",
+        "prezzo": 75
+      },
+      {
+        "nome": "Pacchetto 4 lezioni · 60 min",
+        "desc": "Valido 3 mesi",
+        "prezzo": 200,
+        "nota": "risparmi 20 €"
+      },
+      {
+        "nome": "Pacchetto 8 lezioni · 60 min",
+        "desc": "Valido 6 mesi",
+        "prezzo": 380,
+        "nota": "risparmi 60 €"
+      },
+      {
+        "nome": "Lezione di coppia · 60 min",
+        "desc": "Due persone, un solo obiettivo",
+        "prezzo": 70
+      }
     ]
   }
 }

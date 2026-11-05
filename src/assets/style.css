@@ -148,7 +148,7 @@ blockquote.big{font-family:"Bricolage";font-size:clamp(24px,3vw,32px);line-heigh
 .include{background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px}
 .plist{display:grid;gap:12px}
 .pitem{display:flex;justify-content:space-between;gap:16px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 22px}
-.pitem.top{border:2px solid var(--rojo)}
+.pitem.top{border:2px solid var(--rojo);position:static;color:var(--ink);backdrop-filter:none;z-index:auto}
 .pitem b{display:block}
 .pitem small{color:var(--muted);font-size:14px}
 .pitem .eur{text-align:right;font:800 26px "Bricolage";white-space:nowrap}
@@ -314,3 +314,18 @@ html{scroll-behavior:smooth;scroll-padding-top:80px}
 .hero h1{font-size:clamp(42px,5.4vw,78px)}
 .dark-sec .booker{color:var(--ink)}
 .vinyl-sec{overflow:clip}
+
+/* ===== revisione 5.11: menu a destra, WhatsApp fisso, social nel footer ===== */
+@media(max-width:900px){.burger{margin-left:auto}}
+.wa-fab{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;align-items:center;gap:10px;background:#25D366;color:#fff;text-decoration:none;border-radius:999px;padding:14px 22px 14px 16px;font-weight:700;box-shadow:0 12px 30px -6px rgba(37,211,102,.55);transition:transform .2s,box-shadow .2s}
+.wa-fab svg{width:26px;height:26px;fill:#fff;flex:none}
+.wa-fab:hover{transform:translateY(-2px);box-shadow:0 16px 34px -6px rgba(37,211,102,.7)}
+@media(max-width:520px){.wa-fab span{display:none}.wa-fab{padding:16px}}
+.foot .social.mini{gap:12px;margin-top:22px}
+.social.mini .ic{width:46px;height:46px;border:0;background:var(--night2);box-shadow:inset 0 0 0 1.5px var(--night3);transition:background .2s,box-shadow .2s,transform .2s}
+.social.mini svg{width:20px;height:20px;fill:var(--lav);transition:fill .2s}
+.social.mini a:hover .ic{background:var(--c);box-shadow:none;transform:translateY(-3px)}
+.social.mini a:hover svg{fill:#fff}
+.social .s-ig{--c:#E1306C}.social .s-tt{--c:#111}.social .s-fb{--c:#1877F2}.social .s-yt{--c:#FF0000}
+.social.mini .s-tt:hover .ic{box-shadow:inset 0 0 0 1.5px #fff}
+.prices{margin-top:28px}

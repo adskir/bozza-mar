@@ -1,10 +1,9 @@
 ---
 layout: base.njk
 title: "Lezioni private di salsa e bachata a Bari · Mar La Criolla"
-description: "Lezioni private di salsa, bachata, timba e Salsa Lady a Bari e online con Mar La Criolla. Un percorso costruito su di te. Lezione di prova a 30 €."
+description: "Lezioni private di salsa, bachata e Salsa Lady a Bari con Mar La Criolla. Un percorso costruito su di te. Lezione di prova a 30 €."
 schema: {"@context":"https://schema.org","@type":"Service","name":"Lezioni private di salsa e bachata","provider":{"@type":"Person","name":"Mar La Criolla"},"areaServed":{"@type":"City","name":"Bari"},"offers":{"@type":"Offer","name":"Lezione di prova 60 min","price":"30","priceCurrency":"EUR"}}
 ---
-{% from "icons.njk" import social %}
 <section class="hero">
   <div class="wrap">
     <div>
@@ -75,7 +74,7 @@ schema: {"@context":"https://schema.org","@type":"Service","name":"Lezioni priva
       <h2>Il percorso completo in 5 tracce</h2>
       <p class="sub">Un percorso chiaro e in ordine. Dal primo passo alla sfida finale, senza salti né improvvisazioni.</p>
       <ol class="tracks">
-        <li><span>A1</span><div><b>Scegli il formato</b><small>In presenza a Bari o online.</small></div><time>0:45</time></li>
+        <li><span>A1</span><div><b>Scegli lo stile</b><small>Salsa, bachata o Salsa Lady, a Bari.</small></div><time>0:45</time></li>
         <li><span>A2</span><div><b>Definiamo gli obiettivi</b><small>Disegniamo il tuo piano personalizzato.</small></div><time>1:30</time></li>
         <li><span>A3</span><div><b>Scegli l'orario</b><small>Troviamo il momento migliore per te.</small></div><time>2:15</time></li>
         <li><span>A4</span><div><b>Inizi le lezioni</b><small>Impari con accompagnamento e feedback.</small></div><time>3:00</time></li>
@@ -89,15 +88,13 @@ schema: {"@context":"https://schema.org","@type":"Service","name":"Lezioni priva
 <section id="prezzi">
   <div class="wrap">
     <div class="price-head">
-      <div><h2>Prezzi chiari, senza sorprese</h2><p class="sub">Scegli la modalità più adatta al tuo momento. Tutte le lezioni sono private al 100% e con un piano personalizzato.</p></div>
-      <div class="toggle" data-toggle role="group" aria-label="Modalità"><button aria-pressed="true" data-show="presenza">In presenza</button><button aria-pressed="false" data-show="online">Online</button></div>
+      <div><h2>Prezzi chiari, senza sorprese</h2><p class="sub">Tutte le lezioni sono private al 100%, in presenza a Bari e con un piano personalizzato.</p></div>
     </div>
-    {% for k, label in {"presenza":"in presenza","online":"online"} %}
-    <div class="prices" data-panel="{{ k }}"{% if k == "online" %} hidden{% endif %}>
-      <div class="include"><h3>Cosa include la modalità {{ label }}</h3><ul class="checks">{% for i in prezzi[k].include %}<li>{{ i }}</li>{% endfor %}</ul></div>
+    {% set k = "presenza" %}
+    <div class="prices">
+      <div class="include"><h3>Cosa include ogni lezione</h3><ul class="checks">{% for i in prezzi[k].include %}<li>{{ i }}</li>{% endfor %}</ul></div>
       <div class="plist">{% for v in prezzi[k].voci %}<div class="pitem{% if v.top %} top{% endif %}"><div><b>{{ v.nome }}</b><small>{{ v.desc }}</small></div><div class="eur">{{ v.prezzo }} €{% if v.nota %}<small>{{ v.nota }}</small>{% endif %}</div></div>{% endfor %}</div>
     </div>
-    {% endfor %}
     <div class="cta" style="justify-content:space-between;align-items:center"><p style="font-weight:600">Nessun costo nascosto. Nessuna sorpresa. Trasparenza totale.</p><a class="btn" href="#prenota">Prenota la tua lezione</a></div>
   </div>
 </section>
@@ -106,8 +103,8 @@ schema: {"@context":"https://schema.org","@type":"Service","name":"Lezioni priva
   <div class="wrap founders">
     <div>
       <h2>Offerta di lancio per allievi fondatori</h2>
-      <p class="sub">Per celebrare il lancio delle lezioni private in presenza e online, le prime {{ site.founders.total }} persone accedono a condizioni esclusive e mantengono questo prezzo per sempre.</p>
-      <ul class="checks"><li>Prezzo protetto per tutto il tuo percorso: non pagherai i futuri aumenti</li><li>Valutazione iniziale personalizzata</li><li>Revisione dei video della tua pratica</li><li>Offerte speciali per congressi e festival di timba</li><li>Posti limitati a {{ site.founders.total }} allievi fondatori</li></ul>
+      <p class="sub">Per celebrare il lancio delle lezioni private a Bari, le prime {{ site.founders.total }} persone accedono a condizioni esclusive e mantengono questo prezzo per sempre.</p>
+      <ul class="checks"><li>Prezzo protetto per tutto il tuo percorso: non pagherai i futuri aumenti</li><li>Valutazione iniziale personalizzata</li><li>Revisione dei video della tua pratica</li><li>Posti limitati a {{ site.founders.total }} allievi fondatori</li></ul>
     </div>
     <div class="fbox">
       <div class="num">{{ site.founders.available }} <span>/ {{ site.founders.total }}</span></div>
@@ -124,10 +121,8 @@ schema: {"@context":"https://schema.org","@type":"Service","name":"Lezioni priva
     <div class="pic" style="display:grid;place-items:center;color:#fff;text-align:center;padding:30px;background:linear-gradient(160deg,#E8344E,#2E2540 70%)"><p style="font-family:Bricolage;font-size:26px;font-weight:700">Qui la foto di Mar</p></div>
     <div>
       <h2>Chi sono</h2>
-      <p class="sub">Mi chiamano Mar La Criolla. Ballo e insegno salsa, timba, bachata, rumba e folclore peruviano. Accompagno allievi in presenza a Bari e online da qualsiasi paese: chi parte da zero, chi vuole approfondire, chi compete e chi insegna.</p>
+      <p class="sub">Mi chiamano Mar La Criolla. Insegno salsa e bachata con lezioni private a Bari. Accompagno chi parte da zero, chi vuole approfondire, chi compete e chi insegna.</p>
       <p class="demo-note">Bozza: qui va la storia di Mar con le sue parole (origini, formazione, palchi e gare, perché insegna).</p>
-      <p class="kick" style="margin-top:28px">Seguimi</p>
-      {{ social(site.social) | safe }}
     </div>
   </div>
 </section>
@@ -142,7 +137,6 @@ schema: {"@context":"https://schema.org","@type":"Service","name":"Lezioni priva
           <button type="button" class="opt" data-k="prova" data-v="Lezione di prova 60 min (Bari)" aria-pressed="false">Lezione di prova · Bari<small>60 min · 30 €</small></button>
           <button type="button" class="opt" data-k="90" data-v="Lezione privata 90 min (Bari)" aria-pressed="false">Lezione privata · Bari<small>90 min · 75 €</small></button>
           <button type="button" class="opt" data-k="coppia" data-v="Lezione di coppia 60 min (Bari)" aria-pressed="false">Lezione di coppia<small>60 min · 70 €</small></button>
-          <button type="button" class="opt" data-k="online" data-v="Lezione online 60 min" aria-pressed="false">Lezione online<small>60 min · 40 €</small></button>
           <button type="button" class="opt" data-k="pack" data-v="Pacchetto 4 lezioni (Bari)" aria-pressed="false">Pacchetto 4 lezioni<small>Bari · 200 €</small></button>
         </div>
       </div>
@@ -163,12 +157,10 @@ schema: {"@context":"https://schema.org","@type":"Service","name":"Lezioni priva
     <p class="sub">Tutto quello che ti serve sapere prima di prenotare la prima lezione.</p>
     <div class="faq">
       <details><summary>Serve esperienza per iniziare?</summary><p>No. Le lezioni si costruiscono sul tuo punto di partenza reale. Se parti da zero, lavoriamo su base, sicurezza e fiducia; se balli già, affiniamo tecnica, musicalità e interpretazione.</p></details>
-      <details><summary>Come funzionano le lezioni online?</summary><p>Si fanno in videochiamata, dal vivo e in modo individuale. Ricevi la registrazione della lezione, un piano di pratica tra una lezione e l'altra e la revisione dei video che mi mandi. Ti servono solo spazio per muoverti e una connessione stabile.</p></details>
-      <details><summary>Quali sono gli orari disponibili?</summary><p>In presenza a Bari, di mattina e di pomeriggio; online, adattati al tuo fuso orario. Scrivendomi su WhatsApp verifichiamo la disponibilità e fissiamo il momento migliore per te.</p></details>
+      <details><summary>Quali sono gli orari disponibili?</summary><p>A Bari, di mattina e di pomeriggio. Scrivendomi su WhatsApp verifichiamo la disponibilità e fissiamo il momento migliore per te.</p></details>
       <details><summary>Come funzionano i pagamenti?</summary><p>Paghi la lezione di prova o il pacchetto prima di iniziare. Ti spiego le modalità di pagamento su WhatsApp.</p></details>
       <details><summary>E se devo annullare o spostare una lezione?</summary><p>Avvisami il prima possibile: troviamo insieme una nuova data.</p></details>
       <details><summary>Le lezioni sono solo per donne?</summary><p>No, le lezioni private sono per tutti. Il percorso «Oltre il seguire» è pensato in particolare per le donne.</p></details>
-      <details><summary>Posso combinare presenza e online?</summary><p>Sì: puoi alternare lezioni in presenza e online nello stesso percorso.</p></details>
     </div>
   </div>
 </section>
