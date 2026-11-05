@@ -19,6 +19,7 @@ schema: {"@context":"https://schema.org","@type":"Service","name":"Lezioni priva
         <div class="ctext"><b>Il passo base, a tempo</b><span>Premi play e conta con la musica. Su 4 e 8 ti fermi.</span></div>
         <ol class="counts" aria-label="Conteggio del passo base">{% for c in [["1","Uno"],["2","Dos"],["3","Tres"],["4",""],["5","Cinco"],["6","Seis"],["7","Siete"],["8",""]] %}<li{% if not c[1] %} class="rest"{% endif %}><b>{{ c[0] }}</b><small>{{ c[1] or "pausa" }}</small></li>{% endfor %}</ol>
         <div class="cvideo" id="cvideo" hidden></div>
+        <p class="cyt" id="cyt" hidden>Il video non parte? <a href="https://www.youtube.com/watch?v={{ site.passoBase.youtube }}" target="_blank" rel="noopener">Apri il brano su YouTube</a></p>
       </div>
     </div>
     <div class="portrait">

@@ -50,7 +50,7 @@
     $("#clavePlay").addEventListener("click", () => {
       const v = $("#cvideo"); if (!v.hidden) return;
       v.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${cl.dataset.yt}?autoplay=1&rel=0&playsinline=1" title="Brano per il passo base di salsa" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>`;
-      v.hidden = false; cl.classList.add("open");
+      v.hidden = false; cl.classList.add("open"); $("#cyt").hidden = false;
     });
   }
 

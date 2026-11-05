@@ -322,16 +322,10 @@ html{scroll-behavior:smooth;scroll-padding-top:80px}
 .prices{margin-top:28px}
 
 /* ===== revisione clave + bottoni luminosi + WhatsApp pulsante ===== */
-@property --ba{syntax:"<angle>";initial-value:0deg;inherits:false}
-.btn{position:relative;isolation:isolate;--glow:var(--mango);box-shadow:0 0 0 1px color-mix(in srgb,var(--glow) 35%,transparent),0 10px 26px -12px var(--glow)}
-.btn.ghost{--glow:var(--mango);box-shadow:inset 0 0 0 2px currentColor,0 10px 26px -14px var(--glow)}
-.btn.mango,.btn.wa{--glow:#fff}
-.btn::after{content:"";position:absolute;inset:-3px;border-radius:inherit;padding:2px;pointer-events:none;
-  background:conic-gradient(from var(--ba),transparent 0 58%,var(--glow) 74%,#fff 82%,transparent 94%);
-  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;
-  animation:brun 3.4s linear infinite}
-.btn:nth-of-type(2)::after{animation-delay:-1.7s}
-@keyframes brun{to{--ba:360deg}}
+.btn{--glow:var(--mango);box-shadow:0 0 0 2px var(--glow),0 0 18px -2px color-mix(in srgb,var(--glow) 55%,transparent)}
+.btn.ghost{box-shadow:inset 0 0 0 2px currentColor,0 0 0 2px var(--glow),0 0 18px -2px color-mix(in srgb,var(--glow) 50%,transparent)}
+.btn.mango,.btn.wa{--glow:rgba(255,255,255,.85)}
+.btn{outline-offset:4px}
 
 .wa-fab{isolation:isolate}
 .wa-fab::before,.wa-fab::after{content:"";position:absolute;inset:0;border-radius:inherit;background:#25D366;z-index:-1;animation:wap 2.6s ease-out infinite}
@@ -358,3 +352,5 @@ html{scroll-behavior:smooth;scroll-padding-top:80px}
 .cvideo{grid-column:1/-1;aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:#000}
 .cvideo iframe{width:100%;height:100%;border:0;display:block}
 @media(max-width:420px){.counts b{font-size:18px}.counts small{font-size:9px}}
+.cyt{grid-column:1/-1;font-size:14px;color:var(--lav);margin-top:-4px}
+.cyt a{color:var(--mango);font-weight:700}
