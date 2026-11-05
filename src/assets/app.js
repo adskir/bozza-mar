@@ -71,6 +71,11 @@
     });
   }
 
+  /* il bottone WhatsApp fisso si nasconde mentre la prenotazione è sullo schermo */
+  const fabWa = $(".wa-fab"), bookSec = $("#prenota");
+  if (fabWa && bookSec && "IntersectionObserver" in window)
+    new IntersectionObserver(([e]) => fabWa.classList.toggle("away", e.isIntersecting), { threshold: 0.25 }).observe(bookSec);
+
   /* prenotazione: scegli servizio, giorno e ora */
   const bk = $("#booker");
   if (bk) {

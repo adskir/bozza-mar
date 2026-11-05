@@ -4,6 +4,7 @@ title: "Lezioni private di salsa e bachata a Bari · Mar La Criolla"
 description: "Lezioni private di salsa, bachata e Salsa Lady a Bari con Mar La Criolla. Un percorso costruito su di te. Lezione di prova a 30 €."
 schema: {"@context":"https://schema.org","@type":"Service","name":"Lezioni private di salsa e bachata","provider":{"@type":"Person","name":"Mar La Criolla"},"areaServed":{"@type":"City","name":"Bari"},"offers":{"@type":"Offer","name":"Lezione di prova 60 min","price":"30","priceCurrency":"EUR"}}
 ---
+{% from "icons.njk" import icon %}
 <section class="hero">
   <div class="wrap">
     <div>
@@ -146,7 +147,7 @@ schema: {"@context":"https://schema.org","@type":"Service","name":"Lezioni priva
       <div class="bstep"><h3><i>4</i>I tuoi dati</h3>
         <div class="grid2" style="margin-top:0"><label class="field">Nome<input id="bkName" autocomplete="given-name" placeholder="Il tuo nome"></label><label class="field">Note (facoltativo)<input id="bkNote" placeholder="Livello, obiettivo, stile…"></label></div>
       </div>
-      <div class="summary"><p id="bkSum">Scegli lezione, giorno e ora.</p><a class="btn wa" id="bkSend" href="#">Invia la richiesta su WhatsApp</a></div>
+      <div class="summary"><p id="bkSum">Scegli lezione, giorno e ora.</p><div class="send"><a class="btn wa-send" id="bkSend" href="#">{{ icon("wa") | safe }}<span>Invia su WhatsApp</span></a><small>Si apre WhatsApp con il messaggio già scritto: premi Invia e Mar ti conferma.</small></div></div>
       <p class="demo-note">Bozza: gli orari liberi sono di esempio. Nella versione finale si collegano al calendario di Mar (Google Calendar).</p>
     </div>
   </div>

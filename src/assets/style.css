@@ -362,3 +362,14 @@ html{scroll-behavior:smooth;scroll-padding-top:80px}
 .counts li.now{background:var(--mango);transform:scale(1.06)}
 .counts li.now b,.counts li.now small{color:#2A1D00}
 .counts li.rest.now{background:#3A3049}.counts li.rest.now b,.counts li.rest.now small{color:#ABA2B8}
+
+/* prenotazione: bottone WhatsApp */
+.summary .send{display:grid;gap:8px;justify-items:end;max-width:340px}
+.summary .send small{font-size:13px;line-height:1.4;color:#ABA2B8;text-align:right}
+.btn.wa-send{--glow:transparent;gap:10px;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;padding:15px 26px;font-size:17px;white-space:nowrap;box-shadow:0 10px 28px -10px rgba(37,211,102,.75)}
+.btn.wa-send svg{width:22px;height:22px;fill:#fff}
+.btn.wa-send:hover{background:linear-gradient(135deg,#2BE070,#0F7A6E)}
+.btn.wa-send[aria-disabled]{filter:grayscale(.5)}
+@media(max-width:620px){.summary{display:grid}.summary .send{max-width:none;justify-items:stretch}.btn.wa-send{width:100%}.summary .send small{text-align:center}}
+.wa-fab.away{opacity:0;transform:scale(.6);pointer-events:none}
+.wa-fab{transition:transform .25s,opacity .25s,box-shadow .2s}
