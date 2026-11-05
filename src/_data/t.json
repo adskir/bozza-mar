@@ -6,20 +6,24 @@
   "burger": "Apri il menu",
   "nav": [
    [
-    "#lezioni",
+    "#stili",
     "Lezioni"
-   ],
-   [
-    "#metodo",
-    "Metodo"
    ],
    [
     "#prezzi",
     "Prezzi"
    ],
    [
+    "#metodo",
+    "Metodo"
+   ],
+   [
     "#chi-sono",
     "Chi sono"
+   ],
+   [
+    "#prenota",
+    "Prenota"
    ]
   ],
   "home": "/",
@@ -28,12 +32,16 @@
   "foot2": "Lezioni private a Bari.",
   "footnav": [
    [
-    "#lezioni",
+    "#stili",
     "Lezioni private"
    ],
    [
     "#prezzi",
     "Prezzi"
+   ],
+   [
+    "#metodo",
+    "Metodo"
    ],
    [
     "#chi-sono",

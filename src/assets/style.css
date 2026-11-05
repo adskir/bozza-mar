@@ -383,3 +383,5 @@ html{scroll-behavior:smooth;scroll-padding-top:80px}
 .bstep.missing{animation:miss .9s ease}
 @keyframes miss{0%,100%{background:transparent}30%{background:rgba(232,52,78,.1)}}
 .bstep{border-radius:16px}
+#stili{background:var(--night2)}
+#chi-sono{background:#fff}

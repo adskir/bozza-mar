@@ -27,18 +27,6 @@ schema: {"@context":"https://schema.org","@type":"Service","name":"Lezioni priva
   </div>
 </section>
 
-<section id="lezioni">
-  <div class="wrap">
-    <h2>Per chi sono?</h2>
-    <p class="sub">Le lezioni private sono pensate per profili precisi. Se ti riconosci in una di queste situazioni, questo spazio è per te.</p>
-    <div class="grid2 three">
-      <div class="card"><span class="who">Approccio diverso</span><h3>Chi ha bisogno di un percorso su misura</h3><p>Se le lezioni di gruppo ti stanno strette, se vai a un altro ritmo o semplicemente vuoi qualcuno che guardi solo il tuo ballo: qui il piano si costruisce intorno a te, non il contrario.</p></div>
-      <div class="card"><span class="who">Livello intermedio e avanzato</span><h3>Chi vuole approfondire</h3><p>Hai già le basi e cerchi ciò che fa la differenza: musicalità, sfumature, interpretazione, sicurezza e una voce tua riconoscibile in pista.</p></div>
-      <div class="card"><span class="who">Gare</span><h3>Chi compete</h3><p>Preparazione di coreografie, casting di coppia, allenamento al palco e lavoro sulla presenza. Con calendario, obiettivi per turno e feedback misurabile.</p></div>
-    </div>
-  </div>
-</section>
-
 <section class="dark-sec" id="stili">
   <div class="wrap">
     <h2>Come posso aiutarti</h2>
@@ -47,17 +35,17 @@ schema: {"@context":"https://schema.org","@type":"Service","name":"Lezioni priva
   </div>
 </section>
 
-<section id="oltre">
-  <div class="wrap oltre">
-    <div class="pic"><img src="https://images.unsplash.com/photo-1575217764519-16d213a41dc1?w=1000&q=70&auto=format&fit=crop" alt="Foto provvisoria: coppia che balla" loading="lazy"></div>
-    <div>
-      <h2>Lezioni private per donne che vogliono sviluppare la propria voce nel ballo</h2>
-      <p class="sub">Imparerai a riconoscere i momenti in cui puoi interpretare la musica, esprimere il tuo stile, prendere decisioni e partecipare attivamente alla connessione con il partner, per un ballo più consapevole, libero e autentico.</p>
-      <p style="margin-top:18px;font-weight:600">In queste lezioni lavoriamo su aspetti che di solito non si insegnano nelle lezioni tradizionali:</p>
-      <ul class="checks"><li>Musicalità applicata al ballo sociale</li><li>Presenza ed espressione corporea</li><li>Fiducia e sicurezza nel ballare</li><li>Strumenti per prendere decisioni nel ballo</li><li>Una connessione più consapevole con il partner</li></ul>
-      <blockquote class="big">«Non si tratta di smettere di seguire, ma di imparare quando e come portare la tua voce nel ballo.»</blockquote>
-      <a class="btn" href="#prenota">Prenota la tua lezione</a>
+<section id="prezzi">
+  <div class="wrap">
+    <div class="price-head">
+      <div><h2>Prezzi chiari, senza sorprese</h2><p class="sub">Tutte le lezioni sono private al 100%, in presenza a Bari e con un piano personalizzato.</p></div>
     </div>
+    {% set k = "presenza" %}
+    <div class="prices">
+      <div class="include"><h3>Cosa include ogni lezione</h3><ul class="checks">{% for i in prezzi[k].include %}<li>{{ i }}</li>{% endfor %}</ul></div>
+      <div class="plist">{% for v in prezzi[k].voci %}<div class="pitem{% if v.top %} top{% endif %}"><div><b>{{ v.nome }}</b><small>{{ v.desc }}</small></div><div class="eur">{{ v.prezzo }} €{% if v.nota %}<small>{{ v.nota }}</small>{% endif %}</div></div>{% endfor %}</div>
+    </div>
+    <div class="cta" style="justify-content:space-between;align-items:center"><p style="font-weight:600">Nessun costo nascosto. Nessuna sorpresa. Trasparenza totale.</p><a class="btn" href="#prenota">Prenota la tua lezione</a></div>
   </div>
 </section>
 
@@ -85,17 +73,17 @@ schema: {"@context":"https://schema.org","@type":"Service","name":"Lezioni priva
   </div>
 </section>
 
-<section id="prezzi">
-  <div class="wrap">
-    <div class="price-head">
-      <div><h2>Prezzi chiari, senza sorprese</h2><p class="sub">Tutte le lezioni sono private al 100%, in presenza a Bari e con un piano personalizzato.</p></div>
+<section id="oltre">
+  <div class="wrap oltre">
+    <div class="pic"><img src="https://images.unsplash.com/photo-1575217764519-16d213a41dc1?w=1000&q=70&auto=format&fit=crop" alt="Foto provvisoria: coppia che balla" loading="lazy"></div>
+    <div>
+      <h2>Lezioni private per donne che vogliono sviluppare la propria voce nel ballo</h2>
+      <p class="sub">Imparerai a riconoscere i momenti in cui puoi interpretare la musica, esprimere il tuo stile, prendere decisioni e partecipare attivamente alla connessione con il partner, per un ballo più consapevole, libero e autentico.</p>
+      <p style="margin-top:18px;font-weight:600">In queste lezioni lavoriamo su aspetti che di solito non si insegnano nelle lezioni tradizionali:</p>
+      <ul class="checks"><li>Musicalità applicata al ballo sociale</li><li>Presenza ed espressione corporea</li><li>Fiducia e sicurezza nel ballare</li><li>Strumenti per prendere decisioni nel ballo</li><li>Una connessione più consapevole con il partner</li></ul>
+      <blockquote class="big">«Non si tratta di smettere di seguire, ma di imparare quando e come portare la tua voce nel ballo.»</blockquote>
+      <a class="btn" href="#prenota">Prenota la tua lezione</a>
     </div>
-    {% set k = "presenza" %}
-    <div class="prices">
-      <div class="include"><h3>Cosa include ogni lezione</h3><ul class="checks">{% for i in prezzi[k].include %}<li>{{ i }}</li>{% endfor %}</ul></div>
-      <div class="plist">{% for v in prezzi[k].voci %}<div class="pitem{% if v.top %} top{% endif %}"><div><b>{{ v.nome }}</b><small>{{ v.desc }}</small></div><div class="eur">{{ v.prezzo }} €{% if v.nota %}<small>{{ v.nota }}</small>{% endif %}</div></div>{% endfor %}</div>
-    </div>
-    <div class="cta" style="justify-content:space-between;align-items:center"><p style="font-weight:600">Nessun costo nascosto. Nessuna sorpresa. Trasparenza totale.</p><a class="btn" href="#prenota">Prenota la tua lezione</a></div>
   </div>
 </section>
 
@@ -112,6 +100,18 @@ schema: {"@context":"https://schema.org","@type":"Service","name":"Lezioni priva
       <div class="bar"><i style="width:{{ ((site.founders.total - site.founders.available) / site.founders.total * 100) | round }}%"></i></div>
       <p class="sub" style="font-size:15px;margin-top:0">Quando la lista è completa, le condizioni da fondatore si chiudono definitivamente.</p>
       <a class="btn mango" style="margin-top:18px;width:100%" href="/?s=prova#prenota">Voglio il mio posto da fondatore</a>
+    </div>
+  </div>
+</section>
+
+<section id="lezioni">
+  <div class="wrap">
+    <h2>Per chi sono?</h2>
+    <p class="sub">Le lezioni private sono pensate per profili precisi. Se ti riconosci in una di queste situazioni, questo spazio è per te.</p>
+    <div class="grid2 three">
+      <div class="card"><span class="who">Approccio diverso</span><h3>Chi ha bisogno di un percorso su misura</h3><p>Se le lezioni di gruppo ti stanno strette, se vai a un altro ritmo o semplicemente vuoi qualcuno che guardi solo il tuo ballo: qui il piano si costruisce intorno a te, non il contrario.</p></div>
+      <div class="card"><span class="who">Livello intermedio e avanzato</span><h3>Chi vuole approfondire</h3><p>Hai già le basi e cerchi ciò che fa la differenza: musicalità, sfumature, interpretazione, sicurezza e una voce tua riconoscibile in pista.</p></div>
+      <div class="card"><span class="who">Gare</span><h3>Chi compete</h3><p>Preparazione di coreografie, casting di coppia, allenamento al palco e lavoro sulla presenza. Con calendario, obiettivi per turno e feedback misurabile.</p></div>
     </div>
   </div>
 </section>
