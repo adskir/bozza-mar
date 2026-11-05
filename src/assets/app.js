@@ -44,13 +44,30 @@
     }));
   });
 
-  /* passo base: il video si carica solo al clic (YouTube senza cookie) */
+  /* passo base: brano in loop, il conteggio 1-8 si illumina a tempo */
   const cl = $("#clave");
-  if (cl && cl.dataset.yt) {
-    $("#clavePlay").addEventListener("click", () => {
-      const v = $("#cvideo"); if (!v.hidden) return;
-      v.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${cl.dataset.yt}?autoplay=1&rel=0&playsinline=1" title="Brano per il passo base di salsa" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>`;
-      v.hidden = false; cl.classList.add("open"); $("#cyt").hidden = false;
+  if (cl && cl.dataset.src) {
+    const btn = $("#clavePlay"), items = $$("#counts li");
+    const Q = 60 / Number(cl.dataset.bpm), A = Number(cl.dataset.a), B = Number(cl.dataset.b);
+    const SRC = new URL(cl.dataset.src.replace(/^\//, ""), document.baseURI).href;
+    let ctx, buf, node, t0 = 0, raf = 0, on = false, last = -1;
+    const draw = () => {
+      const e = ctx.currentTime - t0 - (ctx.outputLatency || ctx.baseLatency || 0);
+      if (e >= 0) { const n = Math.floor((e % (8 * Q)) / Q); if (n !== last) { last = n; items.forEach((li, i) => li.classList.toggle("now", i === n)); } }
+      raf = requestAnimationFrame(draw);
+    };
+    const stop = () => { on = false; node && node.stop(); node = null; cancelAnimationFrame(raf); last = -1;
+      items.forEach((li) => li.classList.remove("now")); cl.classList.remove("playing"); btn.setAttribute("aria-pressed", false); };
+    btn.addEventListener("click", async () => {
+      if (on) return stop();
+      ctx = ctx || new (window.AudioContext || window.webkitAudioContext)();
+      if (ctx.state === "suspended") await ctx.resume();
+      on = true; cl.classList.add("playing"); btn.setAttribute("aria-pressed", true);
+      try { if (!buf) { cl.classList.add("loading"); buf = await ctx.decodeAudioData(await (await fetch(SRC)).arrayBuffer()); } }
+      catch (err) { cl.classList.remove("loading"); return stop(); }
+      cl.classList.remove("loading"); if (!on) return;
+      node = ctx.createBufferSource(); node.buffer = buf; node.loop = true; node.loopStart = A; node.loopEnd = B;
+      node.connect(ctx.destination); t0 = ctx.currentTime + 0.05; node.start(t0, A); draw();
     });
   }
 

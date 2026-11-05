@@ -47,7 +47,9 @@
     }
   ],
   "passoBase": {
-    "youtube": "FCc4D1zm6sQ",
-    "titolo": "Uno dos tres, Cinco seis siete…"
+    "audio": "/assets/audio/passo-base.mp3",
+    "bpm": 160,
+    "loopStart": 0.3,
+    "loopEnd": 30.3
   }
 }

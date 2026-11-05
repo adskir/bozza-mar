@@ -354,3 +354,11 @@ html{scroll-behavior:smooth;scroll-padding-top:80px}
 @media(max-width:420px){.counts b{font-size:18px}.counts small{font-size:9px}}
 .cyt{grid-column:1/-1;font-size:14px;color:var(--lav);margin-top:-4px}
 .cyt a{color:var(--mango);font-weight:700}
+.cplay .ic-pause,.cplay[aria-pressed=true] .ic-play{display:none}
+.cplay[aria-pressed=true] .ic-pause{display:block}
+.clave.playing .cplay::after{animation-duration:.375s}
+.clave.loading .cplay{opacity:.6}
+.counts li{border-radius:12px;padding:6px 0;transition:background .08s,transform .08s}
+.counts li.now{background:var(--mango);transform:scale(1.06)}
+.counts li.now b,.counts li.now small{color:#2A1D00}
+.counts li.rest.now{background:#3A3049}.counts li.rest.now b,.counts li.rest.now small{color:#ABA2B8}
