@@ -54,7 +54,7 @@
   if (ytc && ytc.dataset.yt) {
     $("#ytp").addEventListener("click", () => {
       const v = $("#ytv"); if (!v.hidden) return;
-      v.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${ytc.dataset.yt}?autoplay=1&rel=0&playsinline=1" title="Brano per il passo base di salsa" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+      v.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${ytc.dataset.yt}?autoplay=1&start=5&rel=0&playsinline=1" title="Brano per il passo base di salsa" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
       v.hidden = false; ytc.classList.add("open");
     });
   }
