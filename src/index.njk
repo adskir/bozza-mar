@@ -14,11 +14,6 @@ schema: {"@context":"https://schema.org","@type":"Service","name":"Lezioni priva
       <div class="cta">
         <a class="btn" href="#prenota">Prenota la prova · 30 €</a>
       </div>
-      <div class="clave" id="clave" data-src="{{ site.passoBase.audio }}" data-bpm="{{ site.passoBase.bpm }}" data-a="{{ site.passoBase.loopStart }}" data-b="{{ site.passoBase.loopEnd }}">
-        <button class="cplay" id="clavePlay" type="button" aria-pressed="false" aria-label="Ascolta il brano del passo base"><svg class="ic-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.9l10-6.5a1 1 0 0 0 0-1.7l-10-6.5A1 1 0 0 0 8 5.5Z"/></svg><svg class="ic-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg></button>
-        <div class="ctext"><b>Il passo base, a tempo</b><span>Premi play e conta con la musica. Su 4 e 8 ti fermi.</span></div>
-        <ol class="counts" id="counts" aria-label="Conteggio del passo base">{% for c in [["1","Uno"],["2","Dos"],["3","Tres"],["4",""],["5","Cinco"],["6","Seis"],["7","Siete"],["8",""]] %}<li{% if not c[1] %} class="rest"{% endif %}><b>{{ c[0] }}</b><small>{{ c[1] or "pausa" }}</small></li>{% endfor %}</ol>
-      </div>
     </div>
     <div class="portrait">
       <img src="https://images.unsplash.com/photo-1587922342650-955e9760d689?w=1000&q=70&auto=format&fit=crop" alt="Foto provvisoria: ballerina durante una danza latina" fetchpriority="high">

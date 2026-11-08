@@ -44,33 +44,6 @@
     }));
   });
 
-  /* passo base: brano in loop, il conteggio 1-8 si illumina a tempo */
-  const cl = $("#clave");
-  if (cl && cl.dataset.src) {
-    const btn = $("#clavePlay"), items = $$("#counts li");
-    const Q = 60 / Number(cl.dataset.bpm), A = Number(cl.dataset.a), B = Number(cl.dataset.b);
-    const SRC = new URL(cl.dataset.src.replace(/^\//, ""), document.baseURI).href;
-    let ctx, buf, node, t0 = 0, raf = 0, on = false, last = -1;
-    const draw = () => {
-      const e = ctx.currentTime - t0 - (ctx.outputLatency || ctx.baseLatency || 0);
-      if (e >= 0) { const n = Math.floor((e % (8 * Q)) / Q); if (n !== last) { last = n; items.forEach((li, i) => li.classList.toggle("now", i === n)); } }
-      raf = requestAnimationFrame(draw);
-    };
-    const stop = () => { on = false; node && node.stop(); node = null; cancelAnimationFrame(raf); last = -1;
-      items.forEach((li) => li.classList.remove("now")); cl.classList.remove("playing"); btn.setAttribute("aria-pressed", false); };
-    btn.addEventListener("click", async () => {
-      if (on) return stop();
-      ctx = ctx || new (window.AudioContext || window.webkitAudioContext)();
-      if (ctx.state === "suspended") await ctx.resume();
-      on = true; cl.classList.add("playing"); btn.setAttribute("aria-pressed", true);
-      try { if (!buf) { cl.classList.add("loading"); buf = await ctx.decodeAudioData(await (await fetch(SRC)).arrayBuffer()); } }
-      catch (err) { cl.classList.remove("loading"); stop(); const t = $(".ctext span", cl); if (t) t.textContent = "La musica arriva presto: intanto conta con noi 1, 2, 3… 5, 6, 7."; return; }
-      cl.classList.remove("loading"); if (!on) return;
-      node = ctx.createBufferSource(); node.buffer = buf; node.loop = true; node.loopStart = A; node.loopEnd = B;
-      node.connect(ctx.destination); t0 = ctx.currentTime + 0.05; node.start(t0, A); draw();
-    });
-  }
-
   /* il bottone WhatsApp fisso si nasconde mentre la prenotazione è sullo schermo */
   const fabWa = $(".wa-fab"), bookSec = $("#prenota");
   if (fabWa && bookSec && "IntersectionObserver" in window)
