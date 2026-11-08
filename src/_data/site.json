@@ -51,5 +51,8 @@
     "testo": "30 novembre",
     "sconto": 15
   },
-  "ogImage": "/assets/img/og-mar.jpg"
+  "ogImage": "/assets/img/og-mar.jpg",
+  "passoBase": {
+    "youtube": "FCc4D1zm6sQ"
+  }
 }
