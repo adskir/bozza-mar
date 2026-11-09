@@ -53,13 +53,14 @@
     </div>
     <nav aria-label="{{ L.menu }}">{% for l in L.footnav %}<a href="{{ l[0] }}">{{ l[1] }}</a>{% endfor %}</nav>
     <div class="foot-social">{% set fs = [] %}{% for k in ["yt","tt","ig","fb"] %}{% for s in site.social %}{% if s.k == k %}{% set fs = (fs.push(s), fs) %}{% endif %}{% endfor %}{% endfor %}{{ social(fs, true) | safe }}</div>
-    <p class="credit">© {{ "" | year }} Mar La Criolla · {{ L.made }} <a href="https://clickbari.it" target="_blank" rel="noopener">ClickBari</a></p>
+    <p class="credit">© {{ "" | year }} Mar La Criolla · <a href="/privacy/">Privacy e cookie</a> · {{ L.made }} <a href="https://clickbari.it" target="_blank" rel="noopener">ClickBari</a></p>
   </div>
 </footer>
 
 <a class="wa-fab" data-wa="Ciao Mar! Vorrei informazioni sulle lezioni private a Bari." href="https://wa.me/{{ site.whatsapp }}" aria-label="Scrivi a Mar su WhatsApp">{{ icon("wa") | safe }}<span>Scrivimi</span></a>
 
 <script>window.MAR={wa:"{{ site.whatsapp }}"};</script>
+<div class="cookie" id="cookie" hidden><p>Solo cookie tecnici. YouTube si carica solo se premi play. <a href="/privacy/">Info</a></p><button class="btn small" id="cookieOk" type="button">Ho capito</button></div>
 <script src="/assets/app.js" defer></script>
 </body>
 </html>

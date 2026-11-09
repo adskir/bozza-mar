@@ -6,41 +6,41 @@
   "burger": "Apri il menu",
   "nav": [
    [
-    "#prezzi",
+    "/#prezzi",
     "Prezzi"
    ],
    [
-    "#metodo",
+    "/#metodo",
     "Metodo"
    ],
    [
-    "#prenota",
+    "/#prenota",
     "Prenota"
    ],
    [
-    "#chi-sono",
+    "/#chi-sono",
     "Chi sono"
    ]
   ],
   "home": "/",
-  "prenota": "#prenota",
+  "prenota": "/#prenota",
   "foot1": "Salsa e bachata.",
   "foot2": "Lezioni private a Bari.",
   "footnav": [
    [
-    "#prezzi",
+    "/#prezzi",
     "Prezzi"
    ],
    [
-    "#metodo",
+    "/#metodo",
     "Metodo"
    ],
    [
-    "#prenota",
+    "/#prenota",
     "Prenota"
    ],
    [
-    "#chi-sono",
+    "/#chi-sono",
     "Chi sono"
    ]
   ],

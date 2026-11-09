@@ -59,6 +59,14 @@
     });
   }
 
+  /* avviso cookie: si mostra finché non viene chiuso */
+  const ck = $("#cookie");
+  if (ck) {
+    let seen = false; try { seen = localStorage.getItem("mar-cookie") === "1"; } catch (e) {}
+    if (!seen) ck.hidden = false;
+    $("#cookieOk").addEventListener("click", () => { ck.hidden = true; try { localStorage.setItem("mar-cookie", "1"); } catch (e) {} });
+  }
+
   /* prezzi di lancio: conto alla rovescia; dopo la scadenza spariscono barrati e sconti */
   const cds = $$(".cd[data-until]");
   if (cds.length) {
