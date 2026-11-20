@@ -677,3 +677,9 @@ summary::after{color:var(--ink)}
   .hero .portrait{max-width:340px;margin:0 auto;width:100%}
   .hero .portrait .tag{left:50%;transform:translateX(-50%);bottom:-18px;white-space:nowrap;text-align:center;border-left:0;border-top:4px solid var(--gold)}
 }
+
+/* telefono: foto come nella versione pubblicata (larga, plaquette a sinistra) */
+@media(max-width:900px){
+  .hero .portrait{max-width:none;margin:0;width:auto}
+  .hero .portrait .tag{left:-14px;transform:none;bottom:28px;white-space:normal;text-align:left;border-top:0;border-left:4px solid var(--gold)}
+}
