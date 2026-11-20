@@ -542,3 +542,6 @@ details.include summary::after{margin-left:auto}
 @media(max-width:520px){.g-grid{grid-template-columns:minmax(0,1fr);grid-auto-rows:240px}.g-grid .g-wide{grid-column:auto}}
 .portrait img{height:auto}
 .portrait picture{display:block}
+
+/* l'attributo hidden deve sempre nascondere (prima .cookie{display:flex} lo annullava) */
+[hidden]{display:none!important}
