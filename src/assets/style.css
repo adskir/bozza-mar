@@ -694,3 +694,15 @@ summary::after{color:var(--ink)}
   .hero .trust{order:4;margin-top:24px}
   .hero .cta{order:5;margin-top:18px}
 }
+
+/* header e footer bianchi (superficie della palette di Mar): staccano dall'avorio, il logo oro+nero resta nitido */
+.top{background:rgba(255,255,255,.97);box-shadow:0 1px 0 #E7E1D3,0 8px 24px -18px rgba(17,17,17,.35)}
+.foot{background:#fff;border-top:1px solid #E7E1D3}
+@media(max-width:860px){.nav{background:#fff}}
+/* hamburger a tre linee */
+.burger span{left:9px;right:9px;height:2px}
+.burger span:nth-child(1){top:13px}.burger span:nth-child(2){top:19px}.burger span:nth-child(3){top:25px}
+.burger span:nth-child(2){transition:opacity .15s}
+.burger[aria-expanded=true] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.burger[aria-expanded=true] span:nth-child(2){opacity:0}
+.burger[aria-expanded=true] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
