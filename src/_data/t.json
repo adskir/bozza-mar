@@ -1,122 +1,130 @@
 {
- "it": {
-  "skip": "Vai al contenuto",
-  "menu": "Menu principale",
-  "book": "Prenota",
-  "burger": "Apri il menu",
-  "nav": [
-   [
-    "/#prezzi",
-    "Prezzi"
-   ],
-   [
-    "/#metodo",
-    "Metodo"
-   ],
-   [
-    "/#prenota",
-    "Prenota"
-   ],
-   [
-    "/#chi-sono",
-    "Chi sono"
-   ]
-  ],
-  "home": "/",
-  "prenota": "/#prenota",
-  "foot1": "Salsa e bachata.",
-  "foot2": "Lezioni private a Bari.",
-  "footnav": [
-   [
-    "/#prezzi",
-    "Prezzi"
-   ],
-   [
-    "/#metodo",
-    "Metodo"
-   ],
-   [
-    "/#prenota",
-    "Prenota"
-   ],
-   [
-    "/#chi-sono",
-    "Chi sono"
-   ]
-  ],
-  "made": "Sito realizzato da",
-  "botTitle": "Ti rispondo in pochi secondi",
-  "botFab": "Chatta con Mar",
-  "close": "Chiudi",
-  "openChat": "Apri la chat",
-  "other": "ES",
-  "otherName": "Español",
-  "locale": "it_IT"
- },
- "es": {
-  "skip": "Ir al contenido",
-  "menu": "Menú principal",
-  "book": "Reservar",
-  "burger": "Abrir el menú",
-  "nav": [
-   [
-    "/es/clases-privadas-bari/",
-    "Clases en Bari"
-   ],
-   [
-    "/es/sobre-mi/",
-    "Sobre mí"
-   ],
-   [
-    "/es/videos/",
-    "Vídeos"
-   ],
-   [
-    "/es/blog/",
-    "Blog"
-   ],
-   [
-    "/es/online/",
-    "Online"
-   ]
-  ],
-  "home": "/es/",
-  "prenota": "/es/reservar/",
-  "foot1": "Salsa, timba, bachata y folclore peruano.",
-  "foot2": "Clases privadas en Bari y online.",
-  "footnav": [
-   [
-    "/es/clases-privadas-bari/",
-    "Clases privadas en Bari"
-   ],
-   [
-    "/es/reservar/",
-    "Reservar"
-   ],
-   [
-    "/es/sobre-mi/",
-    "Sobre mí"
-   ],
-   [
-    "/es/videos/",
-    "Vídeos"
-   ],
-   [
-    "/es/blog/",
-    "Blog"
-   ],
-   [
-    "/es/online/",
-    "Escuela online"
-   ]
-  ],
-  "made": "Web realizada por",
-  "botTitle": "Te respondo en pocos segundos",
-  "botFab": "Chatea con Mar",
-  "close": "Cerrar",
-  "openChat": "Abrir el chat",
-  "other": "IT",
-  "otherName": "Italiano",
-  "locale": "es_ES"
- }
+  "it": {
+    "skip": "Vai al contenuto",
+    "menu": "Menu principale",
+    "book": "Prenota",
+    "burger": "Apri il menu",
+    "nav": [
+      [
+        "/#prezzi",
+        "Prezzi"
+      ],
+      [
+        "/#metodo",
+        "Metodo"
+      ],
+      [
+        "/#prenota",
+        "Prenota"
+      ],
+      [
+        "/#chi-sono",
+        "Chi sono"
+      ],
+      [
+        "/viaja-con-mar/",
+        "Viaja con MAR"
+      ]
+    ],
+    "home": "/",
+    "prenota": "/#prenota",
+    "foot1": "Salsa e bachata.",
+    "foot2": "Lezioni private a Bari.",
+    "footnav": [
+      [
+        "/#prezzi",
+        "Prezzi"
+      ],
+      [
+        "/#metodo",
+        "Metodo"
+      ],
+      [
+        "/#prenota",
+        "Prenota"
+      ],
+      [
+        "/#chi-sono",
+        "Chi sono"
+      ],
+      [
+        "/viaja-con-mar/",
+        "Viaja con MAR"
+      ]
+    ],
+    "made": "Sito realizzato da",
+    "botTitle": "Ti rispondo in pochi secondi",
+    "botFab": "Chatta con Mar",
+    "close": "Chiudi",
+    "openChat": "Apri la chat",
+    "other": "ES",
+    "otherName": "Español",
+    "locale": "it_IT"
+  },
+  "es": {
+    "skip": "Ir al contenido",
+    "menu": "Menú principal",
+    "book": "Reservar",
+    "burger": "Abrir el menú",
+    "nav": [
+      [
+        "/es/clases-privadas-bari/",
+        "Clases en Bari"
+      ],
+      [
+        "/es/sobre-mi/",
+        "Sobre mí"
+      ],
+      [
+        "/es/videos/",
+        "Vídeos"
+      ],
+      [
+        "/es/blog/",
+        "Blog"
+      ],
+      [
+        "/es/online/",
+        "Online"
+      ]
+    ],
+    "home": "/es/",
+    "prenota": "/es/reservar/",
+    "foot1": "Salsa, timba, bachata y folclore peruano.",
+    "foot2": "Clases privadas en Bari y online.",
+    "footnav": [
+      [
+        "/es/clases-privadas-bari/",
+        "Clases privadas en Bari"
+      ],
+      [
+        "/es/reservar/",
+        "Reservar"
+      ],
+      [
+        "/es/sobre-mi/",
+        "Sobre mí"
+      ],
+      [
+        "/es/videos/",
+        "Vídeos"
+      ],
+      [
+        "/es/blog/",
+        "Blog"
+      ],
+      [
+        "/es/online/",
+        "Escuela online"
+      ]
+    ],
+    "made": "Web realizada por",
+    "botTitle": "Te respondo en pocos segundos",
+    "botFab": "Chatea con Mar",
+    "close": "Cerrar",
+    "openChat": "Abrir el chat",
+    "other": "IT",
+    "otherName": "Italiano",
+    "locale": "es_ES"
+  }
 }

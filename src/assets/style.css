@@ -545,3 +545,12 @@ details.include summary::after{margin-left:auto}
 
 /* l'attributo hidden deve sempre nascondere (prima .cookie{display:flex} lo annullava) */
 [hidden]{display:none!important}
+
+/* pagina Viaja con MAR (bozza, contenuti da Mar) */
+.vcm .ph{background:rgba(232,52,78,.12);color:var(--rojo);border-radius:6px;padding:0 4px;font-weight:600}
+.hero.vcm .ph{background:rgba(255,182,39,.18);color:var(--mango)}
+.hero.vcm .kick{color:var(--mango)}
+.hero.vcm .portrait img{height:auto}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:28px}
+@media(max-width:860px){.grid3{grid-template-columns:minmax(0,1fr)}}
+.card.ev .code{margin:14px 0;padding:10px 12px;border-radius:10px;background:#FFF7E6;border:1px dashed var(--mango);font-size:14px}
