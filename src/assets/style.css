@@ -575,3 +575,90 @@ details.include summary::after{margin-left:auto}
 .top .wrap{height:74px}
 .brand.logo img{height:58px}
 @media(max-width:860px){.nav{top:74px}}
+
+/* ===================================================================
+   TEMA «LUZ DORADA» (palette di Mar, 20.11): avorio + bianco + nero,
+   oro #DDB340 solo su bottoni, linee e indicatori (mai testo piccolo oro su bianco)
+   =================================================================== */
+:root{--gold:#DDB340;--gold-d:#B8912A;--ivory:#F7F4EC;--ink:#111111;--line:#E7E1D3;--muted:#5E5A55;--mango:#DDB340;--rojo:#111111}
+body{background:var(--ivory);color:var(--ink)}
+::selection{background:var(--gold);color:#111}
+/* bottoni: oro con testo nero */
+.btn,.btn.mango{background:var(--gold);color:#111;--glow:transparent;box-shadow:0 8px 22px -10px rgba(184,145,42,.7)}
+.btn:hover,.btn.mango:hover{background:#E6C258;color:#111}
+.btn.ghost{background:transparent;color:#111;box-shadow:inset 0 0 0 2px #111}
+.btn.wa-send{background:#25D366;color:#fff}
+/* sezioni scure -> chiare */
+.hero,.dark-sec,.final{background:var(--ivory);color:var(--ink)}
+.hero{border-bottom:1px solid var(--line)}
+.dark-sec{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.final{background:#fff radial-gradient(60% 80% at 50% 120%,rgba(221,179,64,.22),transparent 70%)}
+.hero h1 em{color:var(--ink);background:linear-gradient(transparent 72%,rgba(221,179,64,.55) 72%);padding:0 .05em}
+.hero .lead,.final .sub,.dark-sec .sub{color:var(--muted)}
+.kick,.dark-sec .kick,.hero.vcm .kick{color:var(--ink)}
+.kick::before{content:"";display:inline-block;width:22px;height:3px;background:var(--gold);vertical-align:middle;margin-right:10px;border-radius:2px}
+.chips span{border-color:#CFC8B8;color:var(--ink)}
+.chips span:first-child{background:var(--gold);border-color:var(--gold);color:#111}
+.trust{color:var(--muted)}
+.trust b{color:var(--ink)}
+.trust li+li::before{background:var(--gold)}
+@media(max-width:520px){.trust li::before,.trust li+li::before{background:var(--gold)}}
+.portrait .tag{box-shadow:0 16px 40px -12px rgba(17,17,17,.3);border-left:4px solid var(--gold)}
+/* player passo base */
+.ytc{background:#fff;border:1px solid var(--line);box-shadow:0 14px 34px -22px rgba(17,17,17,.35)}
+.ytt b{color:var(--ink)}.ytt span{color:var(--muted)}
+.ytp{background:var(--gold);box-shadow:0 10px 24px -10px rgba(184,145,42,.8)}
+.ytp svg{fill:#111}.ytp::after{border-color:var(--gold)}
+.ytn{background:var(--ivory)}
+.ytn b{color:var(--ink)}.ytn small{color:var(--muted)}
+.ytn li.r b,.ytn li.r small{color:#B5AEA2}
+.ytn li:nth-child(4){border-right-color:var(--line)}
+/* prezzi */
+.styles-row span,.styles-row span:nth-child(2),.styles-row span:nth-child(3){background:#111;color:#fff}
+.offer{background:#fff;color:var(--ink);border:1.5px solid var(--gold)}
+.offer p{color:var(--muted)}.offer p b{color:var(--ink)}
+.o-tag{background:var(--gold);color:#111}
+.cd span{background:var(--ivory);box-shadow:inset 0 0 0 1px var(--line)}
+.cd b{color:var(--ink)}.cd small{color:var(--muted)}
+.pitem.top{border-color:var(--gold)}
+.pitem .eur .o-old{text-decoration-color:var(--gold)}
+.checks li::before,.dark-sec .checks li::before{background-color:var(--gold);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12l4 4 8-9' fill='none' stroke='%23111' stroke-width='3'/%3E%3C/svg%3E")}
+summary::after{color:var(--ink)}
+/* vinile */
+.vlabel{background:var(--gold);color:#111}
+.vlabel::before{background:#111}
+.tracks,.tracks li{border-color:var(--line)}
+.tracks li>span,.tracks time,.tracks li small{color:var(--muted)}
+.tracks li.on>span,.tracks li.on time{color:var(--ink);font-weight:800}
+.tracks li.on{box-shadow:inset 3px 0 0 var(--gold);padding-left:10px}
+/* prenotazione */
+.bk-side{background:#fff;color:var(--ink);border-left:1px solid var(--line)}
+.bk-side h3{color:var(--ink)}
+.recap,.recap div{border-color:var(--line)}
+.recap dt{color:var(--muted)}.recap dd{color:#A8A296}.recap dd.set{color:var(--ink)}
+.bk-side .field{color:var(--muted)}
+.bk-side .field input{background:var(--ivory);border-color:var(--line);color:var(--ink)}
+.bk-side .field input::placeholder{color:#A8A296}
+.bk-side .field input:focus,.field input:focus,.field textarea:focus{border-color:var(--gold)}
+.bk-hint.warn,.summary p.warn{color:#9A6B00}
+.bstep h3 i{background:var(--gold);color:#111}
+.opt[aria-pressed=true],.booker .opt[aria-pressed=true]{border-color:#111;background:#FBF3DC;box-shadow:inset 0 0 0 1px #111}
+.day[aria-pressed=true]{background:#111;border-color:#111;color:#fff}
+/* chi sono */
+.f-stats div,.f-stats div:nth-child(4){background:#fff;color:var(--ink);border:1px solid var(--line);border-top:4px solid var(--gold)}
+.f-stats b,.f-stats div:nth-child(4) b{color:var(--ink)}
+.f-stats span,.f-stats div:nth-child(4) span{color:var(--muted)}
+.f-awards li{background:#fff;border-color:var(--line)}
+.f-awards i{background:var(--gold);color:#111}
+.card .who{color:var(--muted)}
+/* header/footer: avorio */
+.top{background:rgba(247,244,236,.96)}
+.top .nav a:hover,.foot nav a:hover{color:var(--gold-d)}
+.top .nav a[aria-current]{border-color:var(--gold)}
+.foot{background:var(--ivory)}
+@media(max-width:860px){.nav{background:var(--ivory)}}
+/* segnaposto nelle pagine bozza */
+.vcm .ph,.hero.vcm .ph{background:rgba(221,179,64,.22);color:var(--ink)}
+.card.ev .code{background:var(--ivory);border-color:var(--gold)}
+.bk-hint{color:var(--muted)}
+.bk-note{color:var(--muted)}
