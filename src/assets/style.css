@@ -677,3 +677,15 @@ summary::after{color:var(--ink)}
   .hero .portrait{max-width:340px;margin:0 auto;width:100%}
   .hero .portrait .tag{left:50%;transform:translateX(-50%);bottom:-18px;white-space:nowrap;text-align:center;border-left:0;border-top:4px solid var(--gold)}
 }
+
+/* telefono: CTA sotto la foto (20.11) */
+@media(max-width:900px){
+  .hero .wrap{display:flex;flex-direction:column;align-items:stretch;gap:0}
+  .hero .wrap>div:first-child{display:contents}
+  .hero .chips{order:1}
+  .hero h1{order:2;text-align:center;margin-top:16px}
+  .hero .trust{order:3;margin-top:16px}
+  .hero .portrait{order:4;margin-top:26px;max-width:300px}
+  .hero .portrait img{aspect-ratio:5/6}
+  .hero .cta{order:5;margin-top:34px}
+}
