@@ -683,3 +683,14 @@ summary::after{color:var(--ink)}
   .hero .portrait{max-width:none;margin:0;width:auto}
   .hero .portrait .tag{left:-14px;transform:none;bottom:28px;white-space:normal;text-align:left;border-top:0;border-left:4px solid var(--gold)}
 }
+
+/* telefono: foto, poi i fatti, poi il bottone */
+@media(max-width:900px){
+  .hero .wrap{display:flex;flex-direction:column;align-items:stretch;gap:0}
+  .hero .wrap>div:first-child{display:contents}
+  .hero .chips{order:1}
+  .hero h1{order:2;text-align:center}
+  .hero .portrait{order:3;margin-top:26px}
+  .hero .trust{order:4;margin-top:24px}
+  .hero .cta{order:5;margin-top:18px}
+}
