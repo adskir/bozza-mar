@@ -5,20 +5,16 @@ description: "Lezioni private di salsa e bachata a Bari con Mar La Criolla. Un p
 schema: {"@context":"https://schema.org","@type":"Service","name":"Lezioni private di salsa e bachata","provider":{"@type":"Person","name":"Mar La Criolla"},"areaServed":{"@type":"City","name":"Bari"},"offers":{"@type":"Offer","name":"Lezione di prova 60 min","price":"30","priceCurrency":"EUR"}}
 ---
 {% from "icons.njk" import icon %}
-<section class="hero">
+<section class="beat-hero">
   <div class="wrap">
-    <div>
-      <div class="chips">{% for c in site.cities %}<span>{{ c }}</span>{% endfor %}</div>
-      <h1>Lezioni private di salsa e bachata con <em>Mar La Criolla</em></h1>
-      <ul class="trust" aria-label="Perché Mar"><li><b>Bicampionessa</b></li><li><b>Oltre 550</b> allievi</li><li>Balla <b>dal 2014</b></li></ul>
-      <div class="cta">
-        <a class="btn" href="#prenota">Prenota la prova</a>
-      </div>
+    <div class="bh-count">
+      <h1 class="bh-title"><span class="bh-row"><i aria-hidden="true">1</i><span>Lezioni private</span></span><span class="bh-row"><i aria-hidden="true">2</i><span>di salsa</span></span><span class="bh-row"><i aria-hidden="true">3</i><span>e bachata</span></span><span class="bh-row bh-rest" aria-hidden="true"><i>4</i><b></b></span><span class="bh-row"><i aria-hidden="true">5</i><span>con Mar</span></span><span class="bh-row"><i aria-hidden="true">6</i><span>La Criolla</span></span><span class="bh-row"><i aria-hidden="true">7</i><span>a Bari</span></span></h1>
+      <div class="bh-row bh-go"><i aria-hidden="true">8</i><a class="btn" href="#prenota">Prenota la prova</a></div>
+      <p class="bh-facts">Bicampionessa di timba, oltre 550 allievi, balla dal 2014.</p>
     </div>
-    <div class="portrait">
-      <img src="/foto/mar-la-criolla-ritratto.jpg" alt="Mar La Criolla, insegnante di salsa e bachata a Bari" loading="eager" fetchpriority="high" sizes="(max-width: 860px) 90vw, 430px">
-      <div class="tag"><b>Lezione di prova · 30 €</b><span>60 minuti con valutazione e piano</span></div>
-    </div>
+    <figure class="bh-photo">
+      <img src="/foto/mar-la-criolla-ritratto.jpg" alt="Mar La Criolla, insegnante di salsa e bachata a Bari" loading="eager" fetchpriority="high" sizes="(max-width: 860px) 40vw, 480px">
+    </figure>
   </div>
 </section>
 
