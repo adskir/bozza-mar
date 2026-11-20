@@ -689,3 +689,12 @@ summary::after{color:var(--ink)}
   .hero .portrait img{aspect-ratio:5/6}
   .hero .cta{order:5;margin-top:34px}
 }
+
+/* telefono: foto rettangolare larga come il bottone, fatti sotto la foto, titolo in 3 righe (20.11) */
+@media(max-width:900px){
+  .hero h1{font-size:clamp(28px,8.6vw,40px);line-height:1.08;max-width:none}
+  .hero .portrait{order:3;max-width:380px;width:100%;margin-top:22px}
+  .hero .portrait img{aspect-ratio:4/5;border-radius:24px}
+  .hero .trust{order:4;margin-top:34px}
+  .hero .cta{order:5;margin-top:18px}
+}
