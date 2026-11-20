@@ -554,3 +554,24 @@ details.include summary::after{margin-left:auto}
 .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:28px}
 @media(max-width:860px){.grid3{grid-template-columns:minmax(0,1fr)}}
 .card.ev .code{margin:14px 0;padding:10px 12px;border-radius:10px;background:#FFF7E6;border:1px dashed var(--mango);font-size:14px}
+
+/* nuovo logo MAR LA CRIOLLA (oro + nero): header e footer chiari (20.11) */
+.top{background:rgba(251,246,238,.96);color:var(--ink);box-shadow:0 1px 0 var(--line)}
+.top .nav a{opacity:1}
+.top .nav a:hover{color:var(--rojo)}
+.top .nav a[aria-current]{border-color:#DDB340}
+.burger span{background:var(--ink)}
+.brand.logo img{height:48px}
+@media(max-width:860px){
+  .nav{background:var(--ivory);box-shadow:0 12px 24px -12px rgba(20,16,28,.25)}
+  .nav a{border-bottom-color:var(--line)}
+}
+.foot{background:var(--ivory);color:var(--muted);border-top:1px solid var(--line)}
+.foot .brand,.foot nav a{color:var(--ink)}
+.foot nav a:hover{color:var(--rojo)}
+.foot .credit{border-top-color:var(--line)}
+.foot .credit a{color:var(--ink)}
+.foot-logo{height:70px}
+.top .wrap{height:74px}
+.brand.logo img{height:58px}
+@media(max-width:860px){.nav{top:74px}}
