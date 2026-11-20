@@ -662,3 +662,18 @@ summary::after{color:var(--ink)}
 .card.ev .code{background:var(--ivory);border-color:var(--gold)}
 .bk-hint{color:var(--muted)}
 .bk-note{color:var(--muted)}
+
+/* hero su telefono: composizione centrata ed equilibrata (20.11) */
+@media(max-width:900px){
+  .hero .wrap{gap:28px;padding-top:28px;padding-bottom:48px}
+  .hero .wrap>div:first-child{text-align:center}
+  .hero .chips{justify-content:center}
+  .hero h1{margin-left:auto;margin-right:auto}
+  .hero .trust{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 12px;font-size:16px}
+  .hero .trust li::before{display:none}
+  .hero .trust li+li::before{display:block;content:"";width:5px;height:5px;margin-right:12px}
+  .hero .cta{justify-content:center}
+  .hero .cta .btn{width:100%;max-width:380px}
+  .hero .portrait{max-width:340px;margin:0 auto;width:100%}
+  .hero .portrait .tag{left:50%;transform:translateX(-50%);bottom:-18px;white-space:nowrap;text-align:center;border-left:0;border-top:4px solid var(--gold)}
+}
