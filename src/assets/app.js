@@ -175,20 +175,22 @@
   }
 })();
 
-/* hero video: su computer video orizzontale a tutto schermo, su telefono quello verticale nell'arco */
+/* hero video: su computer video orizzontale a tutto schermo, su telefono quello verticale.
+   Avvio robusto: muted via proprietà, nuovo tentativo quando è pronto e al primo tocco/scroll
+   (risparmio energetico e alcune impostazioni bloccano l'autoplay). */
 (() => {
   const big = matchMedia("(min-width: 901px)").matches;
-  const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const bg = document.querySelector(".hero-bg"), arch = document.querySelector(".hero-video");
+  let v = arch;
   if (big && bg) {
     if (arch) { arch.pause(); arch.removeAttribute("autoplay"); arch.preload = "none"; }
-    if (!still) {
-      [["mp4", bg.dataset.srcMp4], ["webm", bg.dataset.srcWebm]].forEach(([t, s]) => { const so = document.createElement("source"); so.src = s; so.type = "video/" + t; bg.appendChild(so); });
-      bg.load(); bg.play().catch(() => {});
-    }
-  } else if (arch && !still) {
-    // alcuni telefoni ignorano autoplay: lo avviamo noi
-    arch.muted = true; const go = () => arch.play().catch(() => {});
-    go(); arch.addEventListener("canplay", go, { once: true });
+    [["mp4", bg.dataset.srcMp4], ["webm", bg.dataset.srcWebm]].forEach(([t, s]) => { const so = document.createElement("source"); so.src = s; so.type = "video/" + t; bg.appendChild(so); });
+    bg.preload = "auto"; bg.load(); v = bg;
   }
+  if (!v) return;
+  v.muted = true; v.defaultMuted = true; v.playsInline = true; v.setAttribute("muted", ""); v.setAttribute("playsinline", "");
+  const go = () => { const p = v.play(); if (p && p.catch) p.catch(() => {}); };
+  go(); v.addEventListener("canplay", go, { once: true });
+  const kick = () => { if (v.paused) go(); };
+  ["touchstart", "scroll", "click"].forEach((e) => addEventListener(e, kick, { once: true, passive: true }));
 })();
