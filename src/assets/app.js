@@ -174,3 +174,17 @@
     $("#botClose").addEventListener("click", () => (bot.hidden = true));
   }
 })();
+
+/* hero video: su computer video orizzontale a tutto schermo, su telefono quello verticale nell'arco */
+(() => {
+  const big = matchMedia("(min-width: 901px)").matches;
+  const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const bg = document.querySelector(".hero-bg"), arch = document.querySelector(".hero-video");
+  if (big && bg) {
+    if (arch) { arch.pause(); arch.removeAttribute("autoplay"); arch.preload = "none"; }
+    if (!still) {
+      [["webm", bg.dataset.srcWebm], ["mp4", bg.dataset.srcMp4]].forEach(([t, s]) => { const so = document.createElement("source"); so.src = s; so.type = "video/" + t; bg.appendChild(so); });
+      bg.load(); bg.play().catch(() => {});
+    }
+  }
+})();

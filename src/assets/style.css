@@ -736,3 +736,18 @@ summary::after{color:var(--ink)}
 .wa-talk p{margin:0 0 16px;color:var(--muted);line-height:1.5}
 .wa-talk p b{color:var(--ink)}
 .wa-talk .btn{display:inline-flex;gap:10px;align-items:center}
+
+/* computer: video orizzontale come sfondo del hero (24.11) */
+.hero-bg{display:none}
+@media(min-width:901px){
+  .hero{position:relative;overflow:hidden;background:#15110D;min-height:min(86vh,760px);display:flex;align-items:center;border-bottom:0}
+  .hero-bg{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 35%}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,12,9,.88) 0%,rgba(15,12,9,.62) 42%,rgba(15,12,9,.05) 78%);pointer-events:none}
+  .hero .wrap{position:relative;z-index:1;grid-template-columns:minmax(0,1fr);width:100%}
+  .hero .portrait{display:none}
+  .hero h1,.hero .trust b{color:#fff}
+  .hero h1 em{color:#fff;background:linear-gradient(transparent 72%,rgba(221,179,64,.75) 72%)}
+  .hero .promise,.hero .trust{color:rgba(255,255,255,.82)}
+  .hero .chips span:not(:first-child){color:#fff;border-color:rgba(255,255,255,.45)}
+  .hero .wrap>div:first-child{max-width:640px}
+}

@@ -6,6 +6,7 @@ schema: {"@context":"https://schema.org","@type":"Service","name":"Lezioni priva
 ---
 {% from "icons.njk" import icon %}
 <section class="hero">
+  <video class="hero-bg" muted loop playsinline preload="none" poster="/assets/video/mar-hero-h-poster.jpg" aria-hidden="true" data-src-webm="/assets/video/mar-hero-h.webm" data-src-mp4="/assets/video/mar-hero-h.mp4"></video>
   <div class="wrap">
     <div>
       <div class="chips">{% for c in site.cities %}<span>{{ c }}</span>{% endfor %}</div>
