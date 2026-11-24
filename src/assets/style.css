@@ -776,3 +776,13 @@ summary::after{color:var(--ink)}
   .hero,.hero .wrap{min-height:calc(78svh - 74px)}
   .hero .portrait video,.hero .hero-video{object-position:50% 72%}
 }
+/* telefono: testo distribuito in altezza — etichette in alto, titolo al centro, fatti+bottone in basso */
+@media(max-width:900px){
+  .hero,.hero .wrap{min-height:calc(88svh - 74px)}
+  .hero .wrap{display:flex;flex-direction:column;justify-content:flex-start;padding-top:22px;padding-bottom:28px}
+  .hero .chips{margin-top:0}
+  .hero h1{margin-top:auto!important}
+  .hero .promise{margin-top:14px}
+  .hero .trust{margin-top:auto!important;padding-top:24px}
+}
+@media(max-width:900px){.hero .portrait::after{background:linear-gradient(180deg,rgba(15,12,9,.55) 0%,rgba(15,12,9,.45) 35%,rgba(15,12,9,.6) 60%,rgba(15,12,9,.9) 100%)}}
