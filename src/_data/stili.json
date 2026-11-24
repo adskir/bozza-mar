@@ -1,10 +1,14 @@
 [
   {
-    "nome": "Salsa",
+    "nome": "Salsa cubana",
     "desc": "Tecnica, giri, musicalità e scioltezza nella pista sociale."
   },
   {
     "nome": "Bachata",
     "desc": "Connessione, sensibilità e risorse di coppia per ballare con intenzione."
+  },
+  {
+    "nome": "Merengue",
+    "desc": "Ritmo, coordinazione e divertimento fin dalla prima lezione."
   }
 ]

@@ -1,7 +1,7 @@
 ---
 layout: base.njk
-title: "Lezioni private di salsa e bachata a Bari · Mar La Criolla"
-description: "Lezioni private di salsa e bachata a Bari con Mar La Criolla. Un percorso costruito su di te. Lezione di prova a 30 €."
+title: "Lezioni private di salsa cubana e bachata a Bari · Mar La Criolla"
+description: "Lezioni private di salsa cubana, bachata e merengue a Bari con Mar La Criolla, bicampionessa. Arriva in pista sapendo cosa fare. Lezione di prova a 30 €."
 schema: {"@context":"https://schema.org","@type":"Service","name":"Lezioni private di salsa e bachata","provider":{"@type":"Person","name":"Mar La Criolla"},"areaServed":{"@type":"City","name":"Bari"},"offers":{"@type":"Offer","name":"Lezione di prova 60 min","price":"30","priceCurrency":"EUR"}}
 ---
 {% from "icons.njk" import icon %}
@@ -9,14 +9,18 @@ schema: {"@context":"https://schema.org","@type":"Service","name":"Lezioni priva
   <div class="wrap">
     <div>
       <div class="chips">{% for c in site.cities %}<span>{{ c }}</span>{% endfor %}</div>
-      <h1>Lezioni private di salsa e bachata con <em>Mar La Criolla</em></h1>
+      <h1>Lezioni private di <em>salsa cubana e bachata</em> a Bari</h1>
+      <p class="promise">Arriva in pista sapendo cosa fare. Balla con più sicurezza.</p>
       <ul class="trust" aria-label="Perché Mar"><li><b>Bicampionessa</b></li><li><b>Oltre 550</b> allievi</li><li>Balla <b>dal 2014</b></li></ul>
       <div class="cta">
         <a class="btn" href="#prenota">Prenota la prova</a>
       </div>
     </div>
     <div class="portrait">
-      <img src="/foto/mar-la-criolla-ritratto.jpg" alt="Mar La Criolla, insegnante di salsa e bachata a Bari" loading="eager" fetchpriority="high" sizes="(max-width: 860px) 90vw, 430px">
+      <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="/assets/video/mar-hero-poster.jpg" aria-label="Mar La Criolla balla">
+        <source src="/assets/video/mar-hero.webm" type="video/webm">
+        <source src="/assets/video/mar-hero.mp4" type="video/mp4">
+      </video>
       <div class="tag"><b>Lezione di prova · 30 €</b><span>60 minuti con valutazione e piano</span></div>
     </div>
   </div>
@@ -25,15 +29,31 @@ schema: {"@context":"https://schema.org","@type":"Service","name":"Lezioni priva
 <section id="prezzi">
   <div class="wrap">
     <div class="price-head">
-      <div><h2>Prezzi chiari, senza sorprese</h2><div class="styles-row">{% for st in stili %}<span title="{{ st.desc }}">{{ st.nome }}</span>{% endfor %}</div><p class="sub">Lezioni private di salsa e bachata, in presenza a Bari e con un piano personalizzato.</p></div>
+      <div><h2>Prezzi chiari, senza sorprese</h2><div class="styles-row">{% for st in stili %}<span title="{{ st.desc }}">{{ st.nome }}</span>{% endfor %}</div><p class="sub">Lezioni private di salsa cubana, bachata e merengue, in presenza a Bari e con un piano personalizzato.</p></div>
     </div>
     {% set k = "presenza" %}
-    <div class="offer" id="offer" data-until="{{ site.lancio.fino }}">
-      <span class="o-tag">−{{ site.lancio.sconto }}%</span>
-      <p><b>Prezzi di lancio: −{{ site.lancio.sconto }}% su tutte le lezioni fino al {{ site.lancio.testo }}.</b> Dal 1° dicembre valgono i prezzi barrati.</p>
-      <div class="cd" data-until="{{ site.lancio.fino }}" aria-label="Tempo rimasto"><span><b data-u="d">00</b><small>giorni</small></span><span><b data-u="h">00</b><small>ore</small></span><span><b data-u="m">00</b><small>min</small></span><span><b data-u="s">00</b><small>sec</small></span></div>
+    {% set fd = site.founders %}
+    <div class="founders">
+      <div class="fd-text">
+        <h3>Offerta di lancio per i fondatori</h3>
+        <p class="sub">Per celebrare il lancio ufficiale delle lezioni private in presenza e online, le prime {{ fd.total }} persone avranno condizioni esclusive e manterranno questo prezzo per sempre.</p>
+        <ul class="fd-list">
+          <li><b>Prezzo protetto per tutto il tuo percorso di formazione.</b> Non pagherai mai i futuri aumenti di prezzo.</li>
+          <li>Valutazione iniziale personalizzata.</li>
+          <li>Revisione dei video di pratica.</li>
+          <li>Offerte speciali per congressi e festival di timba.</li>
+          <li>Posti limitati a {{ fd.total }} allievi fondatori.</li>
+        </ul>
+      </div>
+      <div class="fd-card">
+        <p class="fd-count"><b>{{ fd.available }}</b> / {{ fd.total }}</p>
+        <p class="fd-label">posti da fondatore disponibili</p>
+        <div class="fd-bar" role="progressbar" aria-valuemin="0" aria-valuemax="{{ fd.total }}" aria-valuenow="{{ fd.total - fd.available }}" aria-label="Posti occupati"><span style="width:{{ ((fd.total - fd.available) / fd.total * 100) | round }}%"></span></div>
+        <p class="fd-note">Quando la lista sarà completa, le condizioni da fondatore si chiudono definitivamente.</p>
+        <a class="btn" href="https://wa.me/{{ site.whatsapp }}?text={{ 'Ciao Mar! Voglio il mio posto da fondatore per le lezioni private.' | waText }}" target="_blank" rel="noopener">Voglio il mio posto da fondatore</a>
+      </div>
     </div>
-    <div class="plist">{% for v in prezzi[k].voci %}<div class="pitem{% if v.top %} top{% endif %}"><div><b>{{ v.nome }}</b><small>{{ v.desc }}</small></div><div class="eur"><span class="o-old">{{ v.dopo }} €</span>{{ v.prezzo }} €</div></div>{% endfor %}</div>
+    <div class="plist">{% for v in prezzi[k].voci %}<div class="pitem{% if v.top %} top{% endif %}"><div><b>{{ v.nome }}</b><small>{{ v.desc }}</small></div><div class="eur">{{ v.prezzo }} €</div></div>{% endfor %}</div>
     <details class="include">
       <summary>Cosa include ogni lezione</summary>
       <ul class="checks">{% for i in prezzi[k].include %}<li>{{ i }}</li>{% endfor %}</ul>
@@ -73,8 +93,8 @@ schema: {"@context":"https://schema.org","@type":"Service","name":"Lezioni priva
   </div>
     <div class="booker" id="booker">
       <div class="bk-steps">
-        <div class="bstep"><h3><i>1</i>Cosa vuoi ballare?</h3>
-          <div class="chips3" id="bkStyle">{% for s in ["Salsa","Bachata"] %}<button type="button" class="opt" data-v="{{ s }}" aria-pressed="false">{{ s }}</button>{% endfor %}</div>
+        <div class="bstep"><h3><i>1</i>Cosa vuoi ballare? <small class="bk-multi">Puoi sceglierne più di uno</small></h3>
+          <div class="chips3" id="bkStyle">{% for s in ["Salsa cubana","Bachata","Merengue"] %}<button type="button" class="opt" data-v="{{ s }}" aria-pressed="false">{{ s }}</button>{% endfor %}</div>
         </div>
         <div class="bstep"><h3><i>2</i>Che lezione?</h3>
           <div class="grid-opts" id="bkServ">
@@ -150,5 +170,9 @@ schema: {"@context":"https://schema.org","@type":"Service","name":"Lezioni priva
     <h2>Inizia oggi la tua evoluzione nel ballo.</h2>
     <p class="sub">Raccontami i tuoi obiettivi e ti aiuto a trovare l'opzione migliore per te.</p>
     <div class="cta"><a class="btn mango" href="#prenota">Prenota ora</a></div>
+    <div class="wa-talk">
+      <p><b>Hai un dubbio?</b> Scrivimi su WhatsApp: in 5 minuti capiamo quale lezione fa per te. È gratis e senza impegno.</p>
+      <a class="btn wa-send" href="https://wa.me/{{ site.whatsapp }}?text={{ 'Ciao Mar! Ho un dubbio sulle lezioni, parliamone.' | waText }}" target="_blank" rel="noopener">{{ icon("wa") | safe }}<span>Parliamone gratis</span></a>
+    </div>
   </div>
 </section>

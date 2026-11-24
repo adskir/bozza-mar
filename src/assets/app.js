@@ -110,7 +110,12 @@
         hoursEl.appendChild(b);
       });
     }
-    $$("#bkStyle .opt").forEach((b) => b.addEventListener("click", () => { pick($("#bkStyle"), ".opt", b); state.stile = b.dataset.v; update(); }));
+    // stile: si possono scegliere più balli insieme
+    $$("#bkStyle .opt").forEach((b) => b.addEventListener("click", () => {
+      b.setAttribute("aria-pressed", b.getAttribute("aria-pressed") !== "true");
+      const on = $$("#bkStyle .opt[aria-pressed=true]").map((x) => x.dataset.v);
+      state.stile = on.length ? on.join(", ") : null; update();
+    }));
     $$("#bkServ .opt").forEach((b) => b.addEventListener("click", () => { pick($("#bkServ"), ".opt", b); state.servizio = b.dataset.v; update(); }));
     const ok = () => state.stile && state.servizio && state.giorno && state.ora;
     const set = (id, v) => { const el = $(id); el.textContent = v || "—"; el.classList.toggle("set", !!v); };
