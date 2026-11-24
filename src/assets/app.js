@@ -183,8 +183,12 @@
   if (big && bg) {
     if (arch) { arch.pause(); arch.removeAttribute("autoplay"); arch.preload = "none"; }
     if (!still) {
-      [["webm", bg.dataset.srcWebm], ["mp4", bg.dataset.srcMp4]].forEach(([t, s]) => { const so = document.createElement("source"); so.src = s; so.type = "video/" + t; bg.appendChild(so); });
+      [["mp4", bg.dataset.srcMp4], ["webm", bg.dataset.srcWebm]].forEach(([t, s]) => { const so = document.createElement("source"); so.src = s; so.type = "video/" + t; bg.appendChild(so); });
       bg.load(); bg.play().catch(() => {});
     }
+  } else if (arch && !still) {
+    // alcuni telefoni ignorano autoplay: lo avviamo noi
+    arch.muted = true; const go = () => arch.play().catch(() => {});
+    go(); arch.addEventListener("canplay", go, { once: true });
   }
 })();
