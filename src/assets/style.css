@@ -771,3 +771,8 @@ summary::after{color:var(--ink)}
   .hero .chips,.hero h1,.hero .promise,.hero .trust,.hero .cta{position:relative;z-index:2}
 }
 @media(max-width:900px){.hero .portrait{left:0!important;right:0!important;top:0!important;bottom:0!important;width:100%!important;transform:none!important;rotate:none!important}}
+/* telefono: meno «aria» sopra — hero più basso e inquadratura spostata verso i ballerini */
+@media(max-width:900px){
+  .hero,.hero .wrap{min-height:calc(78svh - 74px)}
+  .hero .portrait video,.hero .hero-video{object-position:50% 72%}
+}
