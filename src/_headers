@@ -1,2 +1,4 @@
+# Intestazioni HTTP del sito. (Il noindex della bozza è stato tolto il 25.11.2026 al lancio su marlacriolla.com)
 /*
-  X-Robots-Tag: noindex
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin

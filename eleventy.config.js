@@ -11,6 +11,7 @@ export default function (cfg) {
   });
   cfg.addPassthroughCopy({ "src/assets": "assets" });
   cfg.addPassthroughCopy({ "src/_headers": "_headers" });
+  cfg.addPassthroughCopy({ "src/robots.txt": "robots.txt" });
   cfg.addFilter("waText", (t) => encodeURIComponent(t));
   cfg.addFilter("year", () => new Date().getFullYear());
   cfg.addCollection("posts", (c) => c.getFilteredByGlob("src/blog/*.md").sort((a, b) => b.date - a.date));
