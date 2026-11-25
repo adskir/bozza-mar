@@ -1,3 +1,28 @@
 [build]
   command = "npm run build"
   publish = "_site"
+
+# Dominio principale: marlacriolla.com. Gli altri indirizzi portano qui con redirect 301.
+[[redirects]]
+  from = "https://marlacriolla.it/*"
+  to = "https://marlacriolla.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.marlacriolla.it/*"
+  to = "https://marlacriolla.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://marlacriolla.it/*"
+  to = "https://marlacriolla.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.marlacriolla.it/*"
+  to = "https://marlacriolla.com/:splat"
+  status = 301
+  force = true
