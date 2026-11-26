@@ -27,8 +27,8 @@
   status = 301
   force = true
 
-# Viaja con MAR è diventata «Per organizzatori» (26.11)
+# Viaja con MAR è diventata «Congressi e festival» (26.11)
 [[redirects]]
   from = "/viaja-con-mar/*"
-  to = "/per-organizzatori/"
+  to = "/congressi-e-festival/"
   status = 301
