@@ -1,29 +1,34 @@
 ---
 layout: base.njk
-title: "Lezioni private di salsa cubana e bachata a Bari · Mar La Criolla"
-description: "Lezioni private di salsa cubana, bachata e merengue a Bari con Mar La Criolla, bicampionessa. Arriva in pista sapendo cosa fare. Lezione di prova a 30 €."
+title: "Lezioni private di salsa e bachata a Bari e primo ballo di nozze · Mar La Criolla"
+description: "Lezioni private di salsa cubana e bachata a Bari con Mar La Criolla, bicampionessa di Timba. Primo ballo di nozze: una coreografia pensata per voi."
 schema: {"@context":"https://schema.org","@type":"Service","name":"Lezioni private di salsa e bachata","provider":{"@type":"Person","name":"Mar La Criolla"},"areaServed":{"@type":"City","name":"Bari"},"offers":{"@type":"Offer","name":"Lezione di prova 60 min","price":"30","priceCurrency":"EUR"}}
 ---
 {% from "icons.njk" import icon %}
-<section class="hero">
-  <video class="hero-bg" muted loop playsinline preload="none" poster="/assets/video/mar-hero-h-poster.jpg" aria-hidden="true" data-src-webm="/assets/video/mar-hero-h.webm" data-src-mp4="/assets/video/mar-hero-h.mp4"></video>
+<section class="home-hero">
+  <div class="hh-photo" aria-hidden="true"><img src="/foto/home-hero-mar.jpg" alt="" loading="eager" fetchpriority="high" sizes="(max-width: 860px) 70vw, 60vw"></div>
   <div class="wrap">
-    <div>
-      <div class="chips">{% for c in site.cities %}<span>{{ c }}</span>{% endfor %}</div>
-      <h1>Lezioni private di <em>salsa cubana e bachata</em> a Bari</h1>
-      <p class="promise">Arriva in pista sapendo cosa fare. Balla con più sicurezza.</p>
-      <ul class="trust" aria-label="Perché Mar"><li><b>Bicampionessa</b></li><li><b>Oltre 550</b> allievi</li><li>Balla <b>dal 2014</b></li></ul>
-      <div class="cta">
-        <a class="btn" href="#prenota">Prenota la prova</a>
-      </div>
+    <div class="hh-text">
+      <h1>Più sicurezza in pista. Un primo ballo che vi <span class="hh-u">somiglia.</span></h1>
+      <p class="hh-sub">Lezioni private a Bari, pensate per te. Il vostro primo ballo, creato insieme.</p>
+      <ul class="hh-facts" aria-label="Perché Mar"><li>Bicampionessa di Timba</li><li>Oltre 550 allievi</li><li>Insegna dal 2019</li></ul>
     </div>
-    <div class="portrait">
-      <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="/assets/video/mar-hero-poster.jpg" aria-label="Mar La Criolla balla">
-        <source src="/assets/video/mar-hero.mp4" type="video/mp4">
-        <source src="/assets/video/mar-hero.webm" type="video/webm">
-      </video>
-      <div class="tag"><b>Lezione di prova · 30 €</b><span>60 minuti con valutazione e piano</span></div>
+  </div>
+</section>
+
+<section class="home-doors" aria-label="Scegli il tuo percorso">
+  <div class="wrap">
+    <div class="hdoors">
+      <a class="hdoor hdoor-green" href="/#prezzi">
+        <div class="hdoor-img"><img src="/foto/card-lezioni.jpg" alt="Coppia che balla in sala" sizes="(max-width: 860px) 50vw, 25vw"></div>
+        <div class="hdoor-text"><h2>Lezioni private a Bari</h2><p>Salsa cubana e bachata, al tuo ritmo.</p><span class="btn">Scopri le lezioni</span></div>
+      </a>
+      <a class="hdoor hdoor-navy" href="/primo-ballo-di-nozze/">
+        <div class="hdoor-img"><img src="/foto/card-primo-ballo.jpg" alt="Sposi che ballano il primo ballo" sizes="(max-width: 860px) 50vw, 25vw"></div>
+        <div class="hdoor-text"><h2>Primo ballo di nozze</h2><p>Una coreografia pensata per voi.</p><span class="btn">Scopri il percorso</span></div>
+      </a>
     </div>
+    <p class="org-link"><a href="/per-organizzatori/">Sei un organizzatore? Scopri workshop, show e collaborazioni <span aria-hidden="true">›</span></a></p>
   </div>
 </section>
 

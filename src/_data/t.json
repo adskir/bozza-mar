@@ -7,49 +7,45 @@
     "nav": [
       [
         "/#prezzi",
-        "Prezzi"
+        "Lezioni private a Bari"
       ],
       [
-        "/#metodo",
-        "Metodo"
+        "/primo-ballo-di-nozze/",
+        "Primo ballo di nozze"
       ],
       [
-        "/#prenota",
-        "Prenota"
+        "/per-organizzatori/",
+        "Per organizzatori"
       ],
       [
         "/#chi-sono",
-        "Chi sono"
-      ],
-      [
-        "/viaja-con-mar/",
-        "Viaja con MAR"
+        "Su di me"
       ]
     ],
     "home": "/",
     "prenota": "/#prenota",
-    "foot1": "Salsa e bachata.",
+    "foot1": "Salsa cubana, bachata e primo ballo di nozze.",
     "foot2": "Lezioni private a Bari.",
     "footnav": [
       [
         "/#prezzi",
-        "Prezzi"
+        "Lezioni private a Bari"
       ],
       [
-        "/#metodo",
-        "Metodo"
+        "/primo-ballo-di-nozze/",
+        "Primo ballo di nozze"
       ],
       [
-        "/#prenota",
-        "Prenota"
+        "/per-organizzatori/",
+        "Per organizzatori"
       ],
       [
         "/#chi-sono",
-        "Chi sono"
+        "Su di me"
       ],
       [
-        "/viaja-con-mar/",
-        "Viaja con MAR"
+        "/privacy/",
+        "Privacy"
       ]
     ],
     "made": "Sito realizzato da",

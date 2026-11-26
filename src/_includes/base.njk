@@ -35,6 +35,7 @@
     <nav class="nav" id="nav" aria-label="{{ L.menu }}">
       {% for l in L.nav %}<a href="{{ l[0] }}">{{ l[1] }}</a>{% endfor %}
     </nav>
+    <a class="hdr-cta" href="https://wa.me/{{ site.whatsapp }}?text={{ 'Ciao Mar! Vorrei informazioni.' | waText }}" target="_blank" rel="noopener">{{ icon("wa") | safe }}<span>Scrivimi</span></a>
     <button class="burger" id="burger" aria-label="{{ L.burger }}" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
   </div>
 </header>
