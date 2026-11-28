@@ -994,3 +994,7 @@ body{background:var(--hm-ivory)}
 .hdoor h2{font-weight:800}
 @media(max-width:860px){.hdoor h2{max-width:7.4em}.hdoor p{max-width:11.5em}.home-hero h1{font-weight:800}}
 @media(min-width:861px){.top .nav{gap:0 2.2vw}}
+
+/* home: video al posto della foto nel primo schermo */
+.hh-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%;display:block}
+@media(max-width:860px){.hh-video{object-position:35% 30%}}

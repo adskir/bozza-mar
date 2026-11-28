@@ -194,3 +194,19 @@
   const kick = () => { if (v.paused) go(); };
   ["touchstart", "scroll", "click"].forEach((e) => addEventListener(e, kick, { once: true, passive: true }));
 })();
+
+/* home: video di Mar come sfondo del primo schermo (orizzontale su computer, verticale su telefono) */
+(() => {
+  const v = document.querySelector(".hh-video");
+  if (!v) return;
+  const k = matchMedia("(max-width: 860px)").matches ? "m" : "d";
+  v.poster = v.dataset[k + "Poster"];
+  [["mp4", v.dataset[k + "Mp4"]], ["webm", v.dataset[k + "Webm"]]].forEach(([t, s]) => { const so = document.createElement("source"); so.src = s; so.type = "video/" + t; v.appendChild(so); });
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  v.muted = true; v.defaultMuted = true; v.playsInline = true;
+  v.preload = "auto"; v.load();
+  const go = () => { const p = v.play(); if (p && p.catch) p.catch(() => {}); };
+  go(); v.addEventListener("canplay", go, { once: true });
+  const kick = () => { if (v.paused) go(); };
+  ["touchstart", "scroll", "click"].forEach((e) => addEventListener(e, kick, { once: true, passive: true }));
+})();
